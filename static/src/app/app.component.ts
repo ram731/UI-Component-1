@@ -51,7 +51,7 @@ export class AppComponent implements AfterViewChecked{
         this.pageClass = data.pageClass;
         this.pageTitle = data.title ? data.title : this.pageTitle;
         titleService.setTitle(this.pageTitle);
-        utils.path = utils.path ? utils.path : root.url[0].path;
+        /* utils.path = utils.path ? utils.path : root.url[0].path;
         if(data.currentPage){
           this.utils.currentPageName = data.currentPage;
         }
@@ -72,7 +72,7 @@ export class AppComponent implements AfterViewChecked{
         }
         else {
           this.utils.showSaveAndExit = true;
-        }
+        } */
 
       } else if (e instanceof NavigationEnd) {
         if (e.url.indexOf('glbReqId') > 0) {
