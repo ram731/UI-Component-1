@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  testMode: true,
+  contextPath: 'https://localhost:9445/mydeq-ms4/'  
 };
 
 /*

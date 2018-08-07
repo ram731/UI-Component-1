@@ -1,0 +1,17 @@
+<div *ngIf="showAlert" class="modal-backdrop show" style="z-index: 1053;"></div>
+<div *ngIf="showAlert" class="modal show fade" id="myModal" role="dialog" style="z-index: 1056;">
+	<div class="modal-dialog modal-lg" style="margin-top:10%; z-index: 1056;">
+		<div class="modal-content">
+			<div class="modal-header mx-3 pl-0">
+				<h2 class="modal-title text-primary font-weight-bold">{{alertObj.title}}</h2>
+			</div>
+			<div class="modal-body p-3">
+				<h3 [innerHTML]="alertObj.msg"></h3>
+			</div>
+			<div class="modal-footer">
+				<button type="button" *ngIf="alertObj.leftButtonText" class="btn btn-primary float-left" (click)="closeErrorMsg()"><span class="arrow left"> <i class="fa fa-chevron-left"></i></span> {{alertObj.leftButtonText}}</button>
+				<button type="button" class="btn btn-primary float-right" (click)="hideErrorMsg()">{{alertObj.mainButtonText}}<span class="arrow right"> <i class="fa fa-chevron-right"></i></span></button>
+			</div>
+		</div>
+	</div>
+</div>
