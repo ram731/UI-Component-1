@@ -189,13 +189,14 @@ export class AppComponent implements AfterViewChecked{
   }
 
   onActivate(event:any){    
-    setTimeout(()=>{      
+    /* setTimeout(()=>{      
       this.currentComponent = event; 
       if(typeof  this.currentComponent.setPageReview === "function"){
         this.currentComponent.setPageReview(this);
       }
-      
-    },300);
+
+    },300); */
+    this.router.navigateByUrl(window.location.pathname);
   }
 
   onDeactivate(event:any){

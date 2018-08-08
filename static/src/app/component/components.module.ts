@@ -1,13 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
 import { SharedModule } from '../shared/shared.module';
-
-
 import { MydeqFooterComponent } from './mydeq-footer/mydeq-footer.component';
 import { MydeqHeaderComponent } from './mydeq-header/mydeq-header.component';
+import { CommentsComponent } from './comment-section/comments.component';
 
 
 @NgModule({
@@ -21,12 +19,14 @@ import { MydeqHeaderComponent } from './mydeq-header/mydeq-header.component';
 
   declarations: [
     MydeqFooterComponent,
-    MydeqHeaderComponent
+    MydeqHeaderComponent,
+    CommentsComponent
   ],
 
   exports: [
     MydeqFooterComponent,
-    MydeqHeaderComponent
+    MydeqHeaderComponent,
+    CommentsComponent
   ]
 })
 export class ComponentModule { }
