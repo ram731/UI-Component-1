@@ -47,7 +47,7 @@
         <div class="card-header px-0 mx-4 pb-0">
           <h1 class="card-title text-primary divider-horizontal font-weight-bold pb-3">{{utils.title}}</h1>
           <!--Comments -->
-          <comments *ngIf="utils.reviewComments && utils.reviewComments.length>0" (editEvt)="editPage($event)" [isPageLevel]="'true'" [defaultClass]="'comments'"  [reviewList]="utils.reviewComments"></comments>
+          <!-- <comments *ngIf="utils.reviewComments && utils.reviewComments.length>0" (editEvt)="editPage($event)" [isPageLevel]="'true'" [defaultClass]="'comments'"  [reviewList]="utils.reviewComments"></comments> -->
         </div>
         <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>        
       </div>
