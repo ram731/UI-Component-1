@@ -16,7 +16,7 @@ export class Utils {
     if (!this.pathVal)
     {
         this.pathVal = val;
-        this.setPageAsPerPath();
+        //this.setPageAsPerPath();
     }
   }
 

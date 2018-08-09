@@ -27,16 +27,17 @@ export class AppComponent implements AfterViewChecked{
     private cdRef: ChangeDetectorRef
 
   ) {
-
-    router.events.subscribe(e => {      
+console.log('UTIL',utils);
+    router.events.subscribe(e => {
       if(window.location.pathname.endsWith('confirmation')){
         this.utils.isConfirmationPage = true;
       }
       else{
         this.utils.isConfirmationPage = false;
       }
-      if (e instanceof RoutesRecognized) {        
+      if (e instanceof RoutesRecognized) {
         const root = e.state.root.firstChild;
+        //console.log('Root ',root,root.routeConfig.children[0].path);
         const child = root && root.firstChild ? root.firstChild : null;
         let data: any = root && root.data ? root.data : { title: '' };
         const queryParams: any = root.queryParamMap;
@@ -51,8 +52,8 @@ export class AppComponent implements AfterViewChecked{
         this.pageClass = data.pageClass;
         this.pageTitle = data.title ? data.title : this.pageTitle;
         titleService.setTitle(this.pageTitle);
-        /* utils.path = utils.path ? utils.path : root.url[0].path;
-        if(data.currentPage){
+        utils.path = utils.path ? utils.path : root.routeConfig.children[0].path;
+        /*if(data.currentPage){
           this.utils.currentPageName = data.currentPage;
         }
 
