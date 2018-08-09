@@ -1,26 +1,24 @@
-export class ConfigService {
+export class ConfigCacheService {
 
-    private static instace: ConfigService = null;
+    private static instace: ConfigCacheService = null;
     private componentMetadata: Map<string, any> = new Map<string, any>();
 
     private constructor() {}
 
     public static getInstane() {
 
-        if (!ConfigService.instace) {
-            ConfigService.instace = new ConfigService();
+        if (!ConfigCacheService.instace) {
+            ConfigCacheService.instace = new ConfigCacheService();
         }
 
-        return ConfigService.instace;
+        return ConfigCacheService.instace;
     }
 
     public setComponentMetadata(key: string, value: any) {
         this.componentMetadata.set(key, value);
-       // console.log(`After set Len is ${this.componentMetadata.size}`);
     }
 
     public getRoute(componentName: string) {
-        console.log('Get ',componentName,this.componentMetadata);
         return this.componentMetadata.get(componentName).route;
     }
 

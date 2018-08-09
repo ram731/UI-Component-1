@@ -1,6 +1,6 @@
 import { Injector } from '@angular/core';
 import { Router, Route, Routes } from '@angular/router';
-import { ConfigService } from './config-cache';
+import { ConfigCacheService } from './config-cache';
 import { PageModule } from '../../../pages/pages.module';
 import { MyDeqComponentModule } from './componentModule';
 import * as _ from 'lodash';
@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 export function ConfigServiceFactory(injector: Injector): Function {
     return () => {
         //console.log('Getting config in routing module');
-        const service: ConfigService = ConfigService.getInstane();
+        const service: ConfigCacheService = ConfigCacheService.getInstane();
         const router: Router = injector.get(Router);
         const decoratorFactory = Reflect.getOwnPropertyDescriptor(PageModule, '__annotations__').value[0];
         let componentList: any[] = [];

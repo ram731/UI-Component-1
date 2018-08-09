@@ -1,11 +1,16 @@
-import { ConfigService } from './config-cache';
+import { ConfigCacheService } from './config-cache';
 import { Optional } from '../../../../../node_modules/@angular/core';
 
 export function MydeqComponentConfig(input: ConfigInput): ClassDecorator {
 
    return function(constructor: Function) {
-    const service: ConfigService = ConfigService.getInstane();
-    service.setComponentMetadata(constructor.name, calculateServiceURL(input));
+    const service: ConfigCacheService = ConfigCacheService.getInstane();
+    const metadataObj = calculateServiceURL(input);
+
+    if (metadataObj.resourceBundle){
+        metadataObj.resourceBundle = new metadataObj.resourceBundle();
+    }
+    service.setComponentMetadata(constructor.name, metadataObj);
   };
 }
 
