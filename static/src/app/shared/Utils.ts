@@ -2,7 +2,6 @@ import {Injectable } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import {NgbAccordionConfig, NgbModal , NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
 import * as _ from 'lodash';
-import { environment } from '../../environments/environment';
 
 @Injectable()
 export class Utils {
@@ -24,6 +23,9 @@ export class Utils {
     return this.pathVal;
   }
 
+  pageURL: string;
+  pageTitle:string ="";
+
   piwikSiteIds: any[];
   ANALYTICS: any;
   tooltipText: any;
@@ -34,7 +36,7 @@ export class Utils {
   numberRegEx = '^[0-9\.]+';
   private methodCalls: string[] = [];
   isConfirmationPage:boolean = false;
-  currentPageName: string;
+  //currentPageName: string;
   currentResourceBundlePath: string = 'common';
   userDetails: any = {};
   showSaveAndExit: boolean;
@@ -172,7 +174,7 @@ export class Utils {
     }
   }
 
-  public setPageComments(reviewList:any[]){   
+  public setPageComments(reviewList:any[]){
     this.reviewComments = reviewList;
 }
 
@@ -180,34 +182,30 @@ export class Utils {
     return this.reviewComments;
   }
 
-  navigateTo = (pageName: string,includePath: boolean, includeRequestParam: boolean) => {
-    
+  navigateTo = (pageName: string, includePath: boolean, includeRequestParam: boolean) => {
+    pageName = pageName.replace(new RegExp('_', 'g'), '-');
     if (pageName === 'PLACE') {
       this.navigatePlace();
     } else if (pageName === 'DASHBOARD') {
       this.gotoDashboard();
-    } else{
-      
-      if (pageName === 'EXISTING_PERMIT_INFO') {
-        includePath = true;
-      }
-      let url = "";
-
-      if (includePath) {
-        url += this.path;
-      }
-
-      if (this.navigationPath[this.path][pageName]) {
-        url += '/' + this.navigationPath[this.path][pageName].url;
-        if (includeRequestParam) {
-          this.router.navigate([url], this.navigationExtras);
-        } else {
-          this.router.navigate([url]);
-        }
-      } else {
-        window.open(pageName, '_self');
-      }
+    } else if (includePath && includeRequestParam) {
+      this.router.navigate([this.path, pageName.toLocaleLowerCase()], this.navigationExtras);
+    } else if (includePath) {
+      this.router.navigate([this.path, pageName.toLocaleLowerCase()]);
+    } else {
+      this.router.navigate([pageName.toLocaleLowerCase()]);
     }
+  }
+
+  navigate = (putServiceNextPage: string, getServiceNextPage, includePath: boolean, includeRequestParam: boolean): boolean => {
+    if (putServiceNextPage === 'ALERT') {
+      return false;
+    } else if (putServiceNextPage) {
+      this.navigateTo(putServiceNextPage, true, true);
+    } else {
+      this.navigateTo(getServiceNextPage, true, true);
+    }
+    return true;
   }
 
   gotoDashboard = () => {
@@ -369,39 +367,6 @@ export class Utils {
       inputLatlng = tmpArr[0] + '.' + tmpArr[1];
     }
     return inputLatlng;
-  }
-
-
-  getServiceURL(serviceURLObj:any=null){
-
-    let pageName=_.findKey(this.navigationPath[this.path],{'url' : this.currentPageName});
-    let navigationServiceURL=this.navigationPath[this.path][pageName]['serviceURL'];
-
-    if(serviceURLObj.addSave){
-      return serviceURLObj.endPointURL + this.path + '/save/'+navigationServiceURL;
-    }
-    if(serviceURLObj.addupdate){
-      return serviceURLObj.endPointURL + this.path + '/update/'+navigationServiceURL;
-    }
-    if(serviceURLObj.adddelete){
-      return serviceURLObj.endPointURL + this.path + '/delete/'+navigationServiceURL;
-    }
-    else if(serviceURLObj.serviceUrl){
-      return serviceURLObj.endPointURL + this.path + '/'+serviceURLObj.serviceUrl;
-    }
-    else{
-      return serviceURLObj.endPointURL + this.path + '/'+navigationServiceURL;
-    }
-    
-  }
-
-  getServiceName():string {    
-    let pageName=_.findKey(this.navigationPath[this.path],{'url' : this.currentPageName});
-    return this.navigationPath[this.path][pageName]['serviceURL'];
-  }
-
-  getMockData(mockDataKey:string) {
-    return environment[this.path][mockDataKey];
   }
 
 }
