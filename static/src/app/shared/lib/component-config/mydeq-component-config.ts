@@ -1,11 +1,11 @@
 import { ConfigCacheService } from './config-cache';
-import { Optional } from '../../../../../node_modules/@angular/core';
+import { Optional } from '@angular/core';
 
 export function MydeqComponentConfig(input: ConfigInput): ClassDecorator {
 
    return function(constructor: Function) {
     const service: ConfigCacheService = ConfigCacheService.getInstane();
-    const metadataObj = calculateServiceURL(input);
+    const metadataObj = calculateServiceName(input);
 
     if (metadataObj.resourceBundle){
         metadataObj.resourceBundle = new metadataObj.resourceBundle();
@@ -14,9 +14,9 @@ export function MydeqComponentConfig(input: ConfigInput): ClassDecorator {
   };
 }
 
-function calculateServiceURL(input: ConfigInput) {
+function calculateServiceName(input: ConfigInput) {
     input.route.forEach(eachRoute => {
-        eachRoute.serviceURL = eachRoute.serviceURL || input.serviceURL;
+        eachRoute.serviceName = eachRoute.serviceName || input.serviceName;
     });
 
     return input;
@@ -24,7 +24,7 @@ function calculateServiceURL(input: ConfigInput) {
 
 export interface ConfigInput {
     route?: Path[];
-    serviceURL?: string;
+    serviceName?: string;
     resourceBundle?: any;
     placeBarRequired?: boolean;
     showSaveAndExit?: boolean;
@@ -33,7 +33,7 @@ export interface ConfigInput {
 
 interface Path {
     pageURL?: string;
-    serviceURL?: string;
+    serviceName?: string;
 }
 
 

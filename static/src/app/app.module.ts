@@ -3,7 +3,9 @@ import { APP_INITIALIZER, NgModule, Injector } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModule,NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+
+
 import { ComponentModule } from './component/components.module';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -38,4 +40,4 @@ export class AppModule {
   constructor(injector: Injector) {
     ConfigServiceFactory(injector);
   }
- }
+}

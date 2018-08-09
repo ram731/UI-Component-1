@@ -5,8 +5,6 @@ import { Utils } from '../shared/Utils';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
-
-
 const endpoint_url: string = environment.contextPath + 'service/';
 
 @Injectable()
@@ -18,104 +16,114 @@ export class AppService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    constructor(http: HttpClient, public utils: Utils) {}
+    constructor(http: HttpClient, public utils: Utils) {
+        this.http = http;
+        this.testMode = environment.testMode;
+    }
 
-    getServiceCall(inputParamArr: any[] = null): Observable<any> {
+    getServiceCall(inputParamArr: any[] = null, inputServiceName: string = null, serviceURL: string = null): Observable<any> {
         if (this.testMode) {
-            let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url });
-            url = this.appendParameters(inputParamArr, url);
-            url = this.appendGlbReqId(url);
-            console.log('URL', url);
-            return of(this.utils.getMockData('GET_' + this.utils.getServiceName()));
+            let URL: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName }, serviceURL);
+            URL = this.appendParameters(inputParamArr, URL);
+            URL = this.appendGlbReqId(URL);
+            if (serviceURL) {
+                const tmpArr = serviceURL.split('/');
+                return of(this.getMockData('GET_' + tmpArr[tmpArr.length - 1]));
+           } else {
+                return of(this.getMockData('GET_' + inputServiceName));
+            }
         }
-        this.utils.showLoading(this.utils.currentPageName);
-        let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url });
+        this.utils.showLoading(inputServiceName);
+        let url: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName });
         url = this.appendParameters(inputParamArr, url);
         url = this.appendGlbReqId(url);
         return this.http
             .get(url, { observe: 'response' })
             .pipe(
-                map((response) => this.extractData(response, true, this.utils.currentPageName)),
-                catchError((error) => this.handleError(error, true, this.utils.currentPageName))
+                map((response) => this.extractData(response, true, inputServiceName)),
+                catchError((error) => this.handleError(error, true, inputServiceName))
             );
     }
 
-    putServiceCall = (putObj: any, inputParamArr: any[] = null): Observable<any> => {
+    putServiceCall = (putObj: any, inputParamArr: any[] = null, inputServiceName: string = null, serviceURL: string = null)
+        : Observable<any> => {
 
         if (this.testMode) {
-            let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url });
-            url = this.appendParameters(inputParamArr, url);
-            url = this.appendGlbReqId(url);
-            console.log('Put' + this.utils.currentPageName, url, putObj);
-            return of(this.utils.getMockData('PUT_' + this.utils.getServiceName()));
+            let URL: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName }, serviceURL);
+            URL = this.appendParameters(inputParamArr, URL);
+            URL = this.appendGlbReqId(URL);
+            console.log('Put' + inputServiceName, URL, putObj);
+            return of(this.getMockData('PUT_' + inputServiceName));
         }
-        this.utils.showLoading(this.utils.currentPageName);
-        let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url });
+        this.utils.showLoading(inputServiceName);
+        let url: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName });
         url = this.appendParameters(inputParamArr, url);
 
         return this.http
             .put(url, putObj, this.httpOptions)
             .pipe(
-                map((response) => this.extractData(response, true, this.utils.currentPageName)),
-                catchError((error) => this.handleError(error, true, this.utils.currentPageName))
+                map((response) => this.extractData(response, true, inputServiceName)),
+                catchError((error) => this.handleError(error, true, inputServiceName))
             );
     }
 
-    saveIndividualServiceCall = (putObj: any): Observable<any> => {
+    saveIndividualServiceCall = (putObj: any, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
-            let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url, addSave: true });
-            console.log('saveIndividualServiceCall', url);
-            return of(this.utils.getMockData('indSave'));
+            let URL: string = this.getServiceURL({ endPointURL: endpoint_url, addSave: true, serviceName: inputServiceName });
+            console.log('saveIndividualServiceCall', URL);
+            return of(this.getMockData('indSave'));
         }
-        this.utils.showLoading(this.utils.currentPageName);
-        let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url, addSave: true });
+        this.utils.showLoading(inputServiceName);
+        const url: string = this.getServiceURL({ endPointURL: endpoint_url, addSave: true, serviceName: inputServiceName });
 
         return this.http
             .put(url, putObj, this.httpOptions)
             .pipe(
-                map((response) => this.extractData(response, true, this.utils.currentPageName)),
-                catchError((error) => this.handleError(error, true, this.utils.currentPageName))
+                map((response) => this.extractData(response, true, inputServiceName)),
+                catchError((error) => this.handleError(error, true, inputServiceName))
             );
     }
 
-    updateIndividualServiceCall = (putObj: any): Observable<any> => {
+    updateIndividualServiceCall = (putObj: any, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
-            let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url, addupdate: true });
-            console.log('updateIndividualServiceCall', url);
-            return of(this.utils.getMockData('indSave'));
+            const URL: string = this.getServiceURL({ endPointURL: endpoint_url, addupdate: true, serviceName: inputServiceName });
+            console.log('updateIndividualServiceCall', URL);
+            return of(this.getMockData('indSave'));
         }
-        this.utils.showLoading(this.utils.currentPageName);
-        let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url, addupdate: true });
+        this.utils.showLoading(inputServiceName);
+        const url: string = this.getServiceURL({ endPointURL: endpoint_url, addupdate: true, serviceName: inputServiceName });
 
         return this.http
             .put(url, putObj, this.httpOptions)
             .pipe(
-                map((response) => this.extractData(response, true, this.utils.currentPageName)),
-                catchError((error) => this.handleError(error, true, this.utils.currentPageName))
+                map((response) => this.extractData(response, true, inputServiceName)),
+                catchError((error) => this.handleError(error, true, inputServiceName))
             );
     }
 
-    deleteIndividualServiceCall = (sectionId: string): Observable<any> => {
+    deleteIndividualServiceCall = (sectionId: string, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
-            let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url, adddelete: true });
-            console.log('deleteIndividualServiceCall', url);
-            return of(this.utils.getMockData('deleteSection'));
+            const URL: string = this.getServiceURL({ endPointURL: endpoint_url, adddelete: true, serviceName: inputServiceName })
+                + '/' + sectionId;
+            console.log('deleteIndividualServiceCall', URL);
+            return of(this.getMockData('deleteSection'));
         }
-        this.utils.showLoading(this.utils.currentPageName);
-        let url: string = this.utils.getServiceURL({ endPointURL: endpoint_url, adddelete: true }) + '/' + sectionId;
+        this.utils.showLoading(inputServiceName);
+        const url: string = this.getServiceURL({ endPointURL: endpoint_url, adddelete: true, serviceName: inputServiceName })
+            + '/' + sectionId;
         return this.http
             .delete(url, this.httpOptions)
             .pipe(
-                map((response) => this.extractData(response, true, this.utils.currentPageName)),
-                catchError((error) => this.handleError(error, true, this.utils.currentPageName)));
+                map((response) => this.extractData(response, true, inputServiceName)),
+                catchError((error) => this.handleError(error, true, inputServiceName)));
     }
 
 
     private appendParameters(inputParamArr: any[] = null, url: string) {
         if (inputParamArr) {
             inputParamArr.forEach(urlParam => {
-                if(urlParam) {
-                    url = url + '/' + urlParam
+                if (urlParam) {
+                    url = url + '/' + urlParam;
                 }
             });
         }
@@ -124,38 +132,38 @@ export class AppService {
 
     getPlaceDetailsByStagingID(stagingPlaceID, companyCustID): Observable<any> {
         if (this.testMode) {
-            return of(this.utils.getMockData('stagingResponse'));
+            return of(this.getMockData('stagingResponse'));
         }
         const url = 'newPlace/details/' + companyCustID + '/' + (stagingPlaceID ? stagingPlaceID : 0);
         return this.http
             .get(url, { observe: 'response' })
             .pipe(
-            map((response) => this.extractData(response, false)),
-            catchError((error) => this.handleError_PlaceDetails(error)));
+                map((response) => this.extractData(response, false)),
+                catchError((error) => this.handleError_PlaceDetails(error)));
     }
 
     getPlaceDetailsByPlaceID(placeID: string): Observable<any> {
         if (this.testMode) {
-            return of(this.utils.getMockData('stagingResponse'));
+            return of(this.getMockData('stagingResponse'));
         }
         const url = 'place/detail?placeId=' + (placeID ? placeID : 0);
         return this.http
             .get(url, { observe: 'response' })
             .pipe(
-            map((response) => this.extractData(response, false)),
-            catchError((error) => this.handleError_PlaceDetails(error)));
+                map((response) => this.extractData(response, false)),
+                catchError((error) => this.handleError_PlaceDetails(error)));
     }
 
     getPlaceDetailsByGlbReqId(): Observable<any> {
         if (this.testMode) {
-            return of(this.utils.getMockData('stagingResponse'));
+            return of(this.getMockData('stagingResponse'));
         }
         const url = 'placebar/detail?path=' + this.utils.path;
         return this.http
             .get(url, { observe: 'response' })
             .pipe(
-            map((response) => this.extractData(response, false)),
-            catchError((error) => this.handleError_PlaceDetails(error)));
+                map((response) => this.extractData(response, false)),
+                catchError((error) => this.handleError_PlaceDetails(error)));
     }
 
     //COMMON SERVICE
@@ -175,11 +183,12 @@ export class AppService {
             this.utils.closeLoading(callingMethodName);
         }
         if (res && res.body) {
-            if(res.body.reviewList && res.body.reviewList.length > 0) {
+            if (res.body.reviewList && res.body.reviewList.length > 0) {
                 let arrayObj: any[] = []
                 arrayObj = res.body.reviewList;
-                res.body.reviewList = _.filter(arrayObj, function(n) { 
-                    return n.currentInd === 'C'; });
+                res.body.reviewList = _.filter(arrayObj, function (n) {
+                    return n.currentInd === 'C';
+                });
             }
             this.utils.setPageComments(res.body.reviewList);
             return res.body;
@@ -209,5 +218,30 @@ export class AppService {
             this.utils.glbReqId = null;
         }
         return returnURL;
+    }
+
+    private getServiceURL(serviceURLObj: any = null, serviceURL: string = null) {
+
+        if (serviceURLObj.addSave) {
+            return serviceURLObj.endPointURL + this.utils.path + '/save/' + serviceURLObj.serviceName;
+        } else if (serviceURLObj.addupdate) {
+            return serviceURLObj.endPointURL + this.utils.path + '/update/' + serviceURLObj.serviceName;
+        } else if (serviceURLObj.adddelete) {
+            return serviceURLObj.endPointURL + this.utils.path + '/delete/' + serviceURLObj.serviceName;
+        } else if (serviceURLObj.serviceName) {
+            return serviceURLObj.endPointURL + this.utils.path + '/' + serviceURLObj.serviceName;
+        } else {
+            return serviceURL;
+        }
+    }
+
+    private getMockData(mockDataKey: string) {
+        let returnObj = {};
+        if (this.utils.path && environment[this.utils.path][mockDataKey]) {
+            returnObj = environment[this.utils.path][mockDataKey];
+        } else if (environment[mockDataKey]) {
+            returnObj = environment[mockDataKey];
+        }
+        return returnObj;
     }
 }
