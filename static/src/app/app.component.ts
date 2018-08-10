@@ -37,13 +37,14 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
       else {
         this.utils.isConfirmationPage = false;
       }
-      if (e instanceof RoutesRecognized) {        
+      if (e instanceof RoutesRecognized) {
         const root = e.state.root.firstChild;
         const queryParams: any = root.queryParamMap;
         if (!this.utils.glbReqId && queryParams && queryParams.params['glbReqId']) {
           this.utils.glbReqId = queryParams.params['glbReqId'];
         }
-        utils.path = utils.path ? utils.path : root.children[0].routeConfig.path;
+     
+        utils.path = utils.path ? utils.path : (root.routeConfig.path ? root.routeConfig.path : '');
         utils.pageURL = e.url;
 
       } else if (e instanceof NavigationEnd) {
@@ -62,10 +63,12 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
 
   onActivate(event: any) {
     this.currentComponent = event;
+    if ( this.configCacheService.getMetadata(event.constructor.name)) {
     this.showSaveAndExit = this.configCacheService.showSaveAndExit(event.constructor.name);
     this.placeBarRequired = this.configCacheService.isPlaceBarRequired(event.constructor.name);
     this.configCacheService.getTitle(event.constructor.name);
     this.titleService.setTitle(this.utils.pageTitle);
+    }
     this.router.navigateByUrl(window.location.pathname);
   }
 
