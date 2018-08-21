@@ -26,13 +26,20 @@ export function ConfigServiceFactory(injector: Injector): Function {
         const filteredRoutes = router.config;
         const userDefRoute: Routes = [];
         componentList.forEach(element => {
-            const newArr = _.map(service.getRoute(element.name), function (elm) {
-                return elm.pageURL.split('/');
-            });
+            const newArr = _.map(service.getRoute(element.name), function (elm) {                
+                const tempArr = elm.pageURL.split('/');
+                if (tempArr[0] === '') {
+                    tempArr.shift();
+                }
+                return tempArr;
+            });          
             findAndAdd(userDefRoute, newArr, element);
         });
-        userDefRoute.push(filteredRoutes[0]);
-        router.resetConfig(userDefRoute);
+
+        filteredRoutes.forEach(elm => {
+            userDefRoute.push(elm);
+            router.resetConfig(userDefRoute);
+        });
 
     };
 }
