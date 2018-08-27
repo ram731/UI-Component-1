@@ -7,7 +7,7 @@ import { MyDeqComponentModule } from '../../shared/lib/component-config/componen
 import { PermitInfoComponent } from './permit-info/permit-info.component';
 import { SelectCompanyComponent } from './select-compony/select-company.component';
 
-@NgModule({
+export const metadata = {
 
     imports: [
         CommonModule,
@@ -26,7 +26,8 @@ import { SelectCompanyComponent } from './select-compony/select-company.componen
         PermitInfoComponent,
         SelectCompanyComponent
     ]
-})
+};
+@NgModule(metadata)
 export class CommonPageModule extends MyDeqComponentModule {}
 
 
