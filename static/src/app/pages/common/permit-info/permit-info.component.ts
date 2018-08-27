@@ -7,7 +7,6 @@ import { AppService } from '../../../service/app.service';
 import { MyDeqErrorHandler } from '../../../shared/errorHandler';
 import { Utils } from '../../../shared/Utils';
 import {PageContentpermitverification} from './permit-info.resourcebundle';
-
 @Component({
     selector: 'permit-info',
     templateUrl: './permit-info.component.html'
