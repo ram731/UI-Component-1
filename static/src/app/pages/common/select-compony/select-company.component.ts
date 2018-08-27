@@ -33,7 +33,7 @@ export class SelectCompanyComponent extends BaseComponent {
         super(activatedRoute, formBuilder, utils, appService, errorHandler);
     }
 
-    onGetResponse(getResponse: any): void {        
+    onGetResponse(getResponse: any): void {
        this.companyList = getResponse.userCompanylist;
        this.isIndividual = false;
     }

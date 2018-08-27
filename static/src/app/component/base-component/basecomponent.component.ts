@@ -9,13 +9,13 @@ import * as _ from 'lodash';
 
 export abstract class BaseComponent implements OnInit {
 
-    protected pageText: any = {};
-    protected model: any = {};
-    protected errorFields: any = [];
-    protected errorsList: any = [];
-    protected pageForm: FormGroup;
-    protected pageServiceName: string = null;
-    protected enableContinue: boolean = true;
+     pageText: any = {};
+     model: any = {};
+     errorFields: any = [];
+     errorsList: any = [];
+     pageForm: FormGroup;
+     pageServiceName: string = null;
+     enableContinue: boolean = true;
 
     constructor(protected activatedRoute: ActivatedRoute,
         protected formBuilder: FormBuilder,

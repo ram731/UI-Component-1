@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { CommonPageModule } from './common/common.module';
-
-@NgModule({
+export const metadata = {
 
     imports: [
         CommonModule,
@@ -13,7 +12,8 @@ import { CommonPageModule } from './common/common.module';
         CommonPageModule
     ]
 
-})
+};
+@NgModule(metadata)
 export class PageModule {}
 
 

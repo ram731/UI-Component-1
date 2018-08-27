@@ -1,38 +1,45 @@
 import { Injector } from '@angular/core';
 import { Router, Route, Routes } from '@angular/router';
 import { ConfigCacheService } from './config-cache';
-import { PageModule } from '../../../pages/pages.module';
-import { MyDeqComponentModule } from './componentModule';
 import * as _ from 'lodash';
+import * as pageMetadata from '../../../pages/common/common.module';
 
 export function ConfigServiceFactory(injector: Injector): Function {
     return () => {
         //console.log('Getting config in routing module');
         const service: ConfigCacheService = ConfigCacheService.getInstane();
         const router: Router = injector.get(Router);
-        const decoratorFactory = Reflect.getOwnPropertyDescriptor(PageModule, '__annotations__').value[0];
+        const decoratorFactory = pageMetadata.metadata;
         let componentList: any[] = [];
 
-        // Create a list of components from modules.
-        decoratorFactory.imports.forEach(importedModule => {
-                if (importedModule.prototype instanceof MyDeqComponentModule) {
+        // Create a list of components from modules. -- DEAD CODE : NEED TO REVISIT --
+       /*  decoratorFactory.imports.forEach(importedModule => {
+            if (importedModule.prototype instanceof MyDeqComponentModule) {
+                console.log('Inner loop',importedModule)
+                //console.log('Inner ',importedModule,importedModule.sample(),Reflect.getOwnPropertyDescriptor(importedModule, '__annotations__'));
+
                 componentList = componentList
-                                .concat(Reflect.getOwnPropertyDescriptor(importedModule, '__annotations__')
-                                .value[0].entryComponents);
+                    .concat(Reflect.getOwnPropertyDescriptor(importedModule, '__annotations__')
+                        .value[0].entryComponents);
             }
+        }); */
+
+        decoratorFactory.exports.forEach(component => {
+            componentList = componentList
+                .concat(component);
         });
 
         //Register routes for each component.
         const filteredRoutes = router.config;
         const userDefRoute: Routes = [];
         componentList.forEach(element => {
-            const newArr = _.map(service.getRoute(element.name), function (elm) {                
+            const newArr = _.map(service.getRoute(element.name), function (elm) {
                 const tempArr = elm.pageURL.split('/');
                 if (tempArr[0] === '') {
                     tempArr.shift();
                 }
                 return tempArr;
-            });          
+            });
             findAndAdd(userDefRoute, newArr, element);
         });
 
