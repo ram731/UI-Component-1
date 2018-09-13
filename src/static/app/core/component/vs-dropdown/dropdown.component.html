@@ -1,0 +1,21 @@
+<div ngbDropdown class="dropdown" ngbDropdown #customDropDown="ngbDropdown" (openChange)="dropDownChange($event)">
+  <button class="btn btn-primary w-100" ngbDropdownAnchor (click)="customDropDown.toggle()" [disabled]="readonly">
+    <span class="pull-left px-2">{{currentSelectedItem?.description}}</span>
+  </button>
+  <ul class="w-100" ngbDropdownMenu>
+    <li class="dropdown-item" (click)="$event.stopPropagation(); customDropDown.open();">
+      <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+          <i class="fa fa-search text-white pt-2 pr-2"></i>
+        </div>
+        <input type="text" class="form-control bg-white text-primary" placeholder="Search" [(ngModel)]="searchFilterText" [ngModelOptions]="{standalone: true}" autofocus (keyup)="searchFilter($event)">
+        <div class="input-group-append" *ngIf="searchFilterText.length > 0">
+          <button class="btn btn-primary" type="button" (click)="clearSearch($event)">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </li>
+    <li class="dropdown-item" *ngFor="let item of displayList" (click)="optionSeleted(customDropDown, item)">{{item?.vsCode}} - {{item?.vsDescriptiveName}}</li>
+  </ul>
+</div>
