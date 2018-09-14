@@ -1,0 +1,55 @@
+<form class="form-horizontal" [formGroup]="pageForm">
+  <div class="card-body">
+    <h2>{{pageText.header}} {{ltfInfo?.ltfIdno}}</h2>
+    <h5 class="pl-3 font-regular">{{pageText.sub_header}}</h5>
+    <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+
+    <div class="bg-info mb-2 mt-3">
+      <table class=" table-controls table">
+        <tbody class="h6">
+          <tr>
+            <td width="20%">
+              <div class="pl-2">
+                <h3>{{pageText.content_details1}}</h3>
+              </div>
+            </td>
+            <td>
+              <div><h3  class="pl-0 font-weight-light font-regular">{{ltfInfo?.ms4Name}}</h3></div>
+            </td>
+          </tr>        
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-4">
+      <h3>{{pageText.radio_question_content}}</h3>
+    </div>
+    <!-- <div class="custom-control custom-radio ml-4" [ngClass]="{'has-danger': errorFields['booleanAnswer']}">
+      <input type="radio" id="userSelectionY" name="booleanAnswer" class="custom-control-input" formControlName="booleanAnswer"
+        value="Y" [ngModel]="booleanAnswer">
+      <label class="custom-control-label" for="userSelectionY">{{pageText.radio_answer1}}</label>
+    </div>
+    <div class="custom-control custom-radio ml-4" [ngClass]="{'has-danger': errorFields['booleanAnswer']}">
+      <input type="radio" id="userSelectionN" name="booleanAnswer" class="custom-control-input" formControlName="booleanAnswer"
+        value="N" [ngModel]="booleanAnswer">
+      <label class="custom-control-label" for="userSelectionN">{{pageText.radio_answer2}}</label>
+    </div> -->
+
+  </div>
+
+  <div class="card-footer">
+    <button type="button" class="btn btn-primary float-left" (click)="goBack()">
+      <span class="arrow left">
+        <i class="fa fa-chevron-left"></i>
+      </span>{{pageText.back_button}}
+    </button>
+    <button [disabled]="!enableContinue" type="button" class="btn btn-primary float-right" (click)="pageContinue(pageForm.getRawValue())">
+      {{pageText?.lbl_continue}}
+      <span class="arrow right">
+        <i class="fa fa-chevron-right"></i>
+      </span>
+    </button>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+</form>

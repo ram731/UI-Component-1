@@ -1,0 +1,46 @@
+<div [ngSwitch]="attributes.type" [formGroup]="pageForm">
+  <div *ngSwitchCase="'text'" [ngClass]="{'has-danger': errorFields[attributes.name]}">
+    <input type="text" class="form-control" [id]="attributes.id" [formControlName]="attributes.name">
+  </div>
+  <div class="input-group" *ngSwitchCase="'date'" [ngClass]="{'has-danger': errorFields[attributes.name]}">
+    <div class="input-group-prepend">
+      <button [id]="attributes.id + 'btn'" class="btn btn-primary py-0" (click)="d.toggle()" type="button">
+        <i class="fa fa-lg fa-calendar pb-2" aria-hidden="true"></i>
+      </button>
+    </div>
+    <input class="form-control" [formControlName]="attributes.name" ngbDatepicker #d="ngbDatepicker" placeholder="mm/dd/yyyy"
+      maxlength="10" />
+  </div>
+  <div *ngSwitchCase="'textarea'" [ngClass]="{'has-danger': errorFields[attributes.name]}">
+    <textarea class="form-control" [id]="attributes.id" [formControlName]="attributes.name" [rows]="attributes.rows"
+      [formControlName]="attributes.name" maxlength="4000"> </textarea>
+  </div>
+  <div class="row no-gutters {{attributes.class}}" *ngSwitchCase="'file'">
+    <div class="col-7 custom-file ml-1 h-100" [ngClass]="{'has-danger': errorFields[attributes.name]}">
+        <input type="file" class="custom-file-input" [id]="attributes.name" [name]="attributes.name" ngf-max-size="2MB"
+          (change)="uploadFile($event, attributes.name)">
+        <label class="custom-file-label" [attr.for]="attributes.name">{{fileName ? fileName : 'Choose file' }}</label>
+        <div class="clearfix"></div>
+    </div>
+    <a href="javascript:void(0)" class="col-auto pt-2 pl-2" *ngIf="fileName"><i class="fa fa-times" (click)="removeFile(attributes.name)"></i></a>
+    <div class="clearfix"></div>
+  </div>
+  <div *ngSwitchCase="'radio'">
+    <div class="custom-control custom-radio {{attributes.class}} {{cntrl.class}}" *ngFor="let cntrl of attributes.controls;"
+      [ngClass]="{'has-danger': errorFields[attributes.name]}" style="line-height: initial;">
+      <input class="custom-control-input" [type]="cntrl.type" [name]="attributes.name" [formControlName]="attributes.name"
+        [value]="cntrl.value" [id]="cntrl.id">
+      <label class="custom-control-label" [attr.for]="cntrl.id">{{cntrl.label}}</label>
+    </div>
+  </div>
+  <div *ngSwitchCase="'select'" [ngClass]="{'has-danger': errorFields[attributes.name]}">
+    <select class="custom-select" [id]="attributes.id" [formControlName]="attributes.name">
+      <option value='-1'>SELECT ONE</option>
+      <option *ngFor="let item of itemList" [value]="item.value">{{item.description}} </option>
+    </select>
+  </div>
+  <div *ngSwitchCase="'vs-dropdown'" [ngClass]="{'has-danger': errorFields[attributes.name]}">
+    <vs-dropdown [itemList]="itemList" [formControlName]="attributes.name"></vs-dropdown>
+  </div>
+  <div *ngSwitchDefault></div>
+</div>
