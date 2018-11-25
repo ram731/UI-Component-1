@@ -4,6 +4,8 @@ import {
 } from '@angular/core';
 import * as _ from 'lodash';
 import { ReplaySubject } from 'rxjs';
+import { isNumber } from 'util';
+import { parse } from 'url';
 
 export interface SortEvent {
     sortBy: string|string[];
@@ -30,7 +32,7 @@ export class DataTable implements OnChanges, DoCheck {
     @Input("mfData") public inputData: any[] = [];
 
     @Input("mfSortBy") public sortBy: string|string[] = "";
-    @Input("mfSortOrder") public sortOrder = "asc";
+    @Input("mfSortOrder") public sortOrder = 'asc';
     @Output("mfSortByChange") public sortByChange = new EventEmitter<string|string[]>();
     @Output("mfSortOrderChange") public sortOrderChange = new EventEmitter<string>();
 
@@ -140,10 +142,12 @@ export class DataTable implements OnChanges, DoCheck {
         const offset = (this.activePage - 1) * this.rowsOnPage;
         let data = this.inputData;
         const sortBy = this.sortBy;
-        if (typeof sortBy === 'string' || sortBy instanceof String) {
-            data = _.orderBy(data, this.caseInsensitiveIteratee(<string>sortBy), [this.sortOrder]);
+        let tmp:any[] = [];
+        tmp.push(this.sortOrder);
+        if ( typeof sortBy === 'string' || sortBy instanceof String) {
+            data = _.orderBy(data, this.caseInsensitiveIteratee(<string>sortBy), tmp);
         } else {
-            data = _.orderBy(data, sortBy, [this.sortOrder]);
+            data = _.orderBy(data, sortBy, tmp);
         }
         data = _.slice(data, offset, offset + this.rowsOnPage);
         this.data = data;
@@ -157,12 +161,16 @@ export class DataTable implements OnChanges, DoCheck {
                     value = value[sortByProperty];
                 }
             }
-            if (value && typeof value === 'string' && !isNaN(Date.parse(value)) ) {
+            
+             if (value && /^\d+$/.test(value) ) {
+                return parseInt(value);
+            } 
+            if (value && typeof value === 'string' && !isNaN(Date.parse(value)) ) {            
                 return new Date(value);
             }
             if (value && typeof value === 'string' || value instanceof String) {
                 return value.toLowerCase();
-            }
+            }            
             return value;
         };
     }

@@ -5,10 +5,10 @@ import { SelectCompanyComponent } from '../common/select-company/select-company.
 
 
 
-export const BasicInfoRoute: Routes = [
+export const CommonRoute: Routes = [
 
     {
-        path: 'basic-info',
+        path: 'existing',
         children: [
             {
                 path: 'permit-info',
@@ -24,4 +24,4 @@ export const BasicInfoRoute: Routes = [
     }
 ];
 
-export const basicInfoRouting: ModuleWithProviders = RouterModule.forRoot(BasicInfoRoute);
+export const commonRouting: ModuleWithProviders = RouterModule.forRoot(CommonRoute);

@@ -1,57 +1,109 @@
 import { OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ConfigCacheService } from '../../../core/component-config/config-cache';
-import { Utils } from '../../../shared/Utils';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { AppService } from '../../../service/app.service';
-import { MyDeqErrorHandler } from '../../../core/errorHandler';
-
 import * as _ from 'lodash';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Utils } from '../../shared/Utils';
+import { AppService } from '../../service/app.service';
+import { MyDeqErrorHandler } from '../errorHandler';
+import { BaseComponent } from './basecomponent.component';
+import { PageTextGetter } from '../content/pagetext-getter.component';
+import { PageConentService } from '../content/content-service.component';
 
-export abstract class BaseComponent implements OnInit {
+interface AdditionalGetCallDetails {
+    serviceURL?: string,
+    serviceURLWithoutcontextPath?: string,
+    urlParams?: string[],
+    urlQueryParams?: Map<string, string>,
+    successcallBack?: Function,
+    errorcallBack?: Function
+}
 
-     pageText: any = {};
-     model: any = {};
-     errorFields: any = [];
-     errorsList: any = [];
-     pageForm: FormGroup;
-     pageServiceName: string = null;
-     enableContinue: boolean = true;
+interface AdditionalPutCallDetails {
+    serviceURL?: string,
+    serviceURLWithoutcontextPath?: string,
+    urlParams?: string[],
+    putObject?: any,
+    urlQueryParams?: Map<string, string>,
+    successcallBack?: Function,
+    errorcallBack?: Function
+}
+export abstract class BaseController  extends BaseComponent implements OnInit {
+
+    pageText: any = {};
+    model: any = {};
+    errorFields: any = [];
+    errorsList: any = [];
+    pageForm: FormGroup;
+    private pageLoadServiceName: string = null;
+    enableContinue: boolean = true;
 
     constructor(protected activatedRoute: ActivatedRoute,
         protected formBuilder: FormBuilder,
         protected utils: Utils,
         protected appService: AppService,
-        protected errorHandler: MyDeqErrorHandler) {
+        protected errorHandler: MyDeqErrorHandler,
+         _pageTextComp?: PageTextGetter) {
+        super();
+        if(_pageTextComp){
+            PageConentService.getInstance().registerBasePageContent(this, _pageTextComp);
+           }
         this.pageForm = this.createForm();
-        const configCacheService = ConfigCacheService.getInstane();
-        this.pageText = configCacheService.getResourceBundle(this.constructor.name)['PAGE_TEXT'][utils.path];
-        this.pageServiceName = _.find(configCacheService.getRoute(this.constructor.name), { pageURL: utils.pageURL }).serviceName;
-        this.utils.pageTitle = configCacheService.getTitle(this.constructor.name);
+        //const configCacheService = ConfigCacheService.getInstane();
+        //this.pageText = configCacheService.getResourceBundle(this.constructor.name)['PAGE_TEXT'][utils.path];
+        //this.pageServiceName = _.find(configCacheService.getRoute(this.constructor.name), { pageURL: utils.pageURL })['serviceName'];
+        //this.utils.pageTitle = configCacheService.getTitle(this.constructor.name);
+    }
+
+    setPageLoadServiceName(serviceName: string) {
+        this.pageLoadServiceName = serviceName;
+    }
+
+    getPageLoadServiceName() {
+        return this.pageLoadServiceName;
     }
 
 
     ngOnInit() {
 
         this.activatedRoute.queryParams.subscribe((params: Params) => {
-            this.appService.getServiceCall(this.populateGetURLParams(params), this.pageServiceName).subscribe(
-                response => {
-                    this.model = response;
-                    this.onGetResponse(this.model);
-                },
-                error => {
-                    this.errorFields = this.errorHandler.getErrorFields(error);
-                    this.errorsList = this.errorHandler.getErrors(error);
-                    this.onGettError(error);
-                });
+            this.appService.getServiceCall(this.populateGetURLParams(params), this.populatePageLoadURLQueryParams(),
+                this.getPageLoadServiceName()).subscribe(
+                    response => {
+                        this.model = response;
+                        this.onGetResponse(this.model);
+                    },
+                    error => {
+                        this.handleError(error);
+                        this.onGettError(error);
+                    });
         });
+    }
+
+    /**
+     * This is get call service.
+     */
+    additionalGetCall(getCallDetails: AdditionalGetCallDetails) {
+        if (getCallDetails) {
+            this.appService.getServiceCall(getCallDetails.urlParams, getCallDetails.urlQueryParams, getCallDetails.serviceURL,
+                getCallDetails.serviceURLWithoutcontextPath).subscribe(
+                    response => {
+                        if (getCallDetails.successcallBack) {
+                            getCallDetails.successcallBack(response);
+                        }
+                    },
+                    error => {
+                        if (getCallDetails.errorcallBack) {
+                            getCallDetails.errorcallBack(error);
+                        }
+                    });
+        }
     }
 
     /**
      * This method submit page object.
      */
     pageContinue(formData: any) {
-        this.appService.putServiceCall(this.createPutObject(formData), this.populatePutURLParams(null), this.pageServiceName).subscribe(
+        this.appService.putServiceCall(this.createPutObject(formData), this.populatePutURLParams(null), this.populatePutURLQueryParams(), this.pageLoadServiceName).subscribe(
             response => {
                 if (response.next_page !== 'ALERT') {
                     this.onSuccessPutResponse(response);
@@ -62,10 +114,28 @@ export abstract class BaseComponent implements OnInit {
                 }
             },
             error => {
-                this.errorFields = this.errorHandler.getErrorFields(error);
-                this.errorsList = this.errorHandler.getErrors(error);
+                this.handleError(error);
                 this.onPutError(error);
             });
+    }
+
+    /**
+     * This is a put call service.
+     */
+    additionalPutCall(additionalPutCallDetails: AdditionalPutCallDetails) {
+        if (additionalPutCallDetails) {
+
+            this.appService.putServiceCall(additionalPutCallDetails.putObject,
+                additionalPutCallDetails.urlParams, additionalPutCallDetails.urlQueryParams,
+                additionalPutCallDetails.serviceURL, additionalPutCallDetails.serviceURLWithoutcontextPath)
+                .subscribe(
+                    response => {
+                        additionalPutCallDetails.successcallBack(response);
+                    },
+                    error => {
+                        additionalPutCallDetails.errorcallBack(error);
+                    });
+        }
     }
 
     /**
@@ -73,7 +143,7 @@ export abstract class BaseComponent implements OnInit {
     */
     sectionPut(sectionData: any, index: number) {
 
-        this.appService.saveIndividualServiceCall(this.createSectionPutObject(sectionData[index]), this.pageServiceName).subscribe(
+        this.appService.saveIndividualServiceCall(this.createSectionPutObject(sectionData[index]), this.pageLoadServiceName).subscribe(
             response => {
                 if (response.next_page !== 'ALERT') {
                     this.onSectionSuccessPutResponse(response, index);
@@ -82,8 +152,7 @@ export abstract class BaseComponent implements OnInit {
                 }
             },
             error => {
-                this.errorFields = this.errorHandler.getErrorFields(error);
-                this.errorsList = this.errorHandler.getErrors(error);
+                this.handleError(error);
                 this.onSectionError(error, index);
             });
     }
@@ -93,7 +162,7 @@ export abstract class BaseComponent implements OnInit {
      */
     sectionUpdate(sectionData: any, index: number) {
 
-        this.appService.updateIndividualServiceCall(this.createSectionPutObject(sectionData[index]), this.pageServiceName).subscribe(
+        this.appService.updateIndividualServiceCall(this.createSectionPutObject(sectionData[index]), this.pageLoadServiceName).subscribe(
             response => {
                 if (response.next_page !== 'ALERT') {
                     this.onSectionSuccessUpdateResponse(response, index);
@@ -112,7 +181,7 @@ export abstract class BaseComponent implements OnInit {
     * This method delete section object.
     */
     sectionDelete(sectionId: any, index: number) {
-        this.appService.deleteIndividualServiceCall(sectionId, this.pageServiceName).subscribe(
+        this.appService.deleteIndividualServiceCall(sectionId, this.pageLoadServiceName).subscribe(
             response => {
                 if (response.next_page !== 'ALERT') {
                     this.onSectionSuccessDeleteResponse(response, index);
@@ -121,8 +190,7 @@ export abstract class BaseComponent implements OnInit {
                 }
             },
             error => {
-                this.errorFields = this.errorHandler.getErrorFields(error);
-                this.errorsList = this.errorHandler.getErrors(error);
+                this.handleError(error);
                 this.onSectionError(error, index);
             });
     }
@@ -157,10 +225,25 @@ export abstract class BaseComponent implements OnInit {
     populateGetURLParams(inputObj: any = null): any[] {
         return null;
     }
+
+    /**
+    *  This method add Query parameters to input URL.
+    */
+    populatePageLoadURLQueryParams(): Map<string, string> {
+        return null;
+    }
+
     /**
      *  This method pupulate put url param array.
      */
     populatePutURLParams(inputObj: any): any[] {
+        return null;
+    }
+
+    /**
+     *  This method add Query parameters to input URL.
+     */
+    populatePutURLQueryParams(inputObj: any = null): Map<string, string> {
         return null;
     }
 
@@ -221,9 +304,9 @@ export abstract class BaseComponent implements OnInit {
         return;
     }
 
-     /**
-     *  This method is called on page level error.
-     */
+    /**
+    *  This method is called on page level error.
+    */
     onGettError(errorObj: any): void {
         return;
     }
@@ -258,7 +341,7 @@ export abstract class BaseComponent implements OnInit {
     public approveEdit() {
 
         const tmpArr = this.utils.pageURL.split('/');
-        this.appService.putServiceCall({}, [tmpArr[tmpArr.length - 1]], 'updatePageStatus').subscribe(
+        this.appService.putServiceCall({}, [tmpArr[tmpArr.length - 1]], null, 'updatePageStatus').subscribe(
             response => {
                 this.updateEditIndicator();
             },
@@ -283,7 +366,11 @@ export abstract class BaseComponent implements OnInit {
 
     public setPageReview(obj: any) {
         obj.reviewComments = this.utils.reviewComments;
-    } 
+    }
 
+    handleError(error: any) {
+        this.errorFields = this.errorHandler.getErrorFields(error);
+        this.errorsList = this.errorHandler.getErrors(error);
+    }
 
 }

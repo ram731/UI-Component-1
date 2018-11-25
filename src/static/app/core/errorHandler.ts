@@ -1,15 +1,22 @@
 import { Injectable, ErrorHandler} from '@angular/core';
+import { LoggerService } from '../shared/lib/logger/logger-service.component';
+
+
 
 
 @Injectable()
 export class MyDeqErrorHandler implements ErrorHandler {
 
+    constructor(private logger:LoggerService){        
+    }
+
     handleError(error: any) {
-        console.log('Exception : ', error);
+        //console.log('Exception : ', error);
+        this.logger.error('Exception : ', error);
     }
 
     getErrors(dataStr) {
-        const messages: any[] = [];
+        let messages: any[] = [];
         if (!dataStr || dataStr === '') {
             messages.push('An unknown exception has occurred. Please try after sometime');
             return messages;
