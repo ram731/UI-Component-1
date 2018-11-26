@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Utils } from './Utils';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {  RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AppService } from '../service/app.service';
-import { ContentService } from '../service/content.service';
-import {NgbAccordionConfig, NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionConfig, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
+import { LoggerService } from './lib/logger/logger-service.component';
 
 
 @NgModule({
@@ -17,15 +17,11 @@ import {NgbAccordionConfig, NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstra
     RouterModule
     
   ],
-  declarations: [
-  
-  ],
-  exports: [
- 
-  ],
+  declarations: [],
+  exports: [],
 
   providers: [
-    Utils, AppService, NgbAccordionConfig, NgbDatepickerConfig, ContentService
+    Utils, AppService, NgbAccordionConfig, NgbDatepickerConfig, LoggerService
   ]
 })
 export class SharedModule { }

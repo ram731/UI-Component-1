@@ -21,11 +21,13 @@ export class AppService {
         this.testMode = environment.testMode;
     }
 
-    getServiceCall(inputParamArr: any[] = null, inputServiceName: string = null, serviceURL: string = null): Observable<any> {
+    getServiceCall(inputParamArr: any[] = null,inputQueryParamMap: Map<string,string> = null, inputServiceName: string = null,
+         serviceURL: string = null): Observable<any> {
         if (this.testMode) {
             let URL: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName }, serviceURL);
             URL = this.appendParameters(inputParamArr, URL);
             URL = this.appendGlbReqId(URL);
+            URL = this.appendQueryParameters(inputQueryParamMap, URL);
             if (serviceURL) {
                 const tmpArr = serviceURL.split('/');
                 return of(this.getMockData('GET_' + tmpArr[tmpArr.length - 1]));
@@ -34,9 +36,10 @@ export class AppService {
             }
         }
         this.utils.showLoading(inputServiceName);
-        let url: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName });
+        let url: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName },serviceURL);
         url = this.appendParameters(inputParamArr, url);
         url = this.appendGlbReqId(url);
+        url = this.appendQueryParameters(inputQueryParamMap, url);
         return this.http
             .get(url, { observe: 'response' })
             .pipe(
@@ -45,7 +48,7 @@ export class AppService {
             );
     }
 
-    putServiceCall = (putObj: any, inputParamArr: any[] = null, inputServiceName: string = null, serviceURL: string = null)
+    putServiceCall = (putObj: any, inputParamArr: any[] = null,inputQueryParamMap: Map<string,string> = null, inputServiceName: string = null, serviceURL: string = null)
         : Observable<any> => {
 
         if (this.testMode) {
@@ -58,7 +61,7 @@ export class AppService {
         this.utils.showLoading(inputServiceName);
         let url: string = this.getServiceURL({ endPointURL: endpoint_url, serviceName: inputServiceName });
         url = this.appendParameters(inputParamArr, url);
-
+        url = this.appendQueryParameters(inputQueryParamMap, url);
         return this.http
             .put(url, putObj, this.httpOptions)
             .pipe(
@@ -127,6 +130,16 @@ export class AppService {
                 }
             });
         }
+        return url;
+    }
+    private appendQueryParameters(inputQueryParamMap: Map<string,string>, url: string) {
+        if (inputQueryParamMap) {
+            url=url+'?';
+            inputQueryParamMap.forEach(function(value, key, map){
+                url=url+key+'='+value+'&';
+            });
+        }
+
         return url;
     }
 
@@ -203,13 +216,13 @@ export class AppService {
         return (200 === res.status);
     }
 
-    public appendParms(placeID: string, ltfID: string, url: string): string {
+    /* public appendParms(placeID: string, ltfID: string, url: string): string {
         let returnURL = url;
         if (ltfID) {
             returnURL += '?permitId=' + ltfID + '&placeId=' + placeID;
         }
         return returnURL;
-    }
+    } */
 
     public appendGlbReqId(url: string) {
         let returnURL = url;

@@ -4,7 +4,9 @@ import { Title } from '@angular/platform-browser';
 import { Utils } from './shared/Utils';
 import { SessionTimeOutModalComponent } from './core/component/modals/session-timeout/timeout.component';
 import { AppService } from './service/app.service';
-import { ConfigCacheService } from './core/component-config/config-cache';
+import { LoggerService } from './shared/lib/logger/logger-service.component';
+import { environment } from '../environments/environment';
+import { PageConentService } from './core/content/content-service.component';
 
 
 @Component({
@@ -20,17 +22,21 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
   showSaveAndExit: boolean = false;
   placeBarRequired: boolean = false;
   currentComponent: any = null;
+  pageTitle = 'AZPDES SMALL MS4 NOTICE OF INTENT';
   
-  private configCacheService: ConfigCacheService = null;
   constructor(
     public utils: Utils,
     private titleService: Title,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private service: AppService,
-    private cdRef: ChangeDetectorRef) {
-
-    this.configCacheService = ConfigCacheService.getInstane();
+    private cdRef: ChangeDetectorRef,
+    private pageConentService: PageConentService,
+    private logger:LoggerService) {
+      
+    logger.setProductionFlag(environment.production);
+    
+    PageConentService.setInstance(pageConentService);
     router.events.subscribe(e => {
       if (window.location.pathname.endsWith('confirmation')) {
         this.utils.isConfirmationPage = true;
@@ -41,10 +47,13 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
       if (e instanceof RoutesRecognized) {
         const root = e.state.root.firstChild;
         const queryParams: any = root.queryParamMap;
+        let data: any = root && root.data ? root.data : { title: '' };
         if (!this.utils.glbReqId && queryParams && queryParams.params['glbReqId']) {
           this.utils.glbReqId = queryParams.params['glbReqId'];
         }
-     
+        this.pageTitle = data.title ? data.title : this.pageTitle;
+        titleService.setTitle(this.pageTitle);
+        this.utils.title = titleService.getTitle();        
         utils.path = utils.path ? utils.path : (root.routeConfig.path ? root.routeConfig.path : '');
         utils.pageURL = e.url;
 
@@ -62,14 +71,7 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
 
   }
 
-  onActivate(event: any) {
-    this.currentComponent = event;
-    if ( this.configCacheService.getMetadata(event.constructor.name)) {
-    this.showSaveAndExit = this.configCacheService.showSaveAndExit(event.constructor.name);
-    this.placeBarRequired = this.configCacheService.isPlaceBarRequired(event.constructor.name);
-    this.configCacheService.getTitle(event.constructor.name);
-    this.titleService.setTitle(this.utils.pageTitle);
-    }
+  onActivate(event: any) {       
     this.router.navigateByUrl(window.location.pathname);
   }
 
@@ -93,6 +95,15 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
         error => {
         });
     }
+
+    this.activatedRoute.queryParamMap.subscribe((paramMap: Params) => {     
+     
+      if(paramMap.params['debug']){
+        this.logger.setProductionFlag(false);
+      }     
+      
+    });
+
   }
 
   ngAfterViewInit() {

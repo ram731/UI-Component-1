@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { MyDeqComponentModule } from '../../core/component-config/componentModule';
 import { PermitInfoComponent } from './permit-info/permit-info.component';
 import { SelectCompanyComponent } from './select-company/select-company.component';
+import { commonRouting } from './common.routes';
 
 export const metadata = {
 
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule,
+        commonRouting
     ],
     declarations: [
         PermitInfoComponent,
@@ -28,7 +29,7 @@ export const metadata = {
     ]
 };
 @NgModule(metadata)
-export class CommonPageModule extends MyDeqComponentModule {}
+export class CommonPageModule{}
 
 
 

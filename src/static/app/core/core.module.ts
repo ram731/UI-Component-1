@@ -21,6 +21,7 @@ import {ConcatStringPipe} from './component/ConcatStringPipe';
 import {SafeUrlPipe} from './component/safe-url-pipe';
 import { CommentsComponent } from './component/comment-section/comments.component';
 import { MydeqNavigationAlertModalComponent } from './component/modals/navigation-alert-modal/navigation-alert-modal.component';
+import { PageConentService } from './content/content-service.component';
 
 
 @NgModule({
@@ -68,6 +69,6 @@ import { MydeqNavigationAlertModalComponent } from './component/modals/navigatio
     SafeUrlPipe,
     CommentsComponent
   ],
-  providers: [MyDeqErrorHandler]
+  providers: [MyDeqErrorHandler,PageConentService]
 })
 export class MyDEQCoreModule { }

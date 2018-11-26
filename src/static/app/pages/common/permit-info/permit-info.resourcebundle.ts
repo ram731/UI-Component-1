@@ -1,12 +1,9 @@
-export class PageContentpermitverification{
-    protected PAGE_TEXT: any ={};   
- 
-    constructor(){
-     this.PAGE_TEXT.existing = this.getCommonLabels();
-    }
+import { BasePageContent } from "src/static/app/core/content/base-page-content.component";
 
-    protected getCommonLabels(){
-        return  {
+export class PageContentpermitverification extends BasePageContent{
+  
+     getPageSpecificText(){
+        this.PAGE_TEXT['existing'] =   {
             "header": "Verify the information for LTF No.",
             "sub_header": "Please review the following information, select \"Yes\" or \"No\" and click CONTINUE.",
             "content_details1":"Permit issued to: ",
