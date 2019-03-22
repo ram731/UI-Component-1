@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { Utils } from '../../../shared/Utils';
@@ -13,7 +13,7 @@ import { WhatsNeededPageContent } from './whats-needed.resourcebundle';
 
 
 @Component({
-  selector: 'app-whats-needed',
+  selector: 'whats-needed',
   templateUrl: './whats-needed.component.html'
 })
 
@@ -31,6 +31,9 @@ export class WhatsNeededComponent  extends BasePathController {
     protected appService: AppService,
     protected errorHandler: MyDeqErrorHandler) {
       super(activatedRoute, formBuilder, utils, appService, errorHandler, new WhatsNeededPageContent(utils.path));
+      this.setPageLoadServiceName("whatsNeeded");
+
+      console.log('Constructor ', this.pageText)
     }
 
   /**
@@ -42,13 +45,6 @@ export class WhatsNeededComponent  extends BasePathController {
   }
 
   /**
-    * @whatItDoes - This method will call by @class BaseComponent @function pageContinue method to set the request for put call.
-   */
-  createPutObject(form: any) {
-    return form;
-  }
-
-  /**
    * @whatItDoes - This method will call by @class BaseComponent @function ngOnInit method. If service gives alert_message than show Alert Modal.
    */
   onGETError(error) {
@@ -57,31 +53,12 @@ export class WhatsNeededComponent  extends BasePathController {
     }
   }
 
-  /**
-   * @whatItDoes - This method will call by @class BaseComponent @function pageContinue method.
-   * @param error
-   */
-  onPutError(error) {
-    if (error && error.alert_message) {
-      this.myAlertModal.showBackToDashboardModal(error.alert_header, error.alert_message);
-    }
-  }
+  
 
-  onAlertPutResponse(response: any): any {
-    this.onPutError(response);
-  }
 
-  /**
-   * @whatItDoes - This method will call by @class BaseComponent @function approveEdit method enable fields in review flow.
-   */
-  performActionOnEdit() {
-    throw new Error('Review Path is not applicable. Method not implemented.');
-  }
 
   createForm(): FormGroup {
     return this.formBuilder.group({});
   }
-
-  leftButtonAction(){}
 
 }

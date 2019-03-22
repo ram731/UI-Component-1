@@ -1,17 +1,18 @@
 <div class="card-body">
-  <h3>{{pageText.header}}</h3>
-  <h6 class="pl-2">{{pageText.sub_header}}</h6>
+  <h3>{{pageText?.header}}</h3>
+  <h6 class="pl-2">{{pageText?.sub_header}}</h6>
   <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
   <ul class="list-unstyled h4 pl-3 py-3">
-    <li *ngFor="let item of pageText.action_list; let i = index;" class="deq-numberlist n{{i+1}}">
+    <li *ngFor="let item of pageText?.action_list; let i = index;" class="deq-numberlist n{{i+1}}">
+     
       <span [innerHTML]="item.text"></span>
       <sup *ngIf="item.tooltip" class="font-weight-light" placement="right">
         <i class="far fa-question-circle" aria-hidden="true"></i>
       </sup>
     </li>
   </ul>
-  <ul *ngIf="pageText.foot_notes" class="list-unstyled h4 ml-2 pt-0 font-weight-light">
-    <li *ngFor="let item of pageText.foot_notes; let first=first">
+  <ul *ngIf="pageText?.foot_notes" class="list-unstyled h4 ml-2 pt-0 font-weight-light">
+    <li *ngFor="let item of pageText?.foot_notes; let first=first">
       <span [innerHTML]="item"></span>
       <span *ngIf="first">
         <span *ngFor="let amount of feeAmount; let last=last"> {{amount.paymentActivity}} ${{amount.epaFeeAmount}}
@@ -22,7 +23,7 @@
   </ul>
 
   <ul *ngIf="pageText?.reg_foot_notes" class="list-unstyled h4 ml-3 pt-2 font-weight-light">
-    <li *ngFor="let sub of pageText.reg_foot_notes; let first=first">
+    <li *ngFor="let sub of pageText?.reg_foot_notes; let first=first">
       <span [innerHTML]="sub"></span>
     </li>
   </ul>
@@ -30,31 +31,9 @@
 
   <div class="alert alert-warning h4 pl-3 pt-3 border-0 font-weight-light" role="alert">
     <i class="warning fas fa-2x fa-exclamation-triangle text-danger pt-2 pb-5" aria-hidden="true"></i>
-    <span [innerHTML]="pageText.warning_msg"></span>
+    <span [innerHTML]="pageText?.warning_msg"></span>
   </div>
   <div class="clearfix"></div>
-
 </div>
 
-<div class="card-footer">
-
-    <button *ngIf="showLeftButton" type="button" class="btn btn-primary float-left" (click)="leftButtonAction()">
-        <span class="arrow left">
-            <i class="fa fa-chevron-left"></i>
-        </span>{{pageText?.leftButtonTxt}}
-    </button>
-
-  <button type="button" class="btn btn-primary float-right" (click)="pageContinue({})">
-    {{pageText.continue}}
-    <span class="arrow right">
-      <i class="fas fa-chevron-right"></i>
-    </span>
-  </button> 
-  <div class="clearfix"></div>
-</div>
-<mydeq-alert-modal></mydeq-alert-modal>
-
-<ng-template #RCRAWaste>
-  <span class="font-weight-normal">Hazardous waste shipped off site: </span>
-  <span class="font-weight-light">Doesn't include universal or non-hazardous waste.</span>
-</ng-template>
+<page-footer [pageFooterDTL]="pageFooterDTL"></page-footer>

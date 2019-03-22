@@ -5,6 +5,7 @@ import { QuestionListComponent } from './question-list/question-list.component';
 import { AdditionalCommentsComponent } from './additional-comments/additional-comments.component';
 import { CertifyComponent } from './certify/certify.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ResponsivePageComponent } from './responsive-page/responsive-page.component';
 
 
 export const CommonRoute: Routes = [
@@ -37,7 +38,14 @@ export const CommonRoute: Routes = [
                 path: 'confirmation',
                 component: ConfirmationComponent,
                 data: { title: 'AIRCC-CONFIRMATION', placeBarRequired: false, showSaveAndExit: false, showReviewComments: false }
+            },
+
+            {
+                path: 'responsive',
+                component: ResponsivePageComponent,
+                data: { title: 'AIRCC-CONFIRMATION', placeBarRequired: false, showSaveAndExit: true, showReviewComments: false }
             }
+            
             
         ]
     }
