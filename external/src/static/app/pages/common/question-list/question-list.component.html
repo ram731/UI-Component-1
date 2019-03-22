@@ -1,0 +1,65 @@
+<div class="card-body">
+  <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+  
+  <h3 class="pt-3 pl-3">{{pageText?.header}}</h3>
+  <h6 class="pl-4 ml-1">{{pageText?.sub_header}}</h6>
+  <div class="custom-controls-stacked pl-4 pt-2 mr-4">
+    <div *ngFor="let question of questionList;let i=index;let evenRow=even" class="row py-4" [ngClass]="{'lightcream-bg':evenRow}">
+      <div class="col-md-1 pt-3">
+        <div>{{pageText?.lbl_qst}}</div>
+        <div class=" h1 text-primary pl-1">{{i+1 | number:'2.0'}}</div>
+      </div>
+      <div class="divider-vertical  pr-0" ></div>
+      <div class="h5 col-md-10">
+
+        <individual-qst [questionDetail]="{
+                                              isChild:false,
+                                              qstHeaderText:utils.getHeaderText(question.parent,pageText.lbl_attchment+' '), 
+                                              qstText:question.parent.questionText, 
+                                              childNumber:null, 
+                                              qstStatus:question.parent.questionStatus, 
+                                              revisionNeeded:question.parent.revisionIndicator,
+                                              revisionText:pageText.lbl_need_revision,
+                                              showRevision:calculateshowRevision(question.parent)
+
+        }"></individual-qst>
+
+        <div *ngFor="let childQst of question.child; let j=index">
+                          <individual-qst [questionDetail]="{
+                            isChild:true,                            
+                            qstHeaderText:utils.getHeaderText(childQst,pageText.lbl_attchment+' '),
+                            qstText:childQst.questionText, 
+                            childNumber:childQst.hierarchyText, 
+                            qstStatus:childQst.questionStatus, 
+                            revisionNeeded:childQst.revisionIndicator,
+                            revisionText:pageText.lbl_need_revision,
+                            showRevision:calculateshowRevision(childQst)
+
+              }"></individual-qst>
+        </div>
+
+      </div>
+     
+      <div class="divider-vertical pr-0" ></div>
+      <div class="pl-3 pt-4">
+         <span class="text-primary cursor-pointer h5 font-weight-light" (click)="viewQuestionDetails(question.parent.questionTypeCode,question.parent.questionId)"> {{pageText?.edit}} </span>
+      </div>
+    </div>
+
+    <div *ngIf="pageFooterDTL.disableRightButton" class="row mt-4">
+      <div class="offset-md-5 inverse-bg px-2 py-4 col-md-7 text-center h5">
+         <div class="h4"> {{pageText?.lbl_incomplete_cert}}</div>
+         <div> {{pageText?.lbl_incomplete_cert_sub}}</div>
+      </div>
+    </div>
+
+    <div *ngIf="!pageFooterDTL.disableRightButton" class="row mt-4">
+        <div class="offset-md-5 inverse-bg px-2 py-4 col-md-7 text-center h5">
+           <div class="h4"> {{pageText?.lbl_complete_cert}}</div>
+           <div> {{pageText?.lbl_complete_cert_sub}}</div>
+        </div>
+      </div>
+
+  </div>
+</div>
+<page-footer [pageFooterDTL]="pageFooterDTL"></page-footer>

@@ -1,0 +1,85 @@
+<form class="form-horizontal" [formGroup]="pageForm">
+  <div class="card-body">
+    <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+    <div class="h3" [innerHTML]="ars.header"></div>
+    <div class="h4 pl-3 font-weight-light" [innerHTML]="ars.bodyCopy"></div>
+    <h3>{{pageText?.header}}</h3>
+    <div class="row no-gutters pt-2">
+      <div class="checkbox col-xs-11">
+        <div class="custom-control custom-checkbox" [ngClass]="{'has-danger': errorFields['chkClarifyStatement']}">
+          <input type="checkbox" class="custom-control-input" id="chk_certify_submission" formControlName="certify" />
+          <label class="custom-control-label" for="chk_certify_submission" style="line-height: 1"><span class="h5" style="line-height: 1" [innerHTML]="certifyText"></span></label>
+        </div>
+      </div>
+    </div>
+    <div class="divider-horizontal pt-3"></div>
+    <h3 class="pt-3">{{pageText?.subheader}}</h3>
+    <div class="pl-2">
+      <h6>
+        <span class="mydeq-teal">*</span>
+        <em>{{pageText?.requiredText}}</em>
+      </h6>
+      <div class="row form-group h5 no-gutters pt-3">
+        <label for="question" class="col-sm-1 col-form-label">{{pageText?.questionText}}</label>
+        <div class="col-10">
+          <input type="text" readonly class="form-control-plaintext w-100" id="question" [value]="challengeQuestion?.question">
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="row form-group h5 no-gutters">
+        <label for="ans" class="col-1 col-form-label pt-1">{{pageText.answerText}}</label>
+        <div class="col-4" [ngClass]="{'has-danger': errorFields['challengeQuestion.answer']}">
+          <input type="text" id="ans" formControlName="answer" class="form-control" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <page-footer [pageFooterDTL]="pageFooterDTL"></page-footer>
+</form>
+<ng-template #accLock let-c="close">
+  <div class="modal-header mx-3 pl-0">
+    <h1 class="modal-title text-primary font-weight-bold">{{pageText?.lbl_account_locked}}</h1>
+  </div>
+  <div class="modal-body p-3" id="accLockModal">
+    <h3>{{pageText?.lbl_account_locked_msg}}</h3>
+  </div>
+  <div class="modal-footer" id="accLockFooter">
+    <button type="button" class="btn btn-primary float-right" (click)="exitUser()">{{pageText?.button_ok}}
+      <span class="arrow right">
+        <i class="fa fa-chevron-right"></i>
+      </span>
+    </button>
+  </div>
+</ng-template>
+
+<div *ngIf="readyToCertify" class="modal-backdrop fade show"></div>
+<div *ngIf="readyToCertify" class="modal fade show" id="readyToCertifyModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <form class="form-horizontal" [formGroup]="readToCertifyForm">
+      <div class="modal-content">
+        <div class="modal-header mx-3 pl-0">
+          <h1 class="modal-title text-primary font-weight-bold">{{pageText?.alert_application_review}}</h1>
+        </div>
+        <div class="modal-body p-3" id="readyToCertifyBody">
+          <h3 class="">{{pageText?.lbl_ready_to_certify}}</h3>
+          <div *ngFor="let error of modelerrorMsg" class="alert alert-danger text-center" role="alert">{{error}}</div>
+          <div class="custom-controls-stacked pl-2 pt-4">
+            <div class="custom-control custom-radio" [ngClass]="{'has-danger': modelerror['booleanAnswer']}">
+              <input type="radio" class="custom-control-input" id="userSelectionY" formControlName="booleanAnswer" value="Y" />
+              <label class="custom-control-label" for="userSelectionY">{{pageText?.lbl_yes_review}}</label>
+            </div>
+            <div class="custom-control custom-radio" [ngClass]="{'has-danger': modelerror['booleanAnswer']}">
+              <input type="radio" class="custom-control-input" id="userSelectionN" formControlName="booleanAnswer" value="N" />
+              <label for="userSelectionN" class="custom-control-label">{{pageText?.lbl_no_review}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" id="readyToCertifyFooter">
+          <button type="button" class="btn btn-primary float-left" (click)="backToSummary()"><span class="arrow left"><i class="fa fa-chevron-left"></i></span> {{pageText?.back_button}} </button>
+          <button type="button" class="btn btn-primary float-right" (click)="returnToMyApp(readToCertifyForm.value,accLock)">{{pageText?.continue_button}} <span class="arrow right"><i class="fa fa-chevron-right"></i></span></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

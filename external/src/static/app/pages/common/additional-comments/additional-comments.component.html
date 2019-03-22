@@ -1,0 +1,312 @@
+<form class="form-horizontal" [formGroup]="pageForm">
+  <div class="card-body">    
+    <h3 class="pt-3">{{pageText?.header}}</h3>
+    <h6 class="pl-2">{{pageText?.sub_header}}</h6>
+    <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+
+    <div class="pt-3 row pl-3">
+      <textarea formControlName="additionalComments" class="col-md-9 form-control mydeq-textarea" rows="4" id="additionalComments"
+        maxlength="4000"></textarea>
+    </div>
+    <div class="deq-border-bottom my-0 pt-3 pb-3"></div>
+    <h3 class="pt-3">{{pageText?.sub_question}}</h3>
+    <h6 class="pl-2">{{pageText?.sub_question_continue_text}}</h6>
+    <div class="custom-controls-stacked pl-4 pt-2">
+      <div class="custom-control custom-radio" [ngClass]="{'has-danger': errorFields['booleanAnswer']}">
+        <input type="radio" class="custom-control-input" value="Y" id="yes" formControlName="booleanAnswer" (click)="selectYesNo('Y')">
+        <label class="custom-control-label" for="yes">{{pageText?.yes}}
+        </label>
+      </div>
+      <div *ngIf="showFileUpload" class="cream-bg pt-3 mt-2 ml-5 pb-5">
+        <div class="row pl-5 h5" *ngFor="let fileDetails of uploadedFiles; let i=index">
+          <label class="col-md-6"> {{fileDetails.fileName}}</label>
+          <div *ngIf="approveEditIndicator === 'Y'"class="col-md-2">
+            <a class="cursor-pointer h6">
+              <i class="fas fa-trash-alt text-primary fa-lg" aria-hidden="true" title="DELETE" placement="left"
+                [ngbPopover]="popContent" triggers="manual" #p="ngbPopover" (click)="openPopup(p)"></i>
+            </a>
+
+          </div>
+          <ng-template #popContent>
+            <div class="pb-2">{{pageText?.are_you_sure_delete}}</div>
+            <button type="button" class="btn btn-sm btn-danger float-left" (click)="userPopUpSelection('Y',i)">
+              {{pageText?.yes}}</button>
+            <button type="button" class="btn btn-sm btn-success float-right" (click)="userPopUpSelection('N',i)">{{pageText?.no}}</button>
+            <div class="clearfix"></div>
+          </ng-template>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <= 9">
+          <div class="row">
+            <div class="input-group pt-2 col-md-9">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file1')">{{pageText?.choose_file}}<i
+                    class="fa fa-chevron-right pl-1"></i></span>
+              </div>
+              <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file1']}">
+                <input type="file" class="custom-file-input" id="file1" name="file1" ngf-max-size="20MB" (change)="uploadFile($event,1)" [disabled] = "fileDisableIndicator">
+                <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file1">
+                  {{file1?.name| slice:0:75}}
+                  <span *ngIf="file1 && file1?.name && file1?.name?.length > 75">...</span>
+                </label>
+              </div>
+
+            </div>
+            <div *ngIf="file1 && file1?.name " class="col-md-1 pt-3 pl-0">
+              <i class="fas fa-times text-primary" (click)="removeFile(1)"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+              <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <= 8">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file2')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file2']}">
+                    <input type="file" class="custom-file-input" id="file2" name="file2" ngf-max-size="20MB" (change)="uploadFile($event,2)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file2">
+                      {{file2?.name| slice:0:75}}
+                      <span *ngIf="file2 && file2?.name && file2?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file2 && file2?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(2)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=7 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file3')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file3']}">
+                    <input type="file" class="custom-file-input" id="file3" name="file3" ngf-max-size="20MB" (change)="uploadFile($event,3)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file3">
+                      {{file3?.name| slice:0:75}}
+                      <span *ngIf="file3 && file3?.name && file3?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file3 && file3?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(3)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=6 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file4')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file4']}">
+                    <input type="file" class="custom-file-input" id="file4" name="file4" ngf-max-size="20MB" (change)="uploadFile($event,4)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file4">
+                      {{file4?.name| slice:0:75}}
+                      <span *ngIf="file4 && file4?.name && file4?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file4 && file4?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(4)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=5 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file5')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file5']}">
+                    <input type="file" class="custom-file-input" id="file5" name="file5" ngf-max-size="20MB" (change)="uploadFile($event,5)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file5">
+                      {{file5?.name| slice:0:75}}
+                      <span *ngIf="file5 && file5?.name && file5?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file5 && file5?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(5)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=4 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file6')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file6']}">
+                    <input type="file" class="custom-file-input" id="file6" name="file6" ngf-max-size="20MB" (change)="uploadFile($event,6)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file6">
+                      {{file6?.name| slice:0:75}}
+                      <span *ngIf="file6 && file6?.name && file6?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file6 && file6?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(6)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=3 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file7')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file7']}">
+                    <input type="file" class="custom-file-input" id="file7" name="file7" ngf-max-size="20MB" (change)="uploadFile($event,7)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file7">
+                      {{file7?.name| slice:0:75}}
+                      <span *ngIf="file7 && file7?.name && file7?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file7 && file7?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(7)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=2 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file8')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file8']}">
+                    <input type="file" class="custom-file-input" id="file8" name="file8" ngf-max-size="20MB" (change)="uploadFile($event,8)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file8">
+                      {{file8?.name| slice:0:75}}
+                      <span *ngIf="file8 && file8?.name && file8?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file8 && file8?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(8)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=1 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file9')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file9']}">
+                    <input type="file" class="custom-file-input" id="file9" name="file9" ngf-max-size="20MB" (change)="uploadFile($event,9)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file9">
+                      {{file9?.name| slice:0:75}}
+                      <span *ngIf="file9 && file9?.name && file9?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file9 && file9?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(9)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+        <div class="pl-5 pb-2 " *ngIf="uploadedFileSize <=0 ">
+            <div class="row">
+                <div class="input-group pt-2 col-md-9">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file10')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" [ngClass]="{'has-danger': errorFields['file10']}">
+                    <input type="file" class="custom-file-input" id="file10" name="file10" ngf-max-size="20MB" (change)="uploadFile($event,10)" [disabled] = "fileDisableIndicator">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file10">
+                      {{file10?.name| slice:0:75}}
+                      <span *ngIf="file10 && file10?.name && file10?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file10 && file10?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(10)"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 h6 mr-0 pr-3 pt-1 w-100">
+                  <span class="float-right">{{pageText?.file_types_allowed}}</span></div>
+              </div>
+              <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="custom-control custom-radio pt-2" [ngClass]="{'has-danger': errorFields['booleanAnswer']}">
+        <input type="radio" class="custom-control-input" value="N" id="no" formControlName="booleanAnswer" (click)="selectYesNo('N')">
+        <label class="custom-control-label" for="no">{{pageText?.no}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+
+  <page-footer [pageFooterDTL]="pageFooterDTL"></page-footer>
+</form>

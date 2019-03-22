@@ -1,0 +1,48 @@
+<div class="card-body" style="max-width:720px !important; ">
+  <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+  <div class="row pl-0 pt-3">
+    <div class="mt-0 lead h4 font-weight-normal col-8 pl-3">
+      <div *ngIf="model.reqType === 'ORIGINAL'"class="font-weight-normal h4 pb-1" [innerHTML]="pageText?.confirmation_msg"></div>
+      <div *ngIf="model.reqType === 'ORIGINAL_REVISION'"class="font-weight-normal h4 pb-1" [innerHTML]="pageText?.confirmation_revison_msg"></div>
+      <div *ngIf="model.reqType === 'AMENDMENT'"class="font-weight-normal h4 pb-1" [innerHTML]="pageText?.confirmation_amend_msg"></div>
+      <div *ngIf="model.reqType === 'AMENDMENT_REVISION'"class="font-weight-normal h4 pb-1" [innerHTML]="pageText?.confirmation_amend_revision_msg"></div>
+      <div class="font-weight-normal h4 pb-5" [innerHTML]="pageText?.sub_confirmation_msg"></div>
+      
+      <div class="pb-1">
+        <span class="font-weight-bold">{{pageText?.lbl_lft_id}}</span>
+        <span class="font-weight-light"> {{model?.ltfId}} </span>
+      </div>
+      <div class="pb-1">
+        <span class="font-weight-bold">{{pageText?.lbl_rpt_period}}</span>
+        <span class="font-weight-light">{{model?.reportingPeriodText}}</span>
+      </div>
+    </div>
+    <div class="right col-auto pl-0 pl-0" >
+      <div class="mydeq-confirmation-document float-left pt-1" (click)="downloadDoc()">
+        <div class="mydeq-confirmation-document-type ml-0">
+          <div class="mydeq-confirmation-document-icon pt-1">{{pageText?.lbl_pdf}}</div>
+          <div class="mydeq-confirmation-document-type-label font-weight-normal text-center text-primary">{{pageText?.lbl_copy_of_record}}
+          </div>
+        </div>
+        <div class="mydeq-confirmation-document-message ml-0 py-5 h-100">
+          <span class="font-weight-normal">{{pageText?.lbl_click}}</span>
+          <br>
+          <span class="font-weight-bold pl-1">{{pageText?.lbl_save_print}}</span>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="card-footer">
+
+  <button type="button" class="btn btn-primary float-right" (click)="exitClick()">
+    {{pageText?.lbl_return_to}}
+    <span class="arrow right">
+      <i class="fa fa-chevron-right"></i>
+    </span>
+  </button>
+  <div class="clearfix"></div>
+</div>
