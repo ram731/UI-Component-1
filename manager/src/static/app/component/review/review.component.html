@@ -1,0 +1,159 @@
+<section *ngIf="_reviewComponentDetails.showEdit" id="{{_reviewComponentDetails?.defaultID}}">
+    <div class="border-bottom pb-0 pt-0"></div>
+    <div *ngFor="let error of errorsList" class="alert alert-danger text-center mx-4 mt-2" role="alert">{{error}}</div>
+    <div class="d-flex">
+        <div class=" w-100 border-right" [ngClass]="{'lightcream-bg':startEdit}">
+            <div class="d-flex  flex-column">
+                <div class="pt-1 pb-1 border-bottom">
+                    <div class="d-flex ">
+                        <div class="px-3 pt-4 w-25 mt-4 h5">{{_reviewComponentDetails?.reviewHeader}}</div>
+                        <div class="p-3 border-right h6 text-center">
+                            <div class="custom-control custom-radio ml-3"  [ngClass]="{'has-danger':optionError}">
+                                <input type="radio" id="customqst0{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[0]?.code}}">
+                                <label for="customqst0{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>
+                            </div>
+                            <div class="mt-3">
+                                <label for="one{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[0]?.desc}}</label>
+                            </div>
+                        </div>
+                        <div class="p-3 border-right h6 text-center">
+                            <div class="custom-control custom-radio ml-3" [ngClass]="{'has-danger': optionError}">
+                                <input type="radio" id="customqst1{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[1]?.code}}">
+                                <label for="customqst1{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>
+                            </div>
+                            <div class="mt-3">
+                                <label for="two{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[1]?.desc}}</label>
+                            </div>
+                        </div>
+                        <div class="p-3 border-right h6 text-center" >
+                            <div class="custom-control custom-radio ml-3" [ngClass]="{'has-danger': optionError}">
+                                <input type="radio" id="customqst2{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[2]?.code}}">
+                                <label for="customqst2{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>
+                            </div>
+                            <div class="mt-3">
+                                <label for="three{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[2]?.desc}}</label>
+                            </div>
+                        </div>
+                        <div class="w-25 mt-3 text-center">
+                            <div  style="width:78% !important;" [ngClass]="{'p-3 mt-1':_reviewComponentDetails?.prevReviewStatus === 'N/A', 'px-3 pb-3 pt-0' : _reviewComponentDetails?.prevReviewStatus !== 'N/A'}">
+                                <div class="h6 font-weight-light mb-1">{{_reviewComponentDetails?.prevReviewStatus}}</div>
+                                <div class="mt-0">
+                                    <label for="oneq2q" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[3]?.desc}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 mr-2 px-3 mb-3">
+                    <h5>{{reviewComponentDetails?.commentHeader}}</h5>
+                    <div class="input-group w-100" [ngClass]="{'has-danger': commentError}">
+                        <textarea class="form-control mydeq-textarea" rows="6" id="reviewComments{{_reviewComponentDetails?.defaultID}}" maxlength="4000"></textarea>
+                    </div>
+                </div>
+                <div *ngIf="startEdit" class="pt-3">
+                    <div class="pl-0">
+                        <button type="button" class="btn btn-danger" (click)="clearFormFieldsAndDisable()">
+                            <span class="px-2 float-left">
+                            </span>{{_reviewComponentDetails?.leftBtnTxt}}
+                        </button>
+
+                        <button type="button" class="btn btn-primary float-right px-3" (click)="rightButtonClick()">
+                            {{_reviewComponentDetails?.rightBtnTxt}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" mt-5 pt-4 flex-shrink-1 px-3">
+            <div class="d-flex  flex-column" style="text-align:center;">
+                <div class="pt-3 pb-4 border-bottom">
+                    <i class="fas pl-1  text-primary fa-2x fa-pencil-alt cursor-pointer" title="{{pageText?.edit}}" (click)="enableForm()"></i>
+                </div>
+                <div class="py-3 mt-1">
+                    <i id="vhistory" class="fas pl-1 text-primary fa-2x fa-history cursor-pointer" title="{{_reviewComponentDetails?.reviewHistoryHeader}}" (click)="viewHistory()"></i>
+                    <div class="pt-1 h6" (click)="viewHistory()">{{_reviewComponentDetails?.reviewHistoryHeader}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom pb-0 pt-0"></div>
+</section>
+<!-- ==================================================== -->
+<section *ngIf="!_reviewComponentDetails.showEdit" id="{{_reviewComponentDetails?.defaultID}}">
+    <div class="border-bottom pb-0 pt-0"></div>
+    <div class="d-flex">
+        <div class=" w-100 border-right" [ngClass]="{'lightcream-bg':startEdit}">
+            <div class="d-flex  flex-column">
+                <div class="pt-1 pb-1 border-bottom">
+                    <div class="d-flex ">
+                        <div class="px-3 pt-4 w-25 mt-4 h5">{{_reviewComponentDetails?.reviewHeader}}</div>
+                        <div class="p-3 border-right h6 text-center">
+                                <div class="custom-control custom-radio ml-3"  [ngClass]="{'has-danger':optionError}">
+                                    <input type="radio" id="customqst0{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[0]?.code}}">
+                                    <label for="customqst0{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="one{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[0]?.desc}}</label>
+                                </div>
+                            </div>
+                            <div class="p-3 border-right h6 text-center">
+                                <div class="custom-control custom-radio ml-3" [ngClass]="{'has-danger': optionError}">
+                                    <input type="radio" id="customqst1{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[1]?.code}}">
+                                    <label for="customqst1{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="two{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[1]?.desc}}</label>
+                                </div>
+                            </div>
+                            <div class="p-3 border-right h6 text-center" >
+                                <div class="custom-control custom-radio ml-3" [ngClass]="{'has-danger': optionError}">
+                                    <input type="radio" id="customqst2{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[2]?.code}}">
+                                    <label for="customqst2{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="three{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[2]?.desc}}</label>
+                                </div>
+                            </div>
+                        
+                        <div class="ml-auto w-25 mt-3 text-center">
+                            <div  [ngClass]="{'p-3 mt-1':_reviewComponentDetails?.prevReviewStatus === 'N/A', 'px-3 pb-3 pt-0' : _reviewComponentDetails?.prevReviewStatus !== 'N/A'}">
+                                <div class="h6 font-weight-light mb-1">{{_reviewComponentDetails?.prevReviewStatus}}</div>
+                                <div class="mt-0">
+                                    <label for="oneq2q" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[3]?.desc}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 mr-2 px-3 mb-3">
+                    <h5>{{_reviewComponentDetails?.commentHeader}}</h5>
+                    <div class="w-100 h5 font-weight-light" >
+                        {{_reviewComponentDetails?.comments}}
+                    </div>
+                </div>
+
+                <div class="row h5 pl-3">
+                    <div class="col-md-6">
+                        <label for="date{{_reviewComponentDetails?.defaultID}}">{{pageText?.lbl_date}}</label>
+                        <span id="date{{_reviewComponentDetails?.defaultID}}" class="pl-1 font-weight-light">{{_reviewComponentDetails?.reviewDate}}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="date{{_reviewComponentDetails?.defaultID}}">{{pageText?.lbl_updated_by}}</label>
+                        <span id="date{{_reviewComponentDetails?.defaultID}}" class="pl-1 font-weight-light text-primary">{{_reviewComponentDetails?.reviewedBy}}</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class=" mt-5 pt-4 flex-shrink-1 px-3">
+            <div class="d-flex  flex-column" style="text-align:center;">
+               
+                <div class="py-3 mt-1">
+                    <i id="vhistory" class="fas pl-1 text-primary fa-2x fa-history cursor-pointer" title="{{_reviewComponentDetails?.reviewHistoryHeader}}" (click)="viewHistory()"></i>
+                    <div class="pt-1 h6" (click)="viewHistory()">{{_reviewComponentDetails?.reviewHistoryHeader}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom pb-0 pt-0"></div>
+</section>

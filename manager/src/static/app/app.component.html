@@ -1,0 +1,21 @@
+<mydeq-header></mydeq-header>
+
+<div class="mydeq-global-content-main">
+  <div class="container">
+   <!--  <section class="jumbotron {{pageClass}}"> -->
+      <section class="{{pageClass}}">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</div>
+<div class="clearfix"></div>
+<mydeq-footer></mydeq-footer>
+
+<mydeq-session-timeout> </mydeq-session-timeout>
+
+<div [ngClass]="{'modal-backdrop fade show': utils.showLoadingSign}"></div>
+<div class="modal fade" [ngClass]="{'show': utils.showLoadingSign}">
+  <div class="mydeq-busy">
+    <div class="mydeq-busy-spinner"></div>
+  </div>
+</div>

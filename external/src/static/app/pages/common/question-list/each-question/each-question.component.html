@@ -1,0 +1,23 @@
+<div class="row h5" [ngClass]="{'mt-3 pl-3':eachQuestionDetail.isChild}">
+    <div [ngClass] = "{'col-md-8':eachQuestionDetail.showRevision,'col-md-10':!eachQuestionDetail.showRevision}">
+        <div class="font-weight-light">
+            {{eachQuestionDetail?.qstHeaderText}}
+        </div>
+        <div>
+            
+            <span *ngIf="eachQuestionDetail.childNumber" class="h3 pr-2 pt-3 text-primary">{{eachQuestionDetail?.childNumber}}.</span>
+            {{eachQuestionDetail?.qstText}}
+        </div>
+        
+    </div>
+    <div *ngIf="eachQuestionDetail.revisionNeeded === 'Y'" class="col-md-2 text-center pt-0">
+            <i class="fas fa-sync-alt text-danger"></i>
+            <div  class="h6 pt-1">{{eachQuestionDetail?.revisionText | uppercase}}</div>
+    </div>
+
+    <div class="col-md-2 text-center pt-0" [ngClass]="{'offset-md-2':(eachQuestionDetail.showRevision && eachQuestionDetail.revisionNeeded !== 'Y')}">
+            <i *ngIf="eachQuestionDetail.qstStatus === 'Incomplete'" class="fas fa-exclamation-circle text-danger"></i>
+            <i *ngIf="eachQuestionDetail.qstStatus === 'Complete'" class="fa fa-check text-primary " aria-hidden="true"></i>
+              <div class="h6 pt-1">{{eachQuestionDetail.qstStatus | uppercase}}</div>
+    </div>
+</div>
