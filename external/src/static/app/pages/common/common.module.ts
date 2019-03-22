@@ -11,7 +11,7 @@ import { AdditionalCommentsComponent } from './additional-comments/additional-co
 import { ComponentPageModule } from '../components/componet.module';
 import { SharedModule } from '../../shared/shared.module';
 import { EachQuestion } from './question-list/each-question/each-question.component';
-
+import {ResponsivePageComponent} from './responsive-page/responsive-page.component';
 
 
 export const metadata = {
@@ -32,7 +32,8 @@ export const metadata = {
         QuestionListComponent,        
         AdditionalCommentsComponent,      
         WhatsNeededComponent,
-        EachQuestion,       
+        EachQuestion,  
+        ResponsivePageComponent     
     ],
     exports: [       
         CertifyComponent,
@@ -40,7 +41,8 @@ export const metadata = {
         QuestionListComponent,        
         AdditionalCommentsComponent,       
         WhatsNeededComponent,
-        EachQuestion       
+        EachQuestion,
+        ResponsivePageComponent   
     ]
 };
 @NgModule(metadata)

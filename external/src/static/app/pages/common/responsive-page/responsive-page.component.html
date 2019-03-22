@@ -1,0 +1,23 @@
+<form class="form-horizontal" [formGroup]="pageForm">
+    <div class="card-body">
+        <h3 class="pt-3">{{pageText?.header}}</h3>
+        <h6 class="pl-2">{{pageText?.sub_header}}</h6>
+        <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+
+        <div class="custom-controls-stacked pl-4 pt-2">
+            <div class="row">
+                    <label for="qtnType" class=" h5 mr-2">{{pageText?.lbl_category}}</label>
+                    <select id="qtnType" class="custom-select col-sm-3">
+                            <option value="-1">{{pageText?.select}}</option>
+                            <option value="a">First</option>
+                            <option value="b">Second</option>
+                    </select>
+            </div>
+            
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <page-footer [pageFooterDTL]="pageFooterDTL"></page-footer>
+</form>

@@ -3,41 +3,38 @@ import { BasePageContent } from "../../../core/content/base-page-content.compone
 export class WhatsNeededPageContent extends BasePageContent  {
   
   path:string=null;
-
+  
   constructor(path: string=null) {
-    super()
-    this.path = path;
-    this.PAGE_TEXT['warning_msg']  = `Warning: Your session will time out in 20 minutes of non-activity on a single screen. You may save your application, once started, by clicking on this &#147; <span class="text-primary"><i class="far fa-save" aria-hidden="true"></i></span> &#148; icon located at the top right of every page.`;
+    super()  
+    this.path = path;    
   }
 
   public getPageSpecificText() {
- 
-  if (this.path === 'annual_report') 
-    {
-      this.getAnnualCCContent();
-    }
-    else{      
-        this.getPlanContent();      
-    }
+    this.getPlanContent();
   }
 
   protected getPlanContent() {
-    this.PAGE_TEXT['header'] = 'You will need the following to complete this application:';
-    this.PAGE_TEXT['sub_header'] = 'Please have this information ready and click CONTINUE.';
-    this.PAGE_TEXT['action_list'] = [
-          {
-            text: `Facility Information`,
-          },
-          {
-            text: `Facility Contact`,
-          },
-          {
-            text: `P2 Policy`,
-          },
-          {
-            text: `Facility Production Process Information`,
-          }
-        ];
+
+    this.PAGE_TEXT['cc']= {
+      'header': 'You will need the following to complete this application:',
+      'sub_header': 'Please have this information ready and click CONTINUE.',
+      'action_list': [
+        {
+          text: `Facility Information`,
+        },
+        {
+          text: `Facility Contact`,
+        },
+        {
+          text: `P2 Policy`,
+        },
+        {
+          text: `Facility Production Process Information`,
+        }
+      ],
+
+      'warning_msg': `Warning: Your session will time out in 20 minutes of non-activity on a single screen. You may save your application, once started, by clicking on this &#147; <span class="text-primary"><i class="far fa-save" aria-hidden="true"></i></span> &#148; icon located at the top right of every page.`
+    }
   }
 
   private getAnnualCCContent(){
