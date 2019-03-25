@@ -14,6 +14,7 @@ import { LoggerService } from "../../../shared/lib/logger/logger-service.compone
 })
 export class ResponsivePageComponent extends BasePathController{
 
+    file1:any;
     constructor(protected activatedRoute: ActivatedRoute,
         protected formBuilder: FormBuilder,
         protected utils: Utils,
@@ -33,5 +34,15 @@ export class ResponsivePageComponent extends BasePathController{
         return this.formBuilder.group({});
     }
 
+    uploadFile(event, i) {
+        this.file1 = event.target.files[0];
+    }
+
+    chooseFile = (id) => document.getElementById(id).click()
+
+
+    removeFile() {
+                this.file1 = null;
+        }
     
 }
