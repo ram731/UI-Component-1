@@ -47,7 +47,7 @@
                         class="fa fa-chevron-right pl-1"></i></span>
                   </div>
                   <div class="custom-file h6" >
-                    <input type="file" class="custom-file-input" id="file1" name="file1" ngf-max-size="20MB" (change)="uploadFile($event,1)" [disabled] = "fileDisableIndicator">
+                    <input type="file" class="custom-file-input" id="file1" name="file1" ngf-max-size="20MB" (change)="uploadFile($event,1)" [disabled] = "fileDisableIndicator" accept = ".pdf">
                     <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file1">
                       {{file1?.name| slice:0:75}}
                       <span *ngIf="file1 && file1?.name && file1?.name?.length > 75">...</span>
@@ -59,6 +59,41 @@
                   <i class="fas fa-times text-primary" (click)="removeFile(1)"></i>
                 </div>
               </div>
+
+              <div class="row pt-3">
+                <div class="float-right custom-control custom-checkbox custom-checkbox-md pb-0 mb-0 pl-3">                  
+                    <input type="checkbox" id="filter" class="custom-control-input" >
+                    <label for="filter" class="custom-control-label"><p class="pt-1 pb-0 mb-0">{{pageText?.lbl_checkbox}}</p></label>          
+                  </div> 
+              </div>
+
+              <div class="row pt-3">
+                <ul class="list-unstyled h4 pl-0">
+                    <li class="deq-numberlist n1">
+                      <span>TEST</span>
+                    </li>
+                  </ul>
+              </div>
+
+              <div class="row pt-1">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" value="ADD0" id="test0" name = "test" required>
+                    <label class="custom-control-label" for="test0">TEST
+                    </label>
+                  </div> 
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" value="ADD1" id="test1" name = "test" required>
+                    <label class="custom-control-label" for="test1">TEST1
+                    </label>
+                  </div>
+              </div>
+
+            <div class="row pt-3">
+                <div class="input-group w-100">
+                    <textarea class="form-control mydeq-textarea" rows="6" id="generalComments"
+                        maxlength="700"></textarea>
+                </div>
+            </div>
 
 
         </div>
