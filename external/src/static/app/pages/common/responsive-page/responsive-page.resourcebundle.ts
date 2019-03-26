@@ -13,7 +13,8 @@ export class PagecontentResponsivePage extends BasePageContent{
             are_you_sure_delete:'Are you sure you want to delete?',
             
             lbl_category:'Category:',
-            lbl_start_date:'Start Date:'            
+            lbl_start_date:'Start Date:',
+            lbl_checkbox:'Checkbox Test'            
         };
     }
 }
