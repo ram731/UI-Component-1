@@ -310,9 +310,9 @@ export class AppService {
                 return n.currentInd === 'C';
             }));
         }
-        if(returnObj['displayType']){
-            this.utils.setPageTitle (returnObj['displayType']);
-        }
+        
+        this.utils.setPageTitle ();
+        
         console.log(returnObj)
         return returnObj;
     }
