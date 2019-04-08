@@ -1,0 +1,104 @@
+<form class="form-horizontal" [formGroup]="pageForm">
+    <div class="card-body">
+        <h3 class="pt-3">{{pageText?.header}}</h3>
+        <h6 class="pl-2">{{pageText?.sub_header}}</h6>
+        <div *ngFor="let error of errorsList" class="alert alert-danger text-center" role="alert">{{error}}</div>
+
+        <div class="custom-controls-stacked pl-4 pt-2">
+
+            <div class="row">
+                <label for="qtnType" class=" h5 mr-2">{{pageText?.lbl_category}}
+
+                    <ng-template #tipContent>
+                        <p class="text-left">Sample Tooltip</p>
+                    </ng-template>
+                    <sup class="h5" placement="top" [ngbTooltip]="tipContent">
+                        <i class="far fa-question-circle" aria-hidden="true"></i>
+                    </sup>
+
+                </label>
+                <select id="qtnType" class="custom-select col-sm-3">
+                    <option value="-1">{{pageText?.select}}</option>
+                    <option value="a">First</option>
+                    <option value="b">Second</option>
+                </select>
+            </div>
+
+
+            <div class="row pt-3">
+                <label for="qtnType" class="h5 mr-md-2 ">{{pageText?.lbl_start_date}}</label>
+                <div class="input-group col-md-3 col-sm-5 px-0 ">
+                    <div class="input-group-append pl-sm-4 pl-md-3">
+                        <button id="reportingStartDateBtn1" class="btn btn-primary py-0" (click)="d1.toggle()"
+                            type="button">
+                            <i class="fas fa-lg fa-calendar-alt pb-2" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <input class="form-control" id="inpreportingStartDateBtn1" ngbDatepicker #d1="ngbDatepicker"
+                        placeholder="MM/DD/YY">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-group col-sm-6 col-md-5 pt-3 px-0">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary bg-primary" style="height: 39px" (click)="chooseFile('file1')">{{pageText?.choose_file}}<i
+                        class="fa fa-chevron-right pl-1"></i></span>
+                  </div>
+                  <div class="custom-file h6" >
+                    <input type="file" class="custom-file-input" id="file1" name="file1" ngf-max-size="20MB" (change)="uploadFile($event,1)" [disabled] = "fileDisableIndicator" accept = ".pdf">
+                    <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file1">
+                      {{file1?.name| slice:0:75}}
+                      <span *ngIf="file1 && file1?.name && file1?.name?.length > 75">...</span>
+                    </label>
+                  </div>
+    
+                </div>
+                <div *ngIf="file1 && file1?.name " class="col-md-1 pt-3 pl-0">
+                  <i class="fas fa-times text-primary" (click)="removeFile(1)"></i>
+                </div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="float-right custom-control custom-checkbox custom-checkbox-md pb-0 mb-0 pl-3">                  
+                    <input type="checkbox" id="filter" class="custom-control-input" >
+                    <label for="filter" class="custom-control-label"><p class="pt-1 pb-0 mb-0">{{pageText?.lbl_checkbox}}</p></label>          
+                  </div> 
+              </div>
+
+              <div class="row pt-3">
+                <ul class="list-unstyled h4 pl-0">
+                    <li class="deq-numberlist n1">
+                      <span>TEST</span>
+                    </li>
+                  </ul>
+              </div>
+
+              <div class="row pt-1">
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" value="ADD0" id="test0" name = "test" required>
+                    <label class="custom-control-label" for="test0">TEST
+                    </label>
+                  </div> 
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" value="ADD1" id="test1" name = "test" required>
+                    <label class="custom-control-label" for="test1">TEST1
+                    </label>
+                  </div>
+              </div>
+
+            <div class="row pt-3">
+                <div class="input-group w-100">
+                    <textarea class="form-control mydeq-textarea" rows="6" id="generalComments"
+                        maxlength="700"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <page-footer [pageFooterDTL]="pageFooterDTL"></page-footer>
+</form>

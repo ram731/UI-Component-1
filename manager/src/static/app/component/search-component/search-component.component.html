@@ -1,0 +1,21 @@
+<form [formGroup]="dbSearchForm" class="form-horizontal" id="db_search">
+    <div class="input-group search">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-white pt-1 pr-2 text-fieldborder" style="border-right: 0px"><i class="fas fa-search fa-lg text-primary"></i></span>
+        </div>
+        <input type="text" class="form-control bg-white" style="border-left: 0px; height: auto;" formControlName="searchByValue"
+            placeholder="{{placeholderText}}">
+        <!-- <input type="text" class="form-control" formControlName="searchByValue" placeholder="{{placeholderText}}"> -->
+        <!-- <div class="input-group-append">
+            <button class="btn btn-primary pl-2" type="submit" (click)="searchRequest(dbSearchForm.value)">GO
+                <i class="fa fa-chevron-right pl-2"></i>
+            </button>
+        </div -->
+
+        <div class="input-group-append">
+            <button id="searchBtn" class="btn btn-primary pl-2" type="submit" (click)="searchRequest(dbSearchForm.value)">SEARCH
+              <i class="fas fa-chevron-right pl-2"></i>
+            </button>
+          </div>
+    </div>
+</form>

@@ -1,0 +1,16 @@
+<div class="card-footer">
+    <button *ngIf="pageFooterDTL.leftButtonTxt" [disabled]="pageFooterDTL.disableLeftButton" type="button" class="btn btn-primary float-left" (click)="pageFooterDTL.leftButtonAction()">
+        <span class="arrow left">
+            <i class="fa fa-chevron-left"></i>
+        </span>{{pageFooterDTL.leftButtonTxt}}
+    </button>
+    <button *ngIf="pageFooterDTL.rightButtonTxt" [disabled]="pageFooterDTL.disableRightButton" type="button" class="btn btn-primary float-right" 
+    (click)="pageFooterDTL.rightButtonAction()">
+        {{pageFooterDTL.rightButtonTxt}}
+        <span class="arrow right">
+            <i class="fa fa-chevron-right"></i>
+        </span>
+    </button>
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>

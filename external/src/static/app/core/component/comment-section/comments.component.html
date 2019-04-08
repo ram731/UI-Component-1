@@ -1,0 +1,82 @@
+<div *ngIf="isPageLevel && approveStatus!=='AE'">
+    <!-- <div [ngClass]="{'comments':(approveStatus==='R'),'section-comments':(approveStatus==='A')}"> -->
+    <div class="section-comments">
+        <h3 *ngIf="(approveStatus==='AREQ')" class="mb-0">
+            <span><i class="fa fa-lg fa-wrench mr-1 pl-1 {{commentHeaderColor[approveStatus]}}" aria-hidden="true"></i></span>            
+            <span class="pl-2 {{commentHeaderColor[approveStatus]}}">THE FOLLOWING EDITS ARE REQUIRED:</span>
+        </h3>  
+        <div *ngIf="(approveStatus==='AREQ')" class="pl-1 pt-2">
+                <div *ngIf="reviewList && reviewList.length > 0" class="h5 font-weight-light  pl-1 pt-2">
+                    {{reviewList[0]?.comments}}
+                   </div>
+        </div>       
+        <!-- <div *ngIf="(approveStatus==='R')" class="pl-2 pt-2">          
+            <div class="h5 font-weight-light">
+                Click the EDIT button to make changes then click SAVE.
+            </div>
+        </div> -->
+
+        <div *ngIf="(approveStatus==='PDEF' || approveStatus==='NDEF')" class="mb-0 text-primary">
+                <span>
+                    <h3>
+                        <i class="fa fa-lg fa-check mr-1 pl-1 {{commentHeaderColor[approveStatus]}}" aria-hidden="true"></i>
+                        <span class="pl-0 h3">NO REVISIONS REQUIRED</span>
+                        <a class="float-right h5 font-weight-light pr-2" href="javascript:void(0)" (click)="editPage()" title="EDIT">EDIT</a>
+                        <!-- <span class="float-right h5 font-weight-light pr-2" (click)="editPage()">EDIT</span> -->
+                    </h3>
+            </span>           
+               
+        </div>
+      
+        <div *ngIf="(approveStatus==='PDEF' || approveStatus==='NDEF')" class="pl-2 pt-1">          
+            <div class="h5 font-weight-light">
+                However if you would like to make changes click EDIT to update information.
+            </div>
+            
+            <div *ngIf="reviewList && reviewList.length > 0" class="h5 font-weight-light  pl-0 pt-2">
+                {{reviewList[0]?.comments}}
+            </div>
+               
+        </div>
+    </div>
+   <!--  <div *ngIf="(approveStatus==='R')" class="section-comments">
+        <h3 class="mb-0 pl-1 {{commentHeaderColor[approveStatus]}} ">
+            COMMENTS/CHANGES NEEDED
+        </h3> 
+        <div class="pl-1 pt-2">
+            <div *ngIf="reviewList && reviewList.length > 0" class="h5 font-weight-light  pl-1 pt-2">
+                {{reviewList[0]?.comments}}
+               </div>
+        </div> 
+    </div> -->
+</div>
+
+
+<div *ngIf="!isPageLevel">
+   <div class="section-comments">
+        <h3 *ngIf="(approveStatus==='A' || approveStatus==='AE')" class="mb-0"  >
+            <div class="pl-2 mydeq-teal">NO CHANGES/REVIEW IS REQUIRED</div>
+        </h3>
+        <div *ngIf="(approveStatus==='A' || approveStatus==='AE')" class="pl-2 pt-2">          
+            <div class="h5 font-weight-light">
+                However if you would like to make changes click EDIT to update information.
+            </div>
+           
+            <div *ngIf="reviewList && reviewList.length > 0" class="h5 font-weight-light  pl-0 pt-2">
+                {{reviewList[0]?.comments}}
+            </div>
+               
+         </div>  
+   
+    <div *ngIf="(approveStatus==='R')">
+        <h3 class="mb-0 pl-1 {{commentHeaderColor[approveStatus]}} ">
+            COMMENTS/CHANGES NEEDED
+        </h3>
+        <div class="pl-1 pt-2">
+            <div *ngIf="reviewList && reviewList.length > 0" class="h5 font-weight-light  pl-1 pt-2">
+                {{reviewList[0]?.comments}}
+               </div>
+        </div>
+    </div> 
+    </div>
+</div>
