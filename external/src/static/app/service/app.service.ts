@@ -249,7 +249,7 @@ export class AppService {
                 this.utils.setPageComments(res.body.reviewList);
             }
             /* if(res.body.displayType) { */
-                this.utils.setPageTitle (res.body.displayType);
+                this.utils.setPageTitle ();
            /*  } */
             //this.utils.setPageComments(res.body.reviewList);
             return res.body;
@@ -310,9 +310,9 @@ export class AppService {
                 return n.currentInd === 'C';
             }));
         }
-        if(returnObj['displayType']){
-            this.utils.setPageTitle (returnObj['displayType']);
-        }
+        
+        this.utils.setPageTitle ();
+        
         console.log(returnObj)
         return returnObj;
     }

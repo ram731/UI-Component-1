@@ -332,14 +332,8 @@ export class Utils {
     return parentString;
   }
 
-  public setPageTitle(displayText: string) {
-    if(this.path !== 'viewcc' && displayText && displayText === 'AMENDMENT') {
-      this.title = 'AMEND AIR COMPLIANCE CERTIFICATION';
-    } else if(this.path === 'viewcc') {
-      this.title = 'VIEW AIR COMPLIANCE CERTIFICATION';
-    } else {
-      this.title = 'SUBMIT AIR COMPLIANCE CERTIFICATION';
-    }
+  public setPageTitle(displayText: string=null) {
+    return "MYDEQ"
   }
 
 }
