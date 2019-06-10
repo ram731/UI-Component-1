@@ -1,7 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+/**
+ * This pipe adds '...' at the end of string if string lenght exceeds specified threshold.
+ * 
+ * @example : 'Woods Canyon Lake | concatString :10 ' = 'Woods Cany...'
+ */
 @Pipe({ name: 'concatString' })
-
 export class ConcatStringPipe implements PipeTransform {
     transform(value: string | any,totalLen:number ) {
         let finalString: string;

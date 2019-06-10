@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ViewChild} from '@angular/core';
-import { NgbAccordionConfig, NgbActiveModal, NgbPanelChangeEvent, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { NgbAccordionConfig, NgbActiveModal, NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { GlobalService } from '../../service/global.service';
 
-
+/**
+ * The NeedHelpComponent adds help's section at page level.
+ */
 @Component({
     selector: 'app-need-help',
     templateUrl: 'need-help.component.html',

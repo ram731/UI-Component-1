@@ -1,6 +1,9 @@
 import { Injectable, ErrorHandler} from '@angular/core';
 import { LoggerService } from '../shared/lib/logger/logger-service.component';
 
+/**
+ * MyDeqErrorHandler service parse input service error object and returns error fields AND/OR error messages.
+ */
 @Injectable()
 export class MyDeqErrorHandler implements ErrorHandler {
 

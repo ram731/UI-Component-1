@@ -1,0 +1,1433 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>external documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">external documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content directive">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Directives</li>
+  <li>DataTable</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>external/src/static/app/core/component/datatable/DataTable.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                            <code><a href="https://angular.io/api/core/DoCheck" target="_blank" >DoCheck</a></code>
+            </p>
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>table[mfData]</code></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#diff">diff</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mustRecalculateData">mustRecalculateData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onPageChange">onPageChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSortChange">onSortChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#calculateNewActivePage">calculateNewActivePage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#caseInsensitiveIteratee">caseInsensitiveIteratee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fillData">fillData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPage">getPage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSort">getSort</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngDoCheck">ngDoCheck</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#recalculatePage">recalculatePage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setPage">setPage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setSort">setSort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#mfActivePage">mfActivePage</a>
+                            </li>
+                            <li>
+                                <a href="#mfData">mfData</a>
+                            </li>
+                            <li>
+                                <a href="#mfRowsOnPage">mfRowsOnPage</a>
+                            </li>
+                            <li>
+                                <a href="#mfSortBy">mfSortBy</a>
+                            </li>
+                            <li>
+                                <a href="#mfSortOrder">mfSortOrder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#mfSortByChange">mfSortByChange</a>
+                            </li>
+                            <li>
+                                <a href="#mfSortOrderChange">mfSortOrderChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                                <span class="modifier">Public</span>
+                        <code>constructor(differs: <a href="https://angular.io/api/core/IterableDiffers" target="_blank">IterableDiffers</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>differs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/IterableDiffers" target="_blank" >IterableDiffers</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfActivePage"></a>
+                        <b>mfActivePage</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:40</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfData"></a>
+                        <b>mfData</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:32</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfRowsOnPage"></a>
+                        <b>mfRowsOnPage</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1000</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:39</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfSortBy"></a>
+                        <b>mfSortBy</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfSortOrder"></a>
+                        <b>mfSortOrder</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;asc&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+            <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfSortByChange"></a>
+                        <b>mfSortByChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mfSortOrderChange"></a>
+                        <b>mfSortOrderChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:37</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateNewActivePage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            calculateNewActivePage
+                        </b>
+                        <a href="#calculateNewActivePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>calculateNewActivePage(previousRowsOnPage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, currentRowsOnPage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>previousRowsOnPage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>currentRowsOnPage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="caseInsensitiveIteratee"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            caseInsensitiveIteratee
+                        </b>
+                        <a href="#caseInsensitiveIteratee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>caseInsensitiveIteratee(sortBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:156</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sortBy</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>(row: any) &#x3D;&gt; any</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fillData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            fillData
+                        </b>
+                        <a href="#fillData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fillData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getPage
+                        </b>
+                        <a href="#getPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/PageEvent.html" target="_self" >PageEvent</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSort"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getSort
+                        </b>
+                        <a href="#getSort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSort()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/SortEvent.html" target="_self" >SortEvent</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngDoCheck"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            ngDoCheck
+                        </b>
+                        <a href="#ngDoCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngDoCheck()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            ngOnChanges
+                        </b>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnChanges(changes: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>changes</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recalculatePage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            recalculatePage
+                        </b>
+                        <a href="#recalculatePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>recalculatePage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:91</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPage"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setPage
+                        </b>
+                        <a href="#setPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPage(activePage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, rowsOnPage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>activePage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>rowsOnPage</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSort"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setSort
+                        </b>
+                        <a href="#setSort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setSort(sortBy: string | string[], sortOrder: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sortBy</td>
+                                    <td>
+                                            <code>string | string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>sortOrder</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            data</b>
+                            <a href="#data"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="diff"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            diff</b>
+                            <a href="#diff"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>IterableDiffer&lt;any[]&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mustRecalculateData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            mustRecalculateData</b>
+                            <a href="#mustRecalculateData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onPageChange"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onPageChange</b>
+                            <a href="#onPageChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new EventEmitter&lt;PageEvent&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSortChange"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onSortChange</b>
+                            <a href="#onSortChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new ReplaySubject&lt;SortEvent&gt;(1)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">external/src/static/app/core/component/datatable/DataTable.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Directive, Input, EventEmitter, SimpleChange, OnChanges, DoCheck, IterableDiffers,
+    IterableDiffer, Output
+} from &#x27;@angular/core&#x27;;
+import * as _ from &#x27;lodash&#x27;;
+import { ReplaySubject } from &#x27;rxjs&#x27;;
+import { isNumber } from &#x27;util&#x27;;
+import { parse } from &#x27;url&#x27;;
+
+export interface SortEvent {
+    sortBy: string|string[];
+    sortOrder: string;
+}
+
+export interface PageEvent {
+    activePage: number;
+    rowsOnPage: number;
+    dataLength: number;
+}
+
+export interface DataEvent {
+    length: number;
+}
+
+@Directive({
+    selector: &#x27;table[mfData]&#x27;,
+    exportAs: &#x27;mfDataTable&#x27;
+})
+export class DataTable implements OnChanges, DoCheck {
+
+    private diff: IterableDiffer&lt;any[]&gt;;
+    @Input(&quot;mfData&quot;) public inputData: any[] &#x3D; [];
+
+    @Input(&quot;mfSortBy&quot;) public sortBy: string|string[] &#x3D; &quot;&quot;;
+    @Input(&quot;mfSortOrder&quot;) public sortOrder &#x3D; &#x27;asc&#x27;;
+    @Output(&quot;mfSortByChange&quot;) public sortByChange &#x3D; new EventEmitter&lt;string|string[]&gt;();
+    @Output(&quot;mfSortOrderChange&quot;) public sortOrderChange &#x3D; new EventEmitter&lt;string&gt;();
+
+    @Input(&#x27;mfRowsOnPage&#x27;) public rowsOnPage &#x3D; 1000;
+    @Input(&#x27;mfActivePage&#x27;) public activePage &#x3D; 1;
+
+    private mustRecalculateData &#x3D; false;
+
+    public data: any[];
+
+    public onSortChange &#x3D; new ReplaySubject&lt;SortEvent&gt;(1);
+    public onPageChange &#x3D; new EventEmitter&lt;PageEvent&gt;();
+
+    public constructor(private differs: IterableDiffers) {
+        this.diff &#x3D; differs.find([]).create(null);
+    }
+
+    public getSort(): SortEvent {
+        return {sortBy: this.sortBy, sortOrder: this.sortOrder};
+    }
+
+    public setSort(sortBy: string|string[], sortOrder: string): void {
+        if (this.sortBy !&#x3D;&#x3D; sortBy || this.sortOrder !&#x3D;&#x3D; sortOrder) {
+            this.sortBy &#x3D; sortBy;
+            this.sortOrder &#x3D; _.includes([&#x27;asc&#x27;, &#x27;desc&#x27;], sortOrder) ? sortOrder : &#x27;asc&#x27;;
+            this.mustRecalculateData &#x3D; true;
+            this.onSortChange.next({sortBy: sortBy, sortOrder: sortOrder});
+            this.sortByChange.emit(this.sortBy);
+            this.sortOrderChange.emit(this.sortOrder);
+        }
+    }
+
+    public getPage(): PageEvent {
+        return {activePage: this.activePage, rowsOnPage: this.rowsOnPage, dataLength: this.inputData.length};
+    }
+
+    public setPage(activePage: number, rowsOnPage: number): void {
+        if (this.rowsOnPage !&#x3D;&#x3D; rowsOnPage || this.activePage !&#x3D;&#x3D; activePage) {
+            this.activePage &#x3D; this.activePage !&#x3D;&#x3D; activePage ? activePage : this.calculateNewActivePage(this.rowsOnPage, rowsOnPage);
+            this.rowsOnPage &#x3D; rowsOnPage;
+            this.mustRecalculateData &#x3D; true;
+            this.onPageChange.emit({
+                activePage: this.activePage,
+                rowsOnPage: this.rowsOnPage,
+                dataLength: this.inputData ? this.inputData.length : 0
+            });
+        }
+    }
+
+    private calculateNewActivePage(previousRowsOnPage: number, currentRowsOnPage: number): number {
+        const firstRowOnPage &#x3D; (this.activePage - 1) * previousRowsOnPage + 1;
+        const newActivePage &#x3D; Math.ceil(firstRowOnPage / currentRowsOnPage);
+        return newActivePage;
+    }
+
+    private recalculatePage() {
+        const lastPage &#x3D; Math.ceil(this.inputData.length / this.rowsOnPage);
+        this.activePage &#x3D; lastPage &lt; this.activePage ? lastPage : this.activePage;
+        this.activePage &#x3D; this.activePage || 1;
+
+        this.onPageChange.emit({
+            activePage: this.activePage,
+            rowsOnPage: this.rowsOnPage,
+            dataLength: this.inputData.length
+        });
+    }
+
+    public ngOnChanges(changes: {[key: string]: SimpleChange}): any {
+        if (changes[&#x27;rowsOnPage&#x27;]) {
+            this.rowsOnPage &#x3D; changes[&#x27;rowsOnPage&#x27;].previousValue;
+            this.setPage(this.activePage, changes[&#x27;rowsOnPage&#x27;].currentValue);
+            this.mustRecalculateData &#x3D; true;
+        }
+        if (changes[&#x27;sortBy&#x27;] || changes[&#x27;sortOrder&#x27;]) {
+            if (!_.includes([&#x27;asc&#x27;, &#x27;desc&#x27;], this.sortOrder)) {
+                console.warn(&#x27;angular2-datatable: value for input mfSortOrder must be one of [\&#x27;asc\&#x27;, \&#x27;desc\&#x27;], but is:&#x27;, this.sortOrder);
+                this.sortOrder &#x3D; &#x27;asc&#x27;;
+            }
+            if (this.sortBy) {
+                this.onSortChange.next({sortBy: this.sortBy, sortOrder: this.sortOrder});
+            }
+            this.mustRecalculateData &#x3D; true;
+        }
+        if (changes[&#x27;inputData&#x27;]) {
+            this.inputData &#x3D; changes[&#x27;inputData&#x27;].currentValue || [];
+            this.recalculatePage();
+            this.mustRecalculateData &#x3D; true;
+        }
+    }
+
+    public ngDoCheck(): any {
+        const changes &#x3D; this.diff.diff(this.inputData);
+        if (changes) {
+            this.recalculatePage();
+            this.mustRecalculateData &#x3D; true;
+        }
+        if (this.mustRecalculateData) {
+            this.fillData();
+            this.mustRecalculateData &#x3D; false;
+        }
+    }
+
+    private fillData(): void {
+        this.activePage &#x3D; this.activePage;
+        this.rowsOnPage &#x3D; this.rowsOnPage;
+
+        const offset &#x3D; (this.activePage - 1) * this.rowsOnPage;
+        let data &#x3D; this.inputData;
+        const sortBy &#x3D; this.sortBy;
+        let tmp:any[] &#x3D; [];
+        tmp.push(this.sortOrder);
+        if ( typeof sortBy &#x3D;&#x3D;&#x3D; &#x27;string&#x27; || sortBy instanceof String) {
+            data &#x3D; _.orderBy(data, this.caseInsensitiveIteratee(&lt;string&gt;sortBy), tmp);
+        } else {
+            data &#x3D; _.orderBy(data, sortBy, tmp);
+        }
+        data &#x3D; _.slice(data, offset, offset + this.rowsOnPage);
+        this.data &#x3D; data;
+    }
+
+    private caseInsensitiveIteratee(sortBy: string) {
+        return (row: any): any &#x3D;&gt; {
+            let value &#x3D; row;
+            for (let sortByProperty of sortBy.split(&#x27;.&#x27;)) {
+                if (value) {
+                    value &#x3D; value[sortByProperty];
+                }
+            }
+            
+             if (value &amp;&amp; /^\d+$/.test(value) ) {
+                return parseInt(value);
+            } 
+            if (value &amp;&amp; typeof value &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; !isNaN(Date.parse(value)) ) {            
+                return new Date(value);
+            }
+            if (value &amp;&amp; typeof value &#x3D;&#x3D;&#x3D; &#x27;string&#x27; || value instanceof String) {
+                return value.toLowerCase();
+            }            
+            return value;
+        };
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'DataTable.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

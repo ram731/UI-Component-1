@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders, HttpRequest, HttpResponse, HttpErrorResponse }
 import { map, catchError, tap } from 'rxjs/operators';
 import { throwError as observableThrowError, Observable, of } from 'rxjs';
 
+/**
+ * Global service class consist of methods to get loggedin user details and help text.
+ */
 @Injectable()
 export class GlobalService {
 
@@ -18,6 +21,9 @@ export class GlobalService {
         this.http = http;
     }
 
+    /**
+     * Featch logged in user details.
+     */
     getUserDetails() {
         if (this.testMode) {
             return of({ "error_fields": null, "system_error": null, "error_code_list": null, "first_name": "DONOTUSE", "last_name": "COMPANY", "email_id": "ISDUQA192@IWANTITALL.COM", "role": "RCO" });
@@ -31,6 +37,13 @@ export class GlobalService {
             );
     }
 
+    /**
+     * Featch help text for page.
+     * 
+     * @param moduleName 
+     * @param path 
+     * @param pageId 
+     */
     getHelpDetails(moduleName, path, pageId) {
         if (this.testMode) {
             return of({ "error_fields": null, "system_error": null, "error_code_list": null, "next_page": null, "previous_page": null, "alert_message": null, "alert_header": null, "reviewList": null, "faqList": null, "resourceList": null, "videoList": null, "contactDetailList": null })

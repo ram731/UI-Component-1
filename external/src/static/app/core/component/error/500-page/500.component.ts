@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   selector: 'error',
   templateUrl: './500.component.html'
 })
-
+/**
+ * System error component.
+ */
 export class ErrorPageComponent {
 
   constructor() { }

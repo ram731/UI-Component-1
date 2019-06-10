@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * This component shows a 'BUSY'(operation in progress) image & blurs the background.
+ */
 @Component({
     selector: 'mydeq-loading',
     template: `
@@ -11,7 +14,6 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-
 export class MyDEQLoadingComponent {
 
     showLoadingSign: boolean;
