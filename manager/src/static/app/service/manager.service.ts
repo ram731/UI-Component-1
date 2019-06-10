@@ -7,6 +7,9 @@ import { Utils } from '../shared/Utils';
 import { BaseServices } from './manager-base-services.service';
 const endpoint_url = environment.contextPath + '/service/manager/';
 
+/**
+ * App Specific service class.
+ */
 @Injectable()
 export class ManagerService extends BaseServices {
 

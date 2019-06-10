@@ -1,6 +1,9 @@
 import { NgbDateParserFormatter, NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
 import { DatePipe } from '@angular/common';
 
+/**
+ * Date pipe to convert input date to string output as 'MM/dd/yyyy'  
+ */
 export class NgbDateFRParserFormatter  extends NgbDateParserFormatter {
 	datePipe = new DatePipe('en-US');
 	constructor(
@@ -12,7 +15,7 @@ export class NgbDateFRParserFormatter  extends NgbDateParserFormatter {
 			return '';
 		}
 		try {
-			return this.datePipe.transform(new Date(date.year, date.month - 1, date.day), 'MM/dd');
+			return this.datePipe.transform(new Date(date.year, date.month - 1, date.day), 'MM/dd/yyyy');
 		} catch (e) {
 			return '';
 		}
