@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
+/**
+ * This pipe converts phone object to string.
+ * 
+ * @example : {{{"phoneType":null,"phoneCountryCode":"","phoneAreaCode":"","phoneNumber":"4561237890","ext":"235"} | phone}} = '456-123-7890 Ext:235'
+ */
 @Pipe({ name: 'phone' })
-
 export class PhonePipe  implements PipeTransform {
     transform(value: string|any) {
         let phoneNumber:string;

@@ -7,6 +7,9 @@ import { map, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 const endpoint_url: string = environment.contextPath + '/service/';
 
+/**
+ * This service class have core http service implementation of GET,PUT,POST & DELETE
+ */
 @Injectable()
 export class AppService {
 
@@ -21,6 +24,20 @@ export class AppService {
         this.testMode = environment.testMode;
     }
 
+    /**
+     * Performs GET HTTP call.
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param inputParamArr : URL param array.
+     * @param inputQueryParamMap : URL query param array.
+     * @param inputServiceName : Service Name
+     * @param serviceURL : Service URL.
+     * 
+     * @example  1. getServiceCall(['secure','822'],{'appId':'430','reqId':'73535'},'getDetails')
+     *          
+     *           2.getServiceCall(['secure','822'],{'appId':'430','reqId':'73535'},null,'mydeq-aircc/new/getDetails')
+     */
     getServiceCall(inputParamArr: any[] = null,inputQueryParamMap: Map<string,string> = null,
          inputServiceName: string = null, serviceURL: string = null): Observable<any> {
         if (this.testMode) {
@@ -53,6 +70,22 @@ export class AppService {
             );
     }
 
+
+   /**
+     * Performs PUT HTTP call.
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param putObj : Object to be put.
+     * @param inputParamArr : URL param array.
+     * @param inputQueryParamMap : URL query param array.
+     * @param inputServiceName : Service Name
+     * @param serviceURL : Service URL.
+     * 
+     * @example  1. putServiceCall({fName:'Rick',lName:'WoodLand'},['secure','822'],{'appId':'430','reqId':'73535'},'getDetails')
+     *          
+     *           2.putServiceCall({fName:'Rick',lName:'WoodLand'},['secure','822'],{'appId':'430','reqId':'73535'},null,'mydeq-aircc/new/getDetails')
+     */
     putServiceCall = (putObj: any, inputParamArr: any[] = null,inputQueryParamMap: Map<string,string> = null, inputServiceName: string = null, serviceURL: string = null)
         : Observable<any> => {
 
@@ -75,6 +108,21 @@ export class AppService {
             );
     }
 
+    /**
+     * Performs POST HTTP call.
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param postObj : Object to be posted.
+     * @param inputParamArr : URL param array.
+     * @param inputQueryParamMap : URL query param array.
+     * @param inputServiceName : Service Name
+     * @param serviceURL : Service URL.
+     * 
+     * @example  1. postServiceCall({fName:'Rick',lName:'WoodLand'},['secure','822'],{'appId':'430','reqId':'73535'},'getDetails')
+     *          
+     *           2.postServiceCall({fName:'Rick',lName:'WoodLand'},['secure','822'],{'appId':'430','reqId':'73535'},null,'mydeq-aircc/new/getDetails')
+     */
     postServiceCall = (postObj: FormData, inputParamArr: any[] = null,inputQueryParamMap: Map<string,string> = null, inputServiceName: string = null, serviceURL: string = null)
         : Observable<any> => {
 
@@ -97,6 +145,19 @@ export class AppService {
             );
     }
 
+    /**
+     * Performs PUT HTTP call.
+     * 
+     * It creates following URL pattern <context>/<path>/save/<serviceName>;
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param putObj : Object to be put.    
+     * @param inputServiceName : Service Name    
+     * 
+     * @example  saveIndividualServiceCall({fName:'Rick',lName:'WoodLand'},'saveDetails') 
+     
+     */
     saveIndividualServiceCall = (putObj: any, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
             let URL: string = this.getServiceURL({ endPointURL: endpoint_url, addSave: true, serviceName: inputServiceName });
@@ -114,6 +175,19 @@ export class AppService {
             );
     }
 
+     /**
+     * Performs PUT HTTP call.
+     * 
+     * It creates following URL pattern <context>/<path>/update/<serviceName>;
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param putObj : Object to be put.    
+     * @param inputServiceName : Service Name    
+     * 
+     * @example  updateIndividualServiceCall({fName:'Rick',lName:'WoodLand'},'saveDetails') 
+     
+     */
     updateIndividualServiceCall = (putObj: any, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
             const URL: string = this.getServiceURL({ endPointURL: endpoint_url, addupdate: true, serviceName: inputServiceName });
@@ -131,6 +205,19 @@ export class AppService {
             );
     }
 
+    /**
+     * Performs DELETE HTTP call.
+     * 
+     * It creates following URL pattern <context>/<path>/delete/<serviceName>;
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param sectionId : Id of the section to be deleted.
+     * @param inputServiceName : Service Name    
+     * 
+     * @example  deleteIndividualServiceCall(4,'deleteDetails') 
+     
+     */
     deleteIndividualServiceCall = (sectionId: string, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
             const URL: string = this.getServiceURL({ endPointURL: endpoint_url, adddelete: true, serviceName: inputServiceName })
@@ -148,6 +235,19 @@ export class AppService {
                 catchError((error) => this.handleError(error, true, inputServiceName)));
     }
 
+     /**
+     * Performs DELETE HTTP call.
+     * 
+     * It creates following URL pattern <context>/<path>/delete/<serviceName>;
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param deleteFieldId : Id of a field to be deleted.
+     * @param inputServiceName : Service Name    
+     * 
+     * @example  deleteServiceCall(4,'deleteFile') 
+     
+     */
     deleteServiceCall = (deleteFieldId: string, inputServiceName: string = null): Observable<any> => {
         if (this.testMode) {
             const URL: string = this.getServiceURL({ endPointURL: endpoint_url,  serviceName: inputServiceName })
@@ -166,6 +266,13 @@ export class AppService {
     }
 
 
+    /**
+     * Append parameters from array to URL.
+     * 
+     * @param inputParamArr 
+     * @param url 
+     * 
+     */
     private appendParameters(inputParamArr: any[] = null, url: string) {
         if (inputParamArr) {
             inputParamArr.forEach(urlParam => {
@@ -176,6 +283,13 @@ export class AppService {
         }
         return url;
     }
+
+    /**
+     * Appends query parameters to URL.
+     * 
+     * @param inputQueryParamMap 
+     * @param url 
+     */
     private appendQueryParameters(inputQueryParamMap: Map<string,string>, url: string) {
         if (inputQueryParamMap) {
             url=url+'?';
@@ -187,6 +301,12 @@ export class AppService {
         return url;
     }
 
+    /**
+     * Retrives place details by staging Id.
+     * 
+     * @param stagingPlaceID 
+     * @param companyCustID 
+     */
     getPlaceDetailsByStagingID(stagingPlaceID, companyCustID): Observable<any> {
         if (this.testMode) {
             return of(this.getMockData('stagingResponse'));
@@ -199,6 +319,11 @@ export class AppService {
                 catchError((error) => this.handleError_PlaceDetails(error)));
     }
 
+    /**
+     * Retrives place details by place id.
+     * 
+     * @param placeID 
+     */
     getPlaceDetailsByPlaceID(placeID: string): Observable<any> {
         if (this.testMode) {
             return of(this.getMockData('stagingResponse'));
@@ -211,6 +336,10 @@ export class AppService {
                 catchError((error) => this.handleError_PlaceDetails(error)));
     }
 
+    /**
+     * Retrives place details by global request id.
+     * 
+     */
     getPlaceDetailsByGlbReqId(): Observable<any> {
         if (this.testMode) {
             return of(this.getMockData('stagingResponse'));
@@ -235,6 +364,13 @@ export class AppService {
         return observableThrowError(error.error);
     }
 
+    /**
+     * Extracts data from service response.
+     * 
+     * @param res : HTTP Reponse
+     * @param displayloading : Display loading flag.
+     * @param callingMethodName : Calling method name.
+     */
     public extractData(res: HttpResponse<any> | any, displayloading = true, callingMethodName: string = null) {
         if (displayloading) {
             this.utils.closeLoading(callingMethodName);
@@ -257,6 +393,9 @@ export class AppService {
         return res;
     }
 
+    /**
+     * Checks 200 ok response.
+     */
     public checkOKResponse(res: HttpResponse<any> | any, displayloading = true, callingMethodName: string = null) {
         if (displayloading) {
             this.utils.closeLoading(callingMethodName);
@@ -272,6 +411,11 @@ export class AppService {
         return returnURL;
     } */
 
+    /**
+     * Append global request ID to URL.
+     * 
+     * @param url 
+     */
     public appendGlbReqId(url: string) {
         let returnURL = url;
         if (this.utils.glbReqId) {
@@ -281,6 +425,12 @@ export class AppService {
         return returnURL;
     }
 
+    /**
+     * Returns URL as per type.
+     * 
+     * @param serviceURLObj 
+     * @param serviceURL 
+     */
     private getServiceURL(serviceURLObj: any = null, serviceURL: string = null) {
 
         if (serviceURLObj.addSave) {
@@ -296,6 +446,11 @@ export class AppService {
         }
     }
 
+    /**
+     * Returns mock data object as per mockdatakey.
+     * 
+     * @param mockDataKey 
+     */
     private getMockData(mockDataKey: string) {
         //console
         let returnObj = {};

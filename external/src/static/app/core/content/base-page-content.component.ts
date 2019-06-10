@@ -1,5 +1,8 @@
 import { PageTextGetter } from '../../core/content/pagetext-getter.component';
 
+/**
+ * A base content file. It contains commonly used lables on page.
+ */
 export abstract class BasePageContent implements PageTextGetter{
     public PAGE_TEXT={
         base:{

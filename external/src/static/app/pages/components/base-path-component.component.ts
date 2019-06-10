@@ -8,6 +8,20 @@ import { PageTextGetter } from "../../core/content/pagetext-getter.component";
 import { Utils } from "../../shared/Utils";
 import * as _ from 'lodash';
 
+/**
+ * The BasePathController is an abstract class which always to be extended for creating new page.
+ * 
+ * It extends BaseController and improvise on it by adding support for application path.
+ * 
+ * It adds default implementation for path specific page text & page footer.
+ * 
+ * 
+ * @example
+ * export class MyNewPageController extends BasePathController
+ * {
+ * 
+ * }
+ */
 export abstract class BasePathController extends BaseController{
     public pageFooterDTL =null;
 

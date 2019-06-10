@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Utils } from '../../../../shared/Utils';
 
+/**
+ * Alert Modal component for consisting of header text and textual body contnet.
+ * 
+ */
 @Component({
 
     selector: 'mydeq-navigation-alert-modal',

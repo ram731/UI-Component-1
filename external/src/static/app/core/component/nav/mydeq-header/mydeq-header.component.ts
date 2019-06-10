@@ -3,6 +3,10 @@ interface HeaderDetails{
   first_name?:string,
   last_name?:string
 }
+
+/**
+ * Page header component.
+ */
 @Component({
   selector: 'mydeq-header',
   templateUrl: './mydeq-header.component.html',

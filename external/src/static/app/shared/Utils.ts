@@ -3,12 +3,15 @@ import { NavigationExtras, Router } from '@angular/router';
 import {NgbAccordionConfig, NgbModal , NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
 import * as _ from 'lodash';
 
+/**
+ * Utility Class
+ */
 @Injectable()
 export class Utils {
 
   showLoadingSign = false;
   private pathVal:string=null;
-  module: string = 'AIRCC';
+  module: string = 'UI';
 
   title: string;
 
@@ -48,6 +51,29 @@ export class Utils {
   placeBarObj: any | null;
   reviewComments:any[] =null;
 
+  /**
+   * Application Status.
+   * 
+   * This object will be updated as per project needs.
+   */
+  applicationStatusDetails: any = {
+    APPROVED:{
+      status: new Set(['A','NDEF','PDEF']),
+      desc:'APPROVED',
+      css_class:'text-primary'
+    },
+    APPROVED_EDIT:{
+      status: new Set(['AE']),
+      desc:'APPROVED_EDIT',
+      css_class:''
+    },
+    REJECT:{
+      status: new Set(['R','AREQ']),
+      desc:'REJECT',
+      css_class:'text-danger'
+    },
+  };
+
   constructor(
     private router: Router, 
     private accordionConfig: NgbAccordionConfig,
@@ -81,14 +107,25 @@ export class Utils {
 
   }
 
+  /**
+   * Set page comments.
+   * 
+   * @param reviewList 
+   */
   public setPageComments(reviewList:any[]){
     this.reviewComments = reviewList;
 }
 
+/**
+ * Gets page comment.
+ */
   public getPageComments(){
     return this.reviewComments;
   }
 
+  /**
+   * Method to navigate between pages.
+   */
   navigateTo = (pageName: string [],includePath:boolean=true, includeRequestParam: boolean=false) => {
     let url: string [];
     this.currentPageId = pageName && pageName.length > 0 ? pageName[pageName.length - 1] : undefined;
@@ -126,6 +163,9 @@ export class Utils {
     }
   } */
 
+  /**
+   * Method to navigate between pages.
+   */
   navigate = (putServiceNextPage: string, getServiceNextPage, includePath: boolean, includeRequestParam: boolean): boolean => {   
     if (putServiceNextPage === 'ALERT') {
       return false;
@@ -137,13 +177,23 @@ export class Utils {
     return true;
   }
 
+  /**
+   * Navigates to Dashboard.
+   */
   gotoDashboard = () => {
     window.location.href = window.location.origin + '/mydeq/dashboard';
   }
+
+  /**
+   * Navigates to AZDEQ home.
+   */
   gotoAZDEQHome() {
     window.open('http://azdeq.gov/', '_self');
   }
 
+  /**
+   * Returns Piwik site Id
+   */
   public getPiwikSiteId = (hostname) => {
     for (let i = 0; i < this.piwikSiteIds.length; i++) {
       const piwikSite = this.piwikSiteIds[i];
@@ -154,6 +204,9 @@ export class Utils {
     return 1;
   }
 
+  /**
+   * Performs null check.
+   */
   orEmpty = (entity) => {
     // http://stackoverflow.com/questions/20572016/javascript-string-concatenation-behavior-with-null-or-undefined-values
     // entity || "" will cause true to return "true" but false to return ""
@@ -165,14 +218,24 @@ export class Utils {
     }
   }
 
+  /**
+   * Performs regex comparison.
+   */
   regexCompare = (src, dest) => {
     return src.match(new RegExp(dest, 'i'));
   }
 
+  /**
+   * Opens NGBootstrap modal.
+   */
   openNGBootstrapModal = (content: any, modelSize?: 'sm' | 'lg') => {
     this.modalService.open(content, { size: modelSize ? modelSize : 'lg' });
   }
 
+  /**
+   * Show loading symbol.
+   * @param callingMethodname 
+   */
   showLoading(callingMethodname: string = null) {
     if (callingMethodname) {
       this.methodCalls.push(callingMethodname);
@@ -180,6 +243,10 @@ export class Utils {
     setTimeout(() => this.showLoadingSign = true, 0);
   }
 
+  /**
+   * Removes loading symbol.
+   * @param callingMethodname 
+   */
   closeLoading(callingMethodname: string = null) {
     if (callingMethodname) {
       _.pull(this.methodCalls, callingMethodname);
@@ -189,11 +256,14 @@ export class Utils {
     }
   }
 
+  /**
+   * Navigate to Place module.
+   */
   navigatePlace = (app: string= null) => {
     window.open('/mydeq-ms4/place?app=' + app + '&path=' + this.path, '_self');
   }
 
-  addConditionalSeparator = (src, appendText, separator) => {
+ addConditionalSeparator = (src, appendText, separator) => {
     if (src) {
       src.trim();
     }
@@ -204,6 +274,10 @@ export class Utils {
     }
     return src;
   }
+
+  /**
+   * Get place bar.
+   */
   getCompletePlacebarAddress = (address) => {
     if (address) {
       let completeAddress;
@@ -231,16 +305,27 @@ export class Utils {
     }
   }
 
+  /**
+   * Get Zip code.
+   */
   get5DigitZipCodeFromPlaceAddress = (address) => {
     if (address && address.zip && address.zip.trim()) {
       return address.zip.trim().substring(0, 5);
     }
   }
   
+  /**
+   * Navigate to MyApplication
+   */
   gotoMyApplications = () => {
     window.location.href = window.location.origin + '/mydeq/my-application';
   }
 
+  /**
+   * Convert Date object to string.
+   * 
+   * @param dateObj 
+   */
   convertDateToString(dateObj:any){
     if (dateObj instanceof Object) {
       return this.prepandZero(dateObj.month) + '/' + this.prepandZero(dateObj.day) + '/' + dateObj.year;
@@ -248,6 +333,11 @@ export class Utils {
     return dateObj;
   }
 
+  /**
+   * Convert String to Date Object.
+   * 
+   * @param dateStr 
+   */
   convertStringToDate(dateStr:string){
     if (!dateStr) {
       return null;
@@ -256,10 +346,18 @@ export class Utils {
     return { year: dated.getFullYear(), month: dated.getMonth() + 1, day: dated.getUTCDate() };
   }
 
+  /**
+   * Prepand Zero to input number.
+   * 
+   * @param inputNum 
+   */
   private prepandZero(inputNum:number){
     return inputNum < 10 ? "0"+inputNum : inputNum+"";
   }
 
+  /**
+   * Remove global request Id from URL.
+   */
   removeGlobalRequestID = () => {
     const urlWithoutGlbReqId = this.router.url.replace(new RegExp('glbReqId=' + this.glbReqId), '');
     this.router.navigateByUrl(urlWithoutGlbReqId);
@@ -279,6 +377,12 @@ export class Utils {
     }
   }
 
+  /**
+   * Correct latlong to return 6 digits after decimal.
+   * 
+   * @param correctLatLngFlag 
+   * @param inputLatlng 
+   */
   public correctLatLong(correctLatLngFlag: boolean, inputLatlng: string): string {
 
     if (!correctLatLngFlag) {
@@ -298,33 +402,13 @@ export class Utils {
     return inputLatlng;
   }
 
-  getHeaderText(question: any,prependText:string) {
 
-    let returnString = "";
-    
-    returnString = this.checkNullAndAppand(returnString, prependText);
-    returnString = this.checkNullAndAppand(returnString, question.attachachmentCode);
-    
-    if(question.sectionCode){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand('.',question.sectionCode));
-    }
-    
-    if(!question.sectionCode && question.term){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand('..',question.term));
-    }
-    else if(question.term){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand('.',question.term));
-    }
-    
-    returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand(' ',question.attachachmentText));
-   
-    if(question.sectionText){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand(', ',question.sectionText));
-    }
-        
-    return returnString;
-  }
-
+  /**
+   * Appand 'tobeAppendend' string to 'parentString' if 'tobeAppendend' not null.
+   * 
+   * @param parentString 
+   * @param tobeAppendend 
+   */
   public checkNullAndAppand(parentString: string, tobeAppendend: string) {
     if (tobeAppendend) {
       return parentString + tobeAppendend;
@@ -332,8 +416,32 @@ export class Utils {
     return parentString;
   }
 
+  /**
+   * Set page title.
+   * @param displayText 
+   */
+
   public setPageTitle(displayText: string=null) {
     return "MYDEQ"
   }
+
+  /**
+   * Returns status metadata.
+   * 
+   * @param _inputStatus 
+   */
+  getStatusDetails(_inputStatus:string){
+
+    if(this.applicationStatusDetails.APPROVED.status.has(_inputStatus)){
+      return this.applicationStatusDetails.APPROVED;
+    }
+    else if(this.applicationStatusDetails.APPROVED_EDIT.status.has(_inputStatus)){
+      return this.applicationStatusDetails.APPROVED_EDIT;
+   
+    } else if(this.applicationStatusDetails.REJECT.status.has(_inputStatus)){
+      return this.applicationStatusDetails.REJECT;
+    }
+    return '';
+   }
 
 }
