@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Utils } from '../../Utils';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-
+/**
+ * Alert Modal component for consisting of header text and textual body contnet.
+ * 
+ */
 @Component({
 
     selector: 'deq-alert-modal',

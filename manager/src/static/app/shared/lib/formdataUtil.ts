@@ -1,43 +1,84 @@
 'use strict'
-
+/**
+ * FormDataUtil provides utility methods for form fields.
+ */
 export class FormDataUtil{
 
-    
+    /**
+     * Validates if input value is 'undefined'.
+     * 
+     * @returns boolean
+     */
     private static  isUndefined (value) {
     return value === undefined
   }
   
+  /**
+     * Validates if input value is null.
+     * 
+     * @returns boolean
+     */
   private static   isNull (value) {
     return value === null
   }
   
+  /**
+     * Validates if input value is Object.
+     * 
+     * @returns boolean
+     */
   private static   isObject (value) {
     return value === Object(value)
   }
   
+  /**
+     * Validates if input value is Array.
+     * 
+     * @returns boolean
+     */
   private static    isArray (value) {
     return Array.isArray(value)
   }
   
+  /**
+     * Validates if input value is Date.
+     * 
+     * @returns boolean
+     */
   private static   isDate (value) {
     return value instanceof Date
   }
   
+  /**
+     * Validates if input value is Blob.
+     * 
+     * @returns boolean
+     */
   private static   isBlob (value) {
     return value &&
       typeof value.size === 'number' &&
       typeof value.type === 'string'}
   
+  /**
+     * Validates if input value is File.
+     * 
+     * @returns boolean
+     */
   private static   isFile (value) {
     return this.isBlob(value) &&
       (typeof value.lastModifiedDate === 'object' || typeof value.lastModified === 'number') &&
       typeof value.name === 'string'
   }
   
+  /**
+     * Validates if input value is FormData.
+     * 
+     * @returns boolean
+     */
   private static isFormData (value) {
     return value instanceof FormData
   }
-  
+
  public static objectToFormData (obj, cfg=null, fd=null, pre=null) {
     if (this.isFormData(cfg)) {
       pre = fd

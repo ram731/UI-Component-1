@@ -1,5 +1,8 @@
 import { Component, NgZone } from '@angular/core';
 
+/**
+ * Session timeout modal.
+ */
 @Component({
 
     selector: 'mydeq-session-timeout',
