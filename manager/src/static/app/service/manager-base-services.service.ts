@@ -4,6 +4,9 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angul
 import { Utils } from '../shared/Utils';
 import { map, catchError } from 'rxjs/operators';
 
+/**
+ * This service class have core http service implementation of GET,PUT,POST & DELETE
+ */
 @Injectable()
 export class BaseServices {
 
@@ -18,6 +21,13 @@ export class BaseServices {
   }
 
 
+  /**
+     * Performs GET HTTP call.
+     *      *    
+     * @param url : Service URL.
+     * 
+     * @example getServiceCall('mydeq-aircc/new/getDetails')
+     */
   getServiceCall(url: string) {
     this.utils.showLoading(url);
     return this.http
@@ -28,6 +38,15 @@ export class BaseServices {
       );
   }
 
+  /**
+     * Performs PUT HTTP call.
+     * 
+     * @param putObj : Object to be put.
+     * 
+     * @param url : Service URL.
+     * 
+     * @example putServiceCall({fName:'Rick',lName:'WoodLand'},'mydeq-aircc/new/getDetails')
+     */
   putServiceCall = (putObj: any, url: string) => {
     putObj = this.utils.trimWhiteSpaceAroundBoundary(putObj);
     this.utils.showLoading(url);
@@ -39,6 +58,16 @@ export class BaseServices {
       );
   }
 
+/**
+   * Performs POST HTTP call.
+   *      
+   * @param postObj : Object to be posted.
+   *
+   * @param url : Service URL.
+   * 
+   * @example postServiceCall({fName:'Rick',lName:'WoodLand'},'mydeq-aircc/new/getDetails')
+   * 
+   */
   postServiceCall = (postObj: any, url: string) => {
     this.utils.showLoading(url);
     return this.http
@@ -49,6 +78,16 @@ export class BaseServices {
       );
   }
 
+   /**
+     * Performs PUT HTTP call.
+     * 
+     * NOTE: Either of the inputServiceName OR serviceURL needs to be specified.
+     * 
+     * @param putObj : Object to be put.
+     * @param url : Service URL.
+     * 
+     * @example putServiceOKRespCall({fName:'Rick',lName:'WoodLand'},'mydeq-aircc/new/getDetails')
+     */
   putServiceOKRespCall = (putObj: any, url: string) => {
     putObj = this.utils.trimWhiteSpaceAroundBoundary(putObj);
     this.utils.showLoading(url);
@@ -60,6 +99,14 @@ export class BaseServices {
       );
   }
 
+  /**
+     * Performs DELETE HTTP call.
+     * 
+     * @param url : Service URL.   
+     * 
+     * @example  deleteServiceCall('mydeq-aircc/new/delete') 
+     
+     */
   deleteServiceCall(url: string) {
     this.utils.showLoading(url);
     return this.http
@@ -77,6 +124,13 @@ export class BaseServices {
     return observableThrowError(error.error);
   }
 
+  /**
+     * Extracts data from service response.
+     * 
+     * @param res : HTTP Reponse
+     * @param displayloading : Display loading flag.
+     * @param callingMethodName : Calling method name.
+     */
   protected extractData(res: HttpResponse<any> | any, displayloading = true, callingMethodName: string = null) {
     if (displayloading) {
       this.utils.closeLoading(callingMethodName);
@@ -87,6 +141,9 @@ export class BaseServices {
     return res;
   }
 
+  /**
+     * Checks 200 ok response.
+     */
   private checkOKResponse(res: HttpResponse<any> | any, displayloading = true, callingMethodName: string = null) {
     if (displayloading) {
       this.utils.closeLoading(callingMethodName);

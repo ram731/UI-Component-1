@@ -1,0 +1,881 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>&#x27;internal-documentation&#x27;</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">&#x27;internal-documentation&#x27;</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SessionTimeOutModalComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>manager/src/static/app/shared/modals/session-timeout/timeout.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Session timeout modal.</p>
+
+    </p>
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>mydeq-session-timeout</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./timeout.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#sessionTimedOut">sessionTimedOut</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#timeout">timeout</a>
+                            </li>
+                            <li>
+                                <a href="#timeoutMessageIsVisible">timeoutMessageIsVisible</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#timer">timer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#timestamp">timestamp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#warnTime">warnTime</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#continueSession">continueSession</a>
+                            </li>
+                            <li>
+                                <a href="#endSession">endSession</a>
+                            </li>
+                            <li>
+                                <a href="#exdentSession">exdentSession</a>
+                            </li>
+                            <li>
+                                <a href="#init">init</a>
+                            </li>
+                            <li>
+                                <a href="#initWatcher">initWatcher</a>
+                            </li>
+                            <li>
+                                <a href="#showTimeoutModal">showTimeoutModal</a>
+                            </li>
+                            <li>
+                                <a href="#showWarnTimeoutModal">showWarnTimeoutModal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="continueSession"></a>
+                    <span class="name">
+                        <b>
+                            continueSession
+                        </b>
+                        <a href="#continueSession"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>continueSession()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endSession"></a>
+                    <span class="name">
+                        <b>
+                            endSession
+                        </b>
+                        <a href="#endSession"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>endSession()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exdentSession"></a>
+                    <span class="name">
+                        <b>
+                            exdentSession
+                        </b>
+                        <a href="#exdentSession"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>exdentSession()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="init"></a>
+                    <span class="name">
+                        <b>
+                            init
+                        </b>
+                        <a href="#init"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>init()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initWatcher"></a>
+                    <span class="name">
+                        <b>
+                            initWatcher
+                        </b>
+                        <a href="#initWatcher"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initWatcher(action, timeout)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>timeout</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showTimeoutModal"></a>
+                    <span class="name">
+                        <b>
+                            showTimeoutModal
+                        </b>
+                        <a href="#showTimeoutModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showTimeoutModal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showWarnTimeoutModal"></a>
+                    <span class="name">
+                        <b>
+                            showWarnTimeoutModal
+                        </b>
+                        <a href="#showWarnTimeoutModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showWarnTimeoutModal()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sessionTimedOut"></a>
+                        <span class="name">
+                            <b>
+                            sessionTimedOut</b>
+                            <a href="#sessionTimedOut"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timeout"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            timeout</b>
+                            <a href="#timeout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1200000</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timeoutMessageIsVisible"></a>
+                        <span class="name">
+                            <b>
+                            timeoutMessageIsVisible</b>
+                            <a href="#timeoutMessageIsVisible"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timer"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            timer</b>
+                            <a href="#timer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timestamp"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            timestamp</b>
+                            <a href="#timestamp"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="warnTime"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            warnTime</b>
+                            <a href="#warnTime"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1080000</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">manager/src/static/app/shared/modals/session-timeout/timeout.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, NgZone } from &#x27;@angular/core&#x27;;
+
+/**
+ * Session timeout modal.
+ */
+@Component({
+
+    selector: &#x27;mydeq-session-timeout&#x27;,
+    templateUrl: &#x27;./timeout.component.html&#x27;
+})
+export class SessionTimeOutModalComponent {
+    sessionTimedOut &#x3D; false;
+    timeoutMessageIsVisible: boolean;
+    private timeout &#x3D; 1200000;     // 20m
+    private warnTime &#x3D; 1080000;     // 20m - 118s(count down) - 2m(buffer)
+    private timer: any;
+    private timestamp: any;
+
+    init() {
+        this.timestamp &#x3D; new Date();
+        this.initWatcher(() &#x3D;&gt; {
+            this.showWarnTimeoutModal();
+        }, this.warnTime);
+    }
+
+    initWatcher(action, timeout) {
+        this.timer &#x3D; setTimeout(() &#x3D;&gt; {
+            action();
+        }, timeout);
+    }
+
+    exdentSession () {
+        clearTimeout(this.timer);
+        this.init();
+    }
+
+    showWarnTimeoutModal() {
+        this.sessionTimedOut &#x3D; false;
+        this.timeoutMessageIsVisible &#x3D; true;
+        const diffTime: number &#x3D; this.timeout - this.warnTime;
+        this.initWatcher(() &#x3D;&gt; {
+            this.showTimeoutModal();
+        }, diffTime);
+    }
+
+    showTimeoutModal() {
+        this.sessionTimedOut &#x3D; true;
+        this.timeoutMessageIsVisible &#x3D; true;
+    }
+
+    continueSession() {
+        clearTimeout(this.timer);
+        this.timeoutMessageIsVisible &#x3D; false;
+        this.initWatcher(() &#x3D;&gt; {
+            this.showWarnTimeoutModal();
+        }, this.warnTime);
+    }
+
+    endSession() {
+        window.open(&#x27;/manager/logout&#x27;, &#x27;_self&#x27;);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;timeoutMessageIsVisible&quot; class&#x3D;&quot;modal-backdrop show&quot; style&#x3D;&quot;z-index: 1055;&quot;&gt;&lt;/div&gt;
+&lt;div *ngIf&#x3D;&quot;timeoutMessageIsVisible&quot; class&#x3D;&quot;modal show fade&quot; id&#x3D;&quot;myModal&quot; role&#x3D;&quot;dialog&quot; style&#x3D;&quot;z-index: 1060;&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot; style&#x3D;&quot;z-index: 1060;&quot; &gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header mx-3 pl-0&quot;&gt;
+				&lt;h2 class&#x3D;&quot;modal-title text-primary font-weight-bold&quot; *ngIf&#x3D;&quot;sessionTimedOut&quot;&gt;ALERT: SESSION HAS ENDED&lt;/h2&gt;
+				&lt;h2 class&#x3D;&quot;modal-title text-primary font-weight-bold&quot; *ngIf&#x3D;&quot;!sessionTimedOut&quot;&gt;ALERT: SESSION TIMEOUT WARNING&lt;/h2&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-body p-3&quot;&gt;
+				&lt;h3 *ngIf&#x3D;&quot;sessionTimedOut&quot;&gt;Your session has ended due to no activity on this screen. Please re-login. You will need to restart a new session after login&lt;/h3&gt;
+				&lt;h3 *ngIf&#x3D;&quot;!sessionTimedOut&quot;&gt;Your session will timeout in 2 min, due to no activity on this screen. If you wish to continue your session please click CONTINUE to keep your session active.&lt;/h3&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary float-right&quot; (click)&#x3D;&quot;endSession()&quot; *ngIf&#x3D;&quot;sessionTimedOut&quot;&gt;LOGIN &lt;span class&#x3D;&quot;arrow right&quot;&gt; &lt;i class&#x3D;&quot;fa fa-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary float-right&quot; (click)&#x3D;&quot;continueSession()&quot; *ngIf&#x3D;&quot;!sessionTimedOut&quot;&gt;CONTINUE &lt;span class&#x3D;&quot;arrow right&quot;&gt; &lt;i class&#x3D;&quot;fa fa-chevron-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="timeoutMessageIsVisible" class="modal-backdrop show" style="z-index: 1055;"></div><div *ngIf="timeoutMessageIsVisible" class="modal show fade" id="myModal" role="dialog" style="z-index: 1060;">	<div class="modal-dialog modal-lg" style="z-index: 1060;" >		<div class="modal-content">			<div class="modal-header mx-3 pl-0">				<h2 class="modal-title text-primary font-weight-bold" *ngIf="sessionTimedOut">ALERT: SESSION HAS ENDED</h2>				<h2 class="modal-title text-primary font-weight-bold" *ngIf="!sessionTimedOut">ALERT: SESSION TIMEOUT WARNING</h2>			</div>			<div class="modal-body p-3">				<h3 *ngIf="sessionTimedOut">Your session has ended due to no activity on this screen. Please re-login. You will need to restart a new session after login</h3>				<h3 *ngIf="!sessionTimedOut">Your session will timeout in 2 min, due to no activity on this screen. If you wish to continue your session please click CONTINUE to keep your session active.</h3>			</div>			<div class="modal-footer">				<button type="button" class="btn btn-primary float-right" (click)="endSession()" *ngIf="sessionTimedOut">LOGIN <span class="arrow right"> <i class="fa fa-chevron-right"></i></span></button>				<button type="button" class="btn btn-primary float-right" (click)="continueSession()" *ngIf="!sessionTimedOut">CONTINUE <span class="arrow right"> <i class="fa fa-chevron-right"></i></span></button>			</div>		</div>	</div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'manager-root'},{'name': 'BootstrapPaginator', 'selector': 'mfBootstrapPaginator'},{'name': 'DefaultSorter', 'selector': 'mfDefaultSorter'},{'name': 'HistoryComponent', 'selector': 'review-history'},{'name': 'InventoryListComponent', 'selector': 'manager-inventory-list'},{'name': 'MydeqAlertModalComponent', 'selector': 'deq-alert-modal'},{'name': 'MydeqFooterComponent', 'selector': 'mydeq-footer'},{'name': 'MydeqHeaderComponent', 'selector': 'mydeq-header'},{'name': 'PageNotFoundComponent', 'selector': 'mydeq-page-not-found'},{'name': 'Paginator', 'selector': 'mfPaginator'},{'name': 'ReviewComponent', 'selector': 'review-component'},{'name': 'SearchComponent', 'selector': 'search-component'},{'name': 'SessionTimeOutModalComponent', 'selector': 'mydeq-session-timeout'}];
+    var DIRECTIVES = [{'name': 'DataTable', 'selector': 'table[mfData]'}];
+    var ACTUAL_COMPONENT = {'name': 'SessionTimeOutModalComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SessionTimeOutModalComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

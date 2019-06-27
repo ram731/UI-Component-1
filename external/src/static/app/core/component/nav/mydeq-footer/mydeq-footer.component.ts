@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * Page footer component.
+ */
 @Component({
   selector: 'mydeq-footer',
   templateUrl: './mydeq-footer.component.html',

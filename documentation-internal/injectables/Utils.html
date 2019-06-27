@@ -1,0 +1,2159 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>&#x27;internal-documentation&#x27;</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">&#x27;internal-documentation&#x27;</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>Utils</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>manager/src/static/app/shared/Utils.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Utility Class</p>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#activeModal">activeModal</a>
+                            </li>
+                            <li>
+                                <a href="#ALERT">ALERT</a>
+                            </li>
+                            <li>
+                                <a href="#alertTitle">alertTitle</a>
+                            </li>
+                            <li>
+                                <a href="#ANALYTICS">ANALYTICS</a>
+                            </li>
+                            <li>
+                                <a href="#appId">appId</a>
+                            </li>
+                            <li>
+                                <a href="#closeConfirm">closeConfirm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#config">config</a>
+                            </li>
+                            <li>
+                                <a href="#dateSetting">dateSetting</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dpConfig">dpConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPiwikSiteId">getPiwikSiteId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#methodCalls">methodCalls</a>
+                            </li>
+                            <li>
+                                <a href="#navigateTo">navigateTo</a>
+                            </li>
+                            <li>
+                                <a href="#navigationExtras">navigationExtras</a>
+                            </li>
+                            <li>
+                                <a href="#numberRegEx">numberRegEx</a>
+                            </li>
+                            <li>
+                                <a href="#openNGBootstrapModal">openNGBootstrapModal</a>
+                            </li>
+                            <li>
+                                <a href="#orEmpty">orEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#pageMetaData">pageMetaData</a>
+                            </li>
+                            <li>
+                                <a href="#path">path</a>
+                            </li>
+                            <li>
+                                <a href="#piwikSiteIds">piwikSiteIds</a>
+                            </li>
+                            <li>
+                                <a href="#processName">processName</a>
+                            </li>
+                            <li>
+                                <a href="#requestId">requestId</a>
+                            </li>
+                            <li>
+                                <a href="#showLoadingSign">showLoadingSign</a>
+                            </li>
+                            <li>
+                                <a href="#TITLE_ENUM">TITLE_ENUM</a>
+                            </li>
+                            <li>
+                                <a href="#titleRegEx">titleRegEx</a>
+                            </li>
+                            <li>
+                                <a href="#tooltipText">tooltipText</a>
+                            </li>
+                            <li>
+                                <a href="#unitList">unitList</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                            <li>
+                                <a href="#valueStreamList">valueStreamList</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#checkNullAndAppand">checkNullAndAppand</a>
+                            </li>
+                            <li>
+                                <a href="#closeLoading">closeLoading</a>
+                            </li>
+                            <li>
+                                <a href="#convertDateToString">convertDateToString</a>
+                            </li>
+                            <li>
+                                <a href="#convertStringToDate">convertStringToDate</a>
+                            </li>
+                            <li>
+                                <a href="#downloadReport">downloadReport</a>
+                            </li>
+                            <li>
+                                <a href="#navigateToDashboard">navigateToDashboard</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#prepandZero">prepandZero</a>
+                            </li>
+                            <li>
+                                <a href="#showLoading">showLoading</a>
+                            </li>
+                            <li>
+                                <a href="#trimWhiteSpaceAroundBoundary">trimWhiteSpaceAroundBoundary</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, dpConfig: NgbDatepickerConfig, accordionConfig: NgbAccordionConfig, modalService: NgbModal, activeModal: NgbActiveModal, config: NgbModalConfig)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">manager/src/static/app/shared/Utils.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dpConfig</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbDatepickerConfig</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>accordionConfig</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbAccordionConfig</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activeModal</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbActiveModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>config</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModalConfig</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkNullAndAppand"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            checkNullAndAppand
+                        </b>
+                        <a href="#checkNullAndAppand"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkNullAndAppand(parentString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, tobeAppendend: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="281"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:281</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Appand &#39;tobeAppendend&#39; string to &#39;parentString&#39; if &#39;tobeAppendend&#39; not null.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parentString</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>tobeAppendend</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeLoading"></a>
+                    <span class="name">
+                        <b>
+                            closeLoading
+                        </b>
+                        <a href="#closeLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeLoading(callingMethodname: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:204</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Removes loading symbol.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>callingMethodname</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertDateToString"></a>
+                    <span class="name">
+                        <b>
+                            convertDateToString
+                        </b>
+                        <a href="#convertDateToString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertDateToString(dateObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="237"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:237</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Convert Date object to string.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dateObj</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertStringToDate"></a>
+                    <span class="name">
+                        <b>
+                            convertStringToDate
+                        </b>
+                        <a href="#convertStringToDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertStringToDate(dateStr: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:249</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Convert String to Date Object.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dateStr</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{ year: any; month: any; day: any; }</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadReport"></a>
+                    <span class="name">
+                        <b>
+                            downloadReport
+                        </b>
+                        <a href="#downloadReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadReport(ciIdeaId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, isMessaging: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="217"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:217</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ciIdeaId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isMessaging</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToDashboard"></a>
+                    <span class="name">
+                        <b>
+                            navigateToDashboard
+                        </b>
+                        <a href="#navigateToDashboard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateToDashboard()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method to navigate to pending inventory page.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepandZero"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            prepandZero
+                        </b>
+                        <a href="#prepandZero"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>prepandZero(inputNum: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="262"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:262</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Prepand Zero to input number.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inputNum</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showLoading"></a>
+                    <span class="name">
+                        <b>
+                            showLoading
+                        </b>
+                        <a href="#showLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showLoading(callingMethodname: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:193</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Show loading symbol.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>callingMethodname</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trimWhiteSpaceAroundBoundary"></a>
+                    <span class="name">
+                        <b>
+                            trimWhiteSpaceAroundBoundary
+                        </b>
+                        <a href="#trimWhiteSpaceAroundBoundary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>trimWhiteSpaceAroundBoundary(inputJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="266"
+                            class="link-to-prism">manager/src/static/app/shared/Utils.ts:266</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>inputJson</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeModal"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            activeModal</b>
+                            <a href="#activeModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>NgbActiveModal</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">manager/src/static/app/shared/Utils.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ALERT"></a>
+                        <span class="name">
+                            <b>
+                            ALERT</b>
+                            <a href="#ALERT"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">manager/src/static/app/shared/Utils.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="alertTitle"></a>
+                        <span class="name">
+                            <b>
+                            alertTitle</b>
+                            <a href="#alertTitle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">manager/src/static/app/shared/Utils.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ANALYTICS"></a>
+                        <span class="name">
+                            <b>
+                            ANALYTICS</b>
+                            <a href="#ANALYTICS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">manager/src/static/app/shared/Utils.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="appId"></a>
+                        <span class="name">
+                            <b>
+                            appId</b>
+                            <a href="#appId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">manager/src/static/app/shared/Utils.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="closeConfirm"></a>
+                        <span class="name">
+                            <b>
+                            closeConfirm</b>
+                            <a href="#closeConfirm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="213" class="link-to-prism">manager/src/static/app/shared/Utils.ts:213</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="config"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            config</b>
+                            <a href="#config"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>NgbModalConfig</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">manager/src/static/app/shared/Utils.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dateSetting"></a>
+                        <span class="name">
+                            <b>
+                            dateSetting</b>
+                            <a href="#dateSetting"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">manager/src/static/app/shared/Utils.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dpConfig"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dpConfig</b>
+                            <a href="#dpConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>NgbDatepickerConfig</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">manager/src/static/app/shared/Utils.ts:55</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPiwikSiteId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getPiwikSiteId</b>
+                            <a href="#getPiwikSiteId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">manager/src/static/app/shared/Utils.ts:165</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="methodCalls"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            methodCalls</b>
+                            <a href="#methodCalls"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">manager/src/static/app/shared/Utils.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="navigateTo"></a>
+                        <span class="name">
+                            <b>
+                            navigateTo</b>
+                            <a href="#navigateTo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">manager/src/static/app/shared/Utils.ts:143</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Method to navigate between pages.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="navigationExtras"></a>
+                        <span class="name">
+                            <b>
+                            navigationExtras</b>
+                            <a href="#navigationExtras"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/router/NavigationExtras" target="_blank" >NavigationExtras</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">manager/src/static/app/shared/Utils.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="numberRegEx"></a>
+                        <span class="name">
+                            <b>
+                            numberRegEx</b>
+                            <a href="#numberRegEx"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;^[0-9\.]+&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">manager/src/static/app/shared/Utils.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openNGBootstrapModal"></a>
+                        <span class="name">
+                            <b>
+                            openNGBootstrapModal</b>
+                            <a href="#openNGBootstrapModal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">manager/src/static/app/shared/Utils.ts:136</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Opens NGBootstrap modal.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="orEmpty"></a>
+                        <span class="name">
+                            <b>
+                            orEmpty</b>
+                            <a href="#orEmpty"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">manager/src/static/app/shared/Utils.ts:178</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Performs null check.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pageMetaData"></a>
+                        <span class="name">
+                            <b>
+                            pageMetaData</b>
+                            <a href="#pageMetaData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">manager/src/static/app/shared/Utils.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="path"></a>
+                        <span class="name">
+                            <b>
+                            path</b>
+                            <a href="#path"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">manager/src/static/app/shared/Utils.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="piwikSiteIds"></a>
+                        <span class="name">
+                            <b>
+                            piwikSiteIds</b>
+                            <a href="#piwikSiteIds"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">manager/src/static/app/shared/Utils.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="processName"></a>
+                        <span class="name">
+                            <b>
+                            processName</b>
+                            <a href="#processName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">manager/src/static/app/shared/Utils.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="requestId"></a>
+                        <span class="name">
+                            <b>
+                            requestId</b>
+                            <a href="#requestId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">manager/src/static/app/shared/Utils.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showLoadingSign"></a>
+                        <span class="name">
+                            <b>
+                            showLoadingSign</b>
+                            <a href="#showLoadingSign"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">manager/src/static/app/shared/Utils.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TITLE_ENUM"></a>
+                        <span class="name">
+                            <b>
+                            TITLE_ENUM</b>
+                            <a href="#TITLE_ENUM"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">manager/src/static/app/shared/Utils.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titleRegEx"></a>
+                        <span class="name">
+                            <b>
+                            titleRegEx</b>
+                            <a href="#titleRegEx"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;^[a-zA-Z0-9 \.\_\-]+&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">manager/src/static/app/shared/Utils.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tooltipText"></a>
+                        <span class="name">
+                            <b>
+                            tooltipText</b>
+                            <a href="#tooltipText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">manager/src/static/app/shared/Utils.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unitList"></a>
+                        <span class="name">
+                            <b>
+                            unitList</b>
+                            <a href="#unitList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">manager/src/static/app/shared/Utils.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{ }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">manager/src/static/app/shared/Utils.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueStreamList"></a>
+                        <span class="name">
+                            <b>
+                            valueStreamList</b>
+                            <a href="#valueStreamList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">manager/src/static/app/shared/Utils.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import { NavigationExtras, Router } from &#x27;@angular/router&#x27;;
+import { NgbAccordionConfig, NgbDatepickerConfig, NgbModal, NgbActiveModal, NgbModalConfig } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+
+import * as _ from &#x27;lodash&#x27;;
+// tslint:disable:max-line-length
+
+/**
+ * Utility Class
+ */
+@Injectable()
+export class Utils {
+
+  showLoadingSign &#x3D; false;
+
+  alertTitle: any;
+
+  dateSetting: any;
+
+  path: string;
+
+  piwikSiteIds: any[];
+
+  ANALYTICS: any;
+
+  tooltipText: any;
+  ALERT: any;
+
+  navigationExtras: NavigationExtras;
+
+  TITLE_ENUM: any;
+
+  valueStreamList: any[] &#x3D; [];
+
+  unitList: any[] &#x3D; [];
+
+  user: any &#x3D; { };
+
+  titleRegEx &#x3D; &#x27;^[a-zA-Z0-9 \.\_\-]+&#x27;;
+
+  numberRegEx &#x3D; &#x27;^[0-9\.]+&#x27;;
+
+  requestId: string;
+
+  appId: string;
+
+  private methodCalls: string[] &#x3D; [];
+
+  processName:string;
+
+  pageMetaData:any &#x3D; {};
+
+  constructor(
+    private router: Router,
+    public dpConfig: NgbDatepickerConfig,
+    private accordionConfig: NgbAccordionConfig,
+    private modalService: NgbModal,
+    public activeModal: NgbActiveModal,
+    public config:NgbModalConfig
+  ) {
+    config.backdrop &#x3D;&#x27;static&#x27;;
+   // const todayDate &#x3D; new Date();
+    accordionConfig.type &#x3D; &#x27;primary&#x27;;
+    const now &#x3D; new Date();
+    dpConfig.minDate &#x3D; {year: 2010, month: 1, day: 1};
+    dpConfig.maxDate &#x3D; {year: Math.max(now.getFullYear(),2021), month: 12, day: 31};
+/* 
+    this.dateSetting &#x3D; {
+      minDate: &#x27;01/01/2000&#x27;,
+      maxDate: todayDate,
+      disableDays: [],
+      toContainPrevMonth: false,
+      toContainNextMonth: false,
+      value: todayDate
+    }; */
+
+    this.alertTitle &#x3D; {
+      SUBMITTED: &#x27;ALERT: APPLICATION FORM ALREADY SUBMITTED&#x27;,
+    };
+
+    this.alertTitle &#x3D; {
+      SUBMITTED: &#x27;ALERT: APPLICATION FORM ALREADY SUBMITTED&#x27;,
+    };
+
+    this.ALERT &#x3D; {
+      OUTCOME_NEEDED : {
+        title: &#x27;ALERT&#x27;,
+        msg: &#x27;To submit a CI idea, your idea must either have a mission outcome or impact customer experience. If the idea doesn\&#x27;t accomplish either, please click EXIT. To continue, click CANCEL and select one or both options.&#x27;,
+        mainButtonText: &#x27;EXIT&#x27;,
+        mainButtonCTA: &#x27;/ci-tracker/idea&#x27;,
+        leftButtonText: &#x27;CANCEL&#x27;
+      }
+    };
+
+    this.piwikSiteIds &#x3D; [
+      { hostName: &#x27;localhost&#x27;, siteId: 1 },
+      { hostName: &#x27;mydev.azdeq.gov&#x27;, siteId: 1 },
+      { hostName: &#x27;myqa.azdeq.gov&#x27;, siteId: 3 },
+      { hostName: &#x27;myuat.azdeq.gov&#x27;, siteId: 5 },
+      { hostName: &#x27;mybeta.azdeq.gov&#x27;, siteId: 4 },
+      { hostName: &#x27;my.azdeq.gov&#x27;, siteId: 6 }
+    ];
+
+    this.ANALYTICS &#x3D; {
+      &#x27;CATEGORY&#x27;: &#x27;CITacker&#x27;,
+      &#x27;GET_BILL_INFO&#x27;: &#x27;GET BILL INFORMATION&#x27;,
+      &#x27;PAY_NOW&#x27;: &#x27;Pay Now&#x27;
+    };
+
+    this.tooltipText &#x3D; {
+      TRUE_NORTH: &#x27;&lt;strong&gt;ADEQ\&#x27;s True North&lt;/strong&gt; &lt;p&gt;To be the No. 1 state in the nation, providing:&lt;/p&gt;&lt;ul&gt; &lt;li&gt; Balanced, leading-edge environmental protection&lt;/li&gt;&lt;li&gt;Technical and operational excellence&lt;/li&gt; &lt;li&gt;Radical simplicity for customer and staff &lt;/li&gt; &lt;/ul&gt;&#x27;,
+      COUNTERMEASURE: &#x27;&lt;strong&gt;Countermeasure:&lt;/strong&gt; Action taken to reduce or eliminate the root cause of a problem, preventing you or your team from reaching agency goals. Countermeasures should solve problems at their root-cause, following an analysis that identified the ultimate source of a problem and not merely fixes the symptoms.&#x27;,
+      NEW_IDEA : &#x27;&lt;strong&gt;New Idea:&lt;/strong&gt; Idea developed as a result of problem-solving activities or individual/team brainstorming and improves processes.&#x27;,
+      IMPACT : &#x27;&lt;strong&gt;Impact:&lt;/strong&gt; When an action positively changes an outcome. ADEQ strives to improve mission outcomes by positively affecting quality, cost, delivery and people development, as well as customer experience.&#x27;
+    };
+
+    // Set navigation extras object
+    // that passes on global query params and fragment
+    this.navigationExtras &#x3D; {
+      preserveQueryParams: true,
+      preserveFragment: false
+    };
+
+    this.TITLE_ENUM &#x3D; {
+        add: &#x27;LOG A COMPLETED CONTINUOUS IMPROVEMENT (CI)&#x27;,
+        list: &#x27;IMPROVEMENTS INVENTORY&#x27;,
+        modify: &#x27;SUBMIT DMR&#x27;,
+        report: &#x27;REPORTS&#x27;,
+    };
+
+  }
+
+   /**
+   * Opens NGBootstrap modal.
+   */
+  openNGBootstrapModal &#x3D; (content: any, modelSize?: &#x27;sm&#x27; | &#x27;lg&#x27;) &#x3D;&gt; {
+    this.modalService.open(content, { size: modelSize ? modelSize : &#x27;lg&#x27; });
+  }
+ 
+  /**
+   * Method to navigate between pages.
+   */
+  navigateTo &#x3D; (pageName: string [], includeRequestParam: boolean&#x3D;false) &#x3D;&gt; {
+      let url: string [];
+      if (pageName) {
+        url &#x3D; [&#x27;applications/&#x27;].concat(pageName);
+      } else {
+        url &#x3D; [&#x27;applications&#x27;];
+      }
+
+      if (includeRequestParam) {
+          this.router.navigate(url, this.navigationExtras);
+      } else {
+          this.router.navigate(url);
+      }
+  }
+
+  /**
+   * Method to navigate to pending inventory page.
+   */
+  navigateToDashboard() {
+    this.navigateTo([&#x27;pendingpermits&#x27;], false);
+  }
+
+  public getPiwikSiteId &#x3D; (hostname) &#x3D;&gt; {
+    for (let i &#x3D; 0; i &lt; this.piwikSiteIds.length; i++) {
+      const piwikSite &#x3D; this.piwikSiteIds[i];
+      if (piwikSite.hostName &#x3D;&#x3D;&#x3D; hostname) {
+        return piwikSite.siteId;
+      }
+    }
+    return 1;
+  }
+
+  /**
+   * Performs null check.
+   */
+  orEmpty &#x3D; (entity) &#x3D;&gt; {
+    // http://stackoverflow.com/questions/20572016/javascript-string-concatenation-behavior-with-null-or-undefined-values
+    // entity || &quot;&quot; will cause true to return &quot;true&quot; but false to return &quot;&quot;
+    // both null &#x3D;&#x3D; null and undefined &#x3D;&#x3D; null are true
+    if (entity &#x3D;&#x3D; null) {
+      return &#x27;&#x27;;
+    } else {
+      return entity;
+    }
+  }
+
+  /**
+   * Show loading symbol.
+   * @param callingMethodname 
+   */
+  showLoading(callingMethodname: string &#x3D; null) {
+    if (callingMethodname) {
+      this.methodCalls.push(callingMethodname);
+    }
+    setTimeout(() &#x3D;&gt; this.showLoadingSign &#x3D; true, 0);
+  }
+
+  /**
+   * Removes loading symbol.
+   * @param callingMethodname 
+   */
+  closeLoading(callingMethodname: string &#x3D; null) {
+    if (callingMethodname) {
+      _.pull(this.methodCalls, callingMethodname);
+    }
+    if (this.methodCalls &amp;&amp; this.methodCalls.length &#x3D;&#x3D;&#x3D; 0) {
+      setTimeout(() &#x3D;&gt; this.showLoadingSign &#x3D; false, 0)
+    }
+  }
+
+  closeConfirm &#x3D; (popOverId: string) &#x3D;&gt; {
+    document.getElementById(popOverId).click();
+  }
+
+  downloadReport(ciIdeaId: string, isMessaging: string) {
+    if (isMessaging &#x3D;&#x3D;&#x3D; &#x27;Y&#x27;) {
+      window.open(&#x27;/ci-tracker/service/document?ciIdeaId&#x3D;&#x27; + ciIdeaId, &#x27;_blank&#x27;);
+    }
+  }
+
+  /* configureDatePicker(allowFutureDate: boolean) {
+    const todayDate &#x3D; new Date();
+    const maxYear: number &#x3D; allowFutureDate ? todayDate.getFullYear() + 100 : todayDate.getFullYear();
+    const month: number &#x3D; allowFutureDate ? 12 : todayDate.getMonth() + 1;
+    const day: number &#x3D; allowFutureDate ? 31 : todayDate.getUTCDate();
+    this.dpConfig.minDate &#x3D; { year: 1900, month: 1, day: 1 };
+    this.dpConfig.maxDate &#x3D; { year: maxYear, month: month, day: day};
+  } */
+
+  /**
+   * Convert Date object to string.
+   * 
+   * @param dateObj 
+   */
+  convertDateToString(dateObj:any){
+    if (dateObj instanceof Object) {
+      return this.prepandZero(dateObj.month) + &#x27;/&#x27; + this.prepandZero(dateObj.day) + &#x27;/&#x27; + dateObj.year;
+    }
+    return dateObj;
+  }
+
+  /**
+   * Convert String to Date Object.
+   * 
+   * @param dateStr 
+   */
+  convertStringToDate(dateStr:string){
+    if (!dateStr) {
+      return null;
+    }
+    const dated &#x3D; new Date(dateStr);
+    return { year: dated.getFullYear(), month: dated.getMonth() + 1, day: dated.getUTCDate() };
+  }
+
+  /**
+   * Prepand Zero to input number.
+   * 
+   * @param inputNum 
+   */
+  private prepandZero(inputNum:number){
+    return inputNum &lt; 10 ? &quot;0&quot;+inputNum : inputNum+&quot;&quot;;
+  }
+
+  trimWhiteSpaceAroundBoundary(inputJson:any):string {
+    return JSON.parse(JSON.stringify(inputJson), function (key, val) { return typeof val &#x3D;&#x3D;&#x3D; &#x27;string&#x27;? val.trim() : val; }); 
+  }
+
+
+  // openNGBootstrapModal &#x3D; (content: any, modelSize?: &#x27;sm&#x27; | &#x27;lg&#x27;) &#x3D;&gt; {
+  //   this.modalService.open(content, { size: modelSize ? modelSize : &#x27;lg&#x27; });
+  // }
+
+  /**
+   * Appand &#x27;tobeAppendend&#x27; string to &#x27;parentString&#x27; if &#x27;tobeAppendend&#x27; not null.
+   * 
+   * @param parentString 
+   * @param tobeAppendend 
+   */
+  public checkNullAndAppand(parentString: string, tobeAppendend: string) {
+    if (tobeAppendend) {
+      return parentString + tobeAppendend;
+    }
+    return parentString;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'Utils.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

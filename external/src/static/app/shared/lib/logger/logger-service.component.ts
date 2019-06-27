@@ -1,5 +1,13 @@
 
 import { Injectable } from "@angular/core";
+
+/**
+ * This service prints logs to console.
+ * 
+ * In dev mode debug logs are printed.
+ * 
+ * In Prod mode debug logs are ignored.
+ */
 @Injectable()
 export class LoggerService {
 	private isProduction: boolean = false;

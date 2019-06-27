@@ -13,6 +13,9 @@ import { NeedHelpComponent } from './core/component/need-help/need-help.componen
 
 declare var _paq: any;
 
+/**
+ * App Component.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'

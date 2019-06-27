@@ -9,9 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "app-war": "ng build external --prod --base-href \"/external/\" --build-optimizer",
-    "app-local": "ng build external --target=development --environment=prod --base-href \"/external/\"",
-    "manager-prod": "ng build manager --prod --base-href /manager/ --build-optimizer ",
-    "manager-local": "ng build manager --base-href \"/manager/\" "
+    "app-local": "ng build external --target=development --environment=prod --base-href \"/external/\""
+   
   },
   "private": true,
   "dependencies": {

@@ -5,7 +5,9 @@ import { NgbAccordionConfig, NgbDatepickerConfig, NgbModal, NgbActiveModal, NgbM
 import * as _ from 'lodash';
 // tslint:disable:max-line-length
 
-
+/**
+ * Utility Class
+ */
 @Injectable()
 export class Utils {
 
@@ -127,10 +129,17 @@ export class Utils {
     };
 
   }
+
+   /**
+   * Opens NGBootstrap modal.
+   */
   openNGBootstrapModal = (content: any, modelSize?: 'sm' | 'lg') => {
     this.modalService.open(content, { size: modelSize ? modelSize : 'lg' });
   }
  
+  /**
+   * Method to navigate between pages.
+   */
   navigateTo = (pageName: string [], includeRequestParam: boolean=false) => {
       let url: string [];
       if (pageName) {
@@ -146,12 +155,11 @@ export class Utils {
       }
   }
 
+  /**
+   * Method to navigate to pending inventory page.
+   */
   navigateToDashboard() {
     this.navigateTo(['pendingpermits'], false);
-  }
-
-  navigateToArDashboard() {
-    this.navigateTo(['pendingars'], false);
   }
 
   public getPiwikSiteId = (hostname) => {
@@ -164,6 +172,9 @@ export class Utils {
     return 1;
   }
 
+  /**
+   * Performs null check.
+   */
   orEmpty = (entity) => {
     // http://stackoverflow.com/questions/20572016/javascript-string-concatenation-behavior-with-null-or-undefined-values
     // entity || "" will cause true to return "true" but false to return ""
@@ -175,6 +186,10 @@ export class Utils {
     }
   }
 
+  /**
+   * Show loading symbol.
+   * @param callingMethodname 
+   */
   showLoading(callingMethodname: string = null) {
     if (callingMethodname) {
       this.methodCalls.push(callingMethodname);
@@ -182,6 +197,10 @@ export class Utils {
     setTimeout(() => this.showLoadingSign = true, 0);
   }
 
+  /**
+   * Removes loading symbol.
+   * @param callingMethodname 
+   */
   closeLoading(callingMethodname: string = null) {
     if (callingMethodname) {
       _.pull(this.methodCalls, callingMethodname);
@@ -210,6 +229,11 @@ export class Utils {
     this.dpConfig.maxDate = { year: maxYear, month: month, day: day};
   } */
 
+  /**
+   * Convert Date object to string.
+   * 
+   * @param dateObj 
+   */
   convertDateToString(dateObj:any){
     if (dateObj instanceof Object) {
       return this.prepandZero(dateObj.month) + '/' + this.prepandZero(dateObj.day) + '/' + dateObj.year;
@@ -217,6 +241,11 @@ export class Utils {
     return dateObj;
   }
 
+  /**
+   * Convert String to Date Object.
+   * 
+   * @param dateStr 
+   */
   convertStringToDate(dateStr:string){
     if (!dateStr) {
       return null;
@@ -225,6 +254,11 @@ export class Utils {
     return { year: dated.getFullYear(), month: dated.getMonth() + 1, day: dated.getUTCDate() };
   }
 
+  /**
+   * Prepand Zero to input number.
+   * 
+   * @param inputNum 
+   */
   private prepandZero(inputNum:number){
     return inputNum < 10 ? "0"+inputNum : inputNum+"";
   }
@@ -238,33 +272,12 @@ export class Utils {
   //   this.modalService.open(content, { size: modelSize ? modelSize : 'lg' });
   // }
 
-  getHeaderText(question: any,prependText:string) {
-
-    let returnString = "";
-    
-    returnString = this.checkNullAndAppand(returnString, prependText);
-    returnString = this.checkNullAndAppand(returnString, question.attachachmentCode);
-    
-    if(question.sectionCode){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand('.',question.sectionCode));
-    }
-    
-    if(!question.sectionCode && question.term){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand('..',question.term));
-    }
-    else if(question.term){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand('.',question.term));
-    }
-    
-    returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand(' ',question.attachachmentText));
-   
-    if(question.sectionText){
-      returnString = this.checkNullAndAppand(returnString, this.checkNullAndAppand(', ',question.sectionText));
-    }
-        
-    return returnString;
-  }
-
+  /**
+   * Appand 'tobeAppendend' string to 'parentString' if 'tobeAppendend' not null.
+   * 
+   * @param parentString 
+   * @param tobeAppendend 
+   */
   public checkNullAndAppand(parentString: string, tobeAppendend: string) {
     if (tobeAppendend) {
       return parentString + tobeAppendend;

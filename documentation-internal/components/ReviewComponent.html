@@ -1,0 +1,2014 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>&#x27;internal-documentation&#x27;</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">&#x27;internal-documentation&#x27;</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ReviewComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>manager/src/static/app/component/review/review.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>review-component</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./review.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_reviewComponentDetails">_reviewComponentDetails</a>
+                            </li>
+                            <li>
+                                <a href="#commentError">commentError</a>
+                            </li>
+                            <li>
+                                <a href="#optionError">optionError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#reviewStatuses">reviewStatuses</a>
+                            </li>
+                            <li>
+                                <a href="#startEdit">startEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#const">const</a>
+                            </li>
+                            <li>
+                                <a href="#errorFields">errorFields</a>
+                            </li>
+                            <li>
+                                <a href="#errorsList">errorsList</a>
+                            </li>
+                            <li>
+                                <a href="#model">model</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#pageText">pageText</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearError">clearError</a>
+                            </li>
+                            <li>
+                                <a href="#clearFormFieldsAndDisable">clearFormFieldsAndDisable</a>
+                            </li>
+                            <li>
+                                <a href="#disableForm">disableForm</a>
+                            </li>
+                            <li>
+                                <a href="#enableForm">enableForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getPreviosReviewDescription">getPreviosReviewDescription</a>
+                            </li>
+                            <li>
+                                <a href="#handleError">handleError</a>
+                            </li>
+                            <li>
+                                <a href="#leftButtonClick">leftButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#rightButtonClick">rightButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#viewHistory">viewHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#cleanErrorList">cleanErrorList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#handleError">handleError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setPageContent">setPageContent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#reviewComponentDetails">reviewComponentDetails</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(errorHandler: <a href="../injectables/MyDeqErrorHandler.html">MyDeqErrorHandler</a>, utils: <a href="../injectables/Utils.html">Utils</a>, modalService: NgbModal, logger: <a href="../injectables/LoggerService.html">LoggerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>errorHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MyDeqErrorHandler.html" target="_self" >MyDeqErrorHandler</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>utils</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/Utils.html" target="_self" >Utils</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoggerService.html" target="_self" >LoggerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reviewComponentDetails"></a>
+                        <b>reviewComponentDetails</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ReviewComponentDetails.html" target="_self" >ReviewComponentDetails</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:37</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearError"></a>
+                    <span class="name">
+                        <b>
+                            clearError
+                        </b>
+                        <a href="#clearError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearError()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:227</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearFormFieldsAndDisable"></a>
+                    <span class="name">
+                        <b>
+                            clearFormFieldsAndDisable
+                        </b>
+                        <a href="#clearFormFieldsAndDisable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearFormFieldsAndDisable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableForm"></a>
+                    <span class="name">
+                        <b>
+                            disableForm
+                        </b>
+                        <a href="#disableForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>disableForm(reviewElm: HTMLInputElement, commentElm: HTMLInputElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reviewElm</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>(document.querySelector(&#x27;input[name&#x3D;&quot;reviewOption&#x27;+this._reviewComponentDetails.defaultID+&#x27;&quot;]&#x27;) as HTMLInputElement)</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>commentElm</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>(document.getElementById(&#x27;reviewComments&#x27;+this._reviewComponentDetails.defaultID) as HTMLInputElement)</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableForm"></a>
+                    <span class="name">
+                        <b>
+                            enableForm
+                        </b>
+                        <a href="#enableForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enableForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="165"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:165</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPreviosReviewDescription"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getPreviosReviewDescription
+                        </b>
+                        <a href="#getPreviosReviewDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPreviosReviewDescription(prevCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>prevCode</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <b>
+                            handleError
+                        </b>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleError(errorObj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:204</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>errorObj</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="leftButtonClick"></a>
+                    <span class="name">
+                        <b>
+                            leftButtonClick
+                        </b>
+                        <a href="#leftButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>leftButtonClick(review: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>review</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rightButtonClick"></a>
+                    <span class="name">
+                        <b>
+                            rightButtonClick
+                        </b>
+                        <a href="#rightButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>rightButtonClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="186"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:186</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="viewHistory"></a>
+                    <span class="name">
+                        <b>
+                            viewHistory
+                        </b>
+                        <a href="#viewHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>viewHistory()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="212"
+                            class="link-to-prism">manager/src/static/app/component/review/review.component.ts:212</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cleanErrorList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            cleanErrorList
+                        </b>
+                        <a href="#cleanErrorList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cleanErrorList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/BaseControllerComponent.html#source" target="_self" >BaseControllerComponent:45</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method clears &#39;errorFields&#39; &amp; &#39;errorsList&#39; array.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            handleError
+                        </b>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleError(error: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/BaseControllerComponent.html#source" target="_self" >BaseControllerComponent:36</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method parse input error object and populate &#39;errorFields&#39; &amp; &#39;errorsList&#39; array.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>error</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>-service error object</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPageContent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setPageContent
+                        </b>
+                        <a href="#setPageContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPageContent(pageContent: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/BaseComponent.html" target="_self" >BaseComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/BaseComponent.html#source" target="_self" >BaseComponent:16</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Assignes input page text content to pageText.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pageContent</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_reviewComponentDetails"></a>
+                        <span class="name">
+                            <b>
+                            _reviewComponentDetails</b>
+                            <a href="#_reviewComponentDetails"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ReviewComponentDetails.html" target="_self" >ReviewComponentDetails</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentError"></a>
+                        <span class="name">
+                            <b>
+                            commentError</b>
+                            <a href="#commentError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionError"></a>
+                        <span class="name">
+                            <b>
+                            optionError</b>
+                            <a href="#optionError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reviewStatuses"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            reviewStatuses</b>
+                            <a href="#reviewStatuses"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[{ code: &#x27;NDEF&#x27;, desc: this.pageText.lbl_no_defeciencies },
+    { code: &#x27;PDEF&#x27;, desc: this.pageText.lbl_potential_defeciencies },
+    { code: &#x27;AREQ&#x27;, desc: this.pageText.lbl_additional_request },
+    { code: null, desc: this.pageText.lbl_previously_reviewed }]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="startEdit"></a>
+                        <span class="name">
+                            <b>
+                            startEdit</b>
+                            <a href="#startEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">manager/src/static/app/component/review/review.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="const"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            const</b>
+                            <a href="#const"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/BaseControllerComponent.html#source" target="_self" >BaseControllerComponent:16</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="errorFields"></a>
+                        <span class="name">
+                            <b>
+                            errorFields</b>
+                            <a href="#errorFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/BaseControllerComponent.html#source" target="_self" >BaseControllerComponent:17</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="errorsList"></a>
+                        <span class="name">
+                            <b>
+                            errorsList</b>
+                            <a href="#errorsList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/BaseControllerComponent.html#source" target="_self" >BaseControllerComponent:18</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="model"></a>
+                        <span class="name">
+                            <b>
+                            model</b>
+                            <a href="#model"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/BaseControllerComponent.html" target="_self" >BaseControllerComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/BaseControllerComponent.html#source" target="_self" >BaseControllerComponent:19</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pageText"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            pageText</b>
+                            <a href="#pageText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/BaseComponent.html" target="_self" >BaseComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/BaseComponent.html#source" target="_self" >BaseComponent:10</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Page Text Object</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, Input, OnInit, AfterViewChecked, OnChanges, SimpleChange } from &quot;@angular/core&quot;;
+import { BaseControllerComponent } from &quot;../../core/basecontroller.component&quot;;
+import { MyDeqErrorHandler } from &quot;../../shared/errorHandler&quot;;
+import { Utils } from &quot;../../shared/Utils&quot;;
+import { ReviewSectionText } from &quot;./review-page-text&quot;;
+import { NgbModal } from &quot;@ng-bootstrap/ng-bootstrap&quot;;
+import { HistoryComponent } from &quot;./history/history.component&quot;;
+import * as _ from &#x27;lodash&#x27;;
+import { LoggerService } from &quot;../../shared/lib/logger/logger-service.component&quot;;
+
+export interface ReviewComponentDetails {
+    defaultID:string,
+    reviewHeader?: string,
+    reviewStatuses: any[],
+    currentReviewStatus?: string,
+    prevReviewStatus?: string,
+    showEdit?: boolean,
+    showHistory?: boolean,
+    reviewHistoryHeader?: string,
+    commentHeader?: string,
+    comments?: string,
+    leftBtnTxt?: string,
+    rightBtnTxt?: string,
+    rightBtnAction?: Function,
+    reviewHistory?: any[],
+    additionalDetails?: any,
+    reviewDate?:string,
+    reviewedBy?:string
+}
+
+@Component({
+    selector: &#x27;review-component&#x27;,
+    templateUrl: &#x27;./review.component.html&#x27;
+})
+export class ReviewComponent extends BaseControllerComponent implements AfterViewInit, OnInit {
+
+    @Input(&#x27;reviewComponentDetails&#x27;) reviewComponentDetails: ReviewComponentDetails;
+
+    _reviewComponentDetails: ReviewComponentDetails;
+
+    startEdit: boolean &#x3D; false;
+    optionError: boolean &#x3D; false;
+    commentError: boolean &#x3D; false;
+    private reviewStatuses&#x3D; [{ code: &#x27;NDEF&#x27;, desc: this.pageText.lbl_no_defeciencies },
+    { code: &#x27;PDEF&#x27;, desc: this.pageText.lbl_potential_defeciencies },
+    { code: &#x27;AREQ&#x27;, desc: this.pageText.lbl_additional_request },
+    { code: null, desc: this.pageText.lbl_previously_reviewed }];
+
+
+    constructor(protected errorHandler: MyDeqErrorHandler,
+        protected utils: Utils,
+        protected modalService: NgbModal,
+        protected logger:LoggerService) {
+        super(errorHandler, new ReviewSectionText());
+    }
+
+    ngOnInit() {      
+
+        if (!this.reviewComponentDetails) {
+
+            this._reviewComponentDetails &#x3D; {
+                defaultID:&#x27;0&#x27;,
+                reviewHeader: this.pageText.lbl_review,
+                reviewStatuses: this.reviewStatuses,
+                currentReviewStatus: null,
+                prevReviewStatus: &#x27;N/A&#x27;,
+                showEdit: true,
+                showHistory: true,
+                reviewHistoryHeader: this.pageText.lbl_history,
+                commentHeader: this.pageText.lbl_comments,
+                comments: null,
+                leftBtnTxt: this.pageText.cancel,
+                rightBtnTxt: this.pageText.save,
+                rightBtnAction: null,
+                reviewHistory: [],
+                additionalDetails: null,
+                reviewDate: null,
+                reviewedBy: null,
+
+            }
+        } else {
+                this.logger.debug(&#x27;&#x3D;&gt;&#x27;,this.reviewComponentDetails.showEdit)
+            this._reviewComponentDetails &#x3D; {
+                defaultID:this.reviewComponentDetails.defaultID ? this.reviewComponentDetails.defaultID : &#x27;0&#x27;,
+                reviewHeader: this.reviewComponentDetails.reviewHeader ? this.reviewComponentDetails.reviewHeader : this.pageText.lbl_review,
+                reviewStatuses: this.reviewComponentDetails.reviewStatuses ? this.reviewComponentDetails.reviewStatuses : this.reviewStatuses,
+                currentReviewStatus: this.reviewComponentDetails.currentReviewStatus ? this.reviewComponentDetails.currentReviewStatus : null,
+                prevReviewStatus: this.reviewComponentDetails.prevReviewStatus ? this.getPreviosReviewDescription(this.reviewComponentDetails.prevReviewStatus) : &#x27;N/A&#x27;,
+                showEdit: this.reviewComponentDetails.showEdit!&#x3D;null ? this.reviewComponentDetails.showEdit : true,
+                showHistory: this.reviewComponentDetails.showHistory ? this.reviewComponentDetails.showHistory : true,
+                reviewHistoryHeader: this.reviewComponentDetails.reviewHistoryHeader ? this.reviewComponentDetails.reviewHistoryHeader : this.pageText.lbl_history,
+                commentHeader: this.reviewComponentDetails.commentHeader ? this.reviewComponentDetails.commentHeader : this.pageText.lbl_comments,
+                comments: this.reviewComponentDetails.comments ? this.reviewComponentDetails.comments : null,
+                leftBtnTxt: this.reviewComponentDetails.leftBtnTxt ? this.reviewComponentDetails.leftBtnTxt : this.pageText.cancel,
+                rightBtnTxt: this.reviewComponentDetails.rightBtnTxt ? this.reviewComponentDetails.rightBtnTxt : this.pageText.save,
+                rightBtnAction: this.reviewComponentDetails.rightBtnAction ? this.reviewComponentDetails.rightBtnAction : null,
+                reviewHistory: this.reviewComponentDetails.reviewHistory ? this.reviewComponentDetails.reviewHistory : [],
+                additionalDetails: this.reviewComponentDetails.additionalDetails ? this.reviewComponentDetails.additionalDetails : null,
+
+                reviewDate: this.reviewComponentDetails.reviewDate ? this.reviewComponentDetails.reviewDate : &#x27;&#x27;,
+                reviewedBy: this.reviewComponentDetails.reviewedBy ? this.reviewComponentDetails.reviewedBy : &#x27;&#x27;,
+            }
+
+            if(!this._reviewComponentDetails.showEdit){
+                this._reviewComponentDetails.commentHeader&#x3D; this.pageText.lbl_last_comments;
+                this._reviewComponentDetails.comments &#x3D;  this._reviewComponentDetails.comments;
+            }
+
+        }
+    }
+
+    ngAfterViewInit() {
+        this.clearFormFieldsAndDisable();
+    }
+
+    clearFormFieldsAndDisable() {
+
+        let reviewElm &#x3D; (document.querySelector(&#x27;input[name&#x3D;&quot;reviewOption&#x27;+this._reviewComponentDetails.defaultID+&#x27;&quot;]&#x27;) as HTMLInputElement);
+        let commentElm &#x3D; (document.getElementById(&#x27;reviewComments&#x27;+this._reviewComponentDetails.defaultID) as HTMLInputElement);
+        if (this._reviewComponentDetails.currentReviewStatus !&#x3D;&#x3D; null) {
+            if (reviewElm) {
+                let prevVal &#x3D; this._reviewComponentDetails.currentReviewStatus;
+
+                Array.from(document.getElementsByName(&quot;reviewOption&quot;+this._reviewComponentDetails.defaultID)).forEach(r &#x3D;&gt; {
+
+                    if (r[&#x27;value&#x27;] &#x3D;&#x3D;&#x3D; prevVal) {
+                        r[&#x27;checked&#x27;] &#x3D; true;
+                        //   console.log(&#x27;R&#x27;,r)
+                    } else {
+                        r[&#x27;checked&#x27;] &#x3D; false;
+                    }
+
+                });
+            }
+        }
+        else {
+            if (reviewElm) {
+                Array.from(document.getElementsByName(&quot;reviewOption&quot;+this._reviewComponentDetails.defaultID)).forEach(r &#x3D;&gt; r[&#x27;checked&#x27;] &#x3D; false);
+            }
+        }
+
+
+        if (commentElm) {
+            commentElm.value &#x3D; this._reviewComponentDetails.comments;
+        }
+
+        this.disableForm(reviewElm, commentElm);
+        this.clearError();
+    }
+
+    disableForm(reviewElm: HTMLInputElement &#x3D; (document.querySelector(&#x27;input[name&#x3D;&quot;reviewOption&#x27;+this._reviewComponentDetails.defaultID+&#x27;&quot;]&#x27;) as HTMLInputElement),
+        commentElm: HTMLInputElement &#x3D; (document.getElementById(&#x27;reviewComments&#x27;+this._reviewComponentDetails.defaultID) as HTMLInputElement)) {
+          
+        if (reviewElm) {
+            Array.from(document.getElementsByName(&quot;reviewOption&quot;+this._reviewComponentDetails.defaultID)).forEach(r &#x3D;&gt; r[&#x27;disabled&#x27;] &#x3D; true);
+        }
+
+        if (commentElm) {
+            commentElm.disabled &#x3D; true;
+        }
+
+        this.startEdit &#x3D; false;
+    }
+
+    enableForm() {
+        let reviewElm &#x3D; (document.querySelector(&#x27;input[name&#x3D;&quot;reviewOption&#x27;+this._reviewComponentDetails.defaultID+&#x27;&quot;]&#x27;) as HTMLInputElement);
+        let commentElm &#x3D; (document.getElementById(&#x27;reviewComments&#x27;+this._reviewComponentDetails.defaultID) as HTMLInputElement);
+        if (reviewElm) {
+            Array.from(document.getElementsByName(&quot;reviewOption&quot;+this._reviewComponentDetails.defaultID)).forEach(r &#x3D;&gt; r[&#x27;disabled&#x27;] &#x3D; false);
+        }
+
+        if (commentElm) {
+            commentElm.disabled &#x3D; false;
+        }
+        this.startEdit &#x3D; true;
+    }
+
+    leftButtonClick(review: any) {
+        this._reviewComponentDetails.currentReviewStatus &#x3D; review.status;
+        this._reviewComponentDetails.comments &#x3D; review.comments;
+        this.clearError();
+        this.disableForm();
+    }
+
+
+    rightButtonClick() {        
+
+        let reviewElm &#x3D; (document.querySelector(&#x27;input[name&#x3D;&quot;reviewOption&#x27;+this._reviewComponentDetails.defaultID+&#x27;&quot;]:checked&#x27;) as HTMLInputElement);
+        let reviewOptionVal &#x3D; reviewElm ? reviewElm.value : null;
+        let commentVal &#x3D; (document.getElementById(&#x27;reviewComments&#x27;+this._reviewComponentDetails.defaultID) as HTMLInputElement).value;
+
+        this._reviewComponentDetails.rightBtnAction(
+            {
+                reviewOption: reviewOptionVal,
+                comments: commentVal,
+                additionalDetails: this._reviewComponentDetails.additionalDetails
+            },
+            this.leftButtonClick.bind(this),
+            this.handleError.bind(this)
+        );
+    this.logger.debug(this._reviewComponentDetails);
+    }
+
+    handleError(errorObj: any) {
+        if (errorObj) {
+            this.errorsList &#x3D; errorObj.errorsList;
+            this.commentError &#x3D; errorObj.commentError;
+            this.optionError &#x3D; errorObj.optionError;
+        }
+    }
+
+    viewHistory() {
+        if(this._reviewComponentDetails.reviewHistory.length &gt; 0) {
+            this.logger.debug(this._reviewComponentDetails.reviewHistory);
+            const modalRef &#x3D; this.modalService.open(HistoryComponent, { size: &#x27;lg&#x27;, centered: true });
+            modalRef.componentInstance.reviewHistory &#x3D; this._reviewComponentDetails.reviewHistory;
+        }
+    }
+
+    private getPreviosReviewDescription(prevCode:string){        
+        let statuses &#x3D;  this.reviewComponentDetails.reviewStatuses ? this.reviewComponentDetails.reviewStatuses :  this.reviewStatuses;        
+       let searchedObj&#x3D; _.find(statuses,[&#x27;code&#x27;,prevCode]);
+       return searchedObj.desc;
+
+    }
+
+    clearError() {
+        this.errorsList &#x3D; [];
+        this.commentError &#x3D; false;
+        this.optionError &#x3D; false;
+    }
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section *ngIf&#x3D;&quot;_reviewComponentDetails.showEdit&quot; id&#x3D;&quot;{{_reviewComponentDetails?.defaultID}}&quot;&gt;
+    &lt;div class&#x3D;&quot;border-bottom pb-0 pt-0&quot;&gt;&lt;/div&gt;
+    &lt;div *ngFor&#x3D;&quot;let error of errorsList&quot; class&#x3D;&quot;alert alert-danger text-center mx-4 mt-2&quot; role&#x3D;&quot;alert&quot;&gt;{{error}}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;d-flex&quot;&gt;
+        &lt;div class&#x3D;&quot; w-100 border-right&quot; [ngClass]&#x3D;&quot;{&#x27;lightcream-bg&#x27;:startEdit}&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex  flex-column&quot;&gt;
+                &lt;div class&#x3D;&quot;pt-1 pb-1 border-bottom&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex &quot;&gt;
+                        &lt;div class&#x3D;&quot;px-3 pt-4 w-25 mt-4 h5&quot;&gt;{{_reviewComponentDetails?.reviewHeader}}&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;p-3 border-right h6 text-center&quot;&gt;
+                            &lt;div class&#x3D;&quot;custom-control custom-radio ml-3&quot;  [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;:optionError}&quot;&gt;
+                                &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;customqst0{{_reviewComponentDetails?.defaultID}}&quot; name&#x3D;&quot;reviewOption{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-input&quot; value&#x3D;&quot;{{_reviewComponentDetails?.reviewStatuses[0]?.code}}&quot;&gt;
+                                &lt;label for&#x3D;&quot;customqst0{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-label&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;one{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[0]?.desc}}&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;p-3 border-right h6 text-center&quot;&gt;
+                            &lt;div class&#x3D;&quot;custom-control custom-radio ml-3&quot; [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;: optionError}&quot;&gt;
+                                &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;customqst1{{_reviewComponentDetails?.defaultID}}&quot; name&#x3D;&quot;reviewOption{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-input&quot; value&#x3D;&quot;{{_reviewComponentDetails?.reviewStatuses[1]?.code}}&quot;&gt;
+                                &lt;label for&#x3D;&quot;customqst1{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-label&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;two{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[1]?.desc}}&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;p-3 border-right h6 text-center&quot; &gt;
+                            &lt;div class&#x3D;&quot;custom-control custom-radio ml-3&quot; [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;: optionError}&quot;&gt;
+                                &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;customqst2{{_reviewComponentDetails?.defaultID}}&quot; name&#x3D;&quot;reviewOption{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-input&quot; value&#x3D;&quot;{{_reviewComponentDetails?.reviewStatuses[2]?.code}}&quot;&gt;
+                                &lt;label for&#x3D;&quot;customqst2{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-label&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                                &lt;label for&#x3D;&quot;three{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[2]?.desc}}&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;w-25 mt-3 text-center&quot;&gt;
+                            &lt;div  style&#x3D;&quot;width:78% !important;&quot; [ngClass]&#x3D;&quot;{&#x27;p-3 mt-1&#x27;:_reviewComponentDetails?.prevReviewStatus &#x3D;&#x3D;&#x3D; &#x27;N/A&#x27;, &#x27;px-3 pb-3 pt-0&#x27; : _reviewComponentDetails?.prevReviewStatus !&#x3D;&#x3D; &#x27;N/A&#x27;}&quot;&gt;
+                                &lt;div class&#x3D;&quot;h6 font-weight-light mb-1&quot;&gt;{{_reviewComponentDetails?.prevReviewStatus}}&lt;/div&gt;
+                                &lt;div class&#x3D;&quot;mt-0&quot;&gt;
+                                    &lt;label for&#x3D;&quot;oneq2q&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[3]?.desc}}&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;mt-3 mr-2 px-3 mb-3&quot;&gt;
+                    &lt;h5&gt;{{reviewComponentDetails?.commentHeader}}&lt;/h5&gt;
+                    &lt;div class&#x3D;&quot;input-group w-100&quot; [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;: commentError}&quot;&gt;
+                        &lt;textarea class&#x3D;&quot;form-control mydeq-textarea&quot; rows&#x3D;&quot;6&quot; id&#x3D;&quot;reviewComments{{_reviewComponentDetails?.defaultID}}&quot; maxlength&#x3D;&quot;4000&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div *ngIf&#x3D;&quot;startEdit&quot; class&#x3D;&quot;pt-3&quot;&gt;
+                    &lt;div class&#x3D;&quot;pl-0&quot;&gt;
+                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;clearFormFieldsAndDisable()&quot;&gt;
+                            &lt;span class&#x3D;&quot;px-2 float-left&quot;&gt;
+                            &lt;/span&gt;{{_reviewComponentDetails?.leftBtnTxt}}
+                        &lt;/button&gt;
+
+                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary float-right px-3&quot; (click)&#x3D;&quot;rightButtonClick()&quot;&gt;
+                            {{_reviewComponentDetails?.rightBtnTxt}}
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot; mt-5 pt-4 flex-shrink-1 px-3&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex  flex-column&quot; style&#x3D;&quot;text-align:center;&quot;&gt;
+                &lt;div class&#x3D;&quot;pt-3 pb-4 border-bottom&quot;&gt;
+                    &lt;i class&#x3D;&quot;fas pl-1  text-primary fa-2x fa-pencil-alt cursor-pointer&quot; title&#x3D;&quot;{{pageText?.edit}}&quot; (click)&#x3D;&quot;enableForm()&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;py-3 mt-1&quot;&gt;
+                    &lt;i id&#x3D;&quot;vhistory&quot; class&#x3D;&quot;fas pl-1 text-primary fa-2x fa-history cursor-pointer&quot; title&#x3D;&quot;{{_reviewComponentDetails?.reviewHistoryHeader}}&quot; (click)&#x3D;&quot;viewHistory()&quot;&gt;&lt;/i&gt;
+                    &lt;div class&#x3D;&quot;pt-1 h6&quot; (click)&#x3D;&quot;viewHistory()&quot;&gt;{{_reviewComponentDetails?.reviewHistoryHeader}}&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;border-bottom pb-0 pt-0&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; --&gt;
+&lt;section *ngIf&#x3D;&quot;!_reviewComponentDetails.showEdit&quot; id&#x3D;&quot;{{_reviewComponentDetails?.defaultID}}&quot;&gt;
+    &lt;div class&#x3D;&quot;border-bottom pb-0 pt-0&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;d-flex&quot;&gt;
+        &lt;div class&#x3D;&quot; w-100 border-right&quot; [ngClass]&#x3D;&quot;{&#x27;lightcream-bg&#x27;:startEdit}&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex  flex-column&quot;&gt;
+                &lt;div class&#x3D;&quot;pt-1 pb-1 border-bottom&quot;&gt;
+                    &lt;div class&#x3D;&quot;d-flex &quot;&gt;
+                        &lt;div class&#x3D;&quot;px-3 pt-4 w-25 mt-4 h5&quot;&gt;{{_reviewComponentDetails?.reviewHeader}}&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;p-3 border-right h6 text-center&quot;&gt;
+                                &lt;div class&#x3D;&quot;custom-control custom-radio ml-3&quot;  [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;:optionError}&quot;&gt;
+                                    &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;customqst0{{_reviewComponentDetails?.defaultID}}&quot; name&#x3D;&quot;reviewOption{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-input&quot; value&#x3D;&quot;{{_reviewComponentDetails?.reviewStatuses[0]?.code}}&quot;&gt;
+                                    &lt;label for&#x3D;&quot;customqst0{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-label&quot;&gt;&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;one{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[0]?.desc}}&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;p-3 border-right h6 text-center&quot;&gt;
+                                &lt;div class&#x3D;&quot;custom-control custom-radio ml-3&quot; [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;: optionError}&quot;&gt;
+                                    &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;customqst1{{_reviewComponentDetails?.defaultID}}&quot; name&#x3D;&quot;reviewOption{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-input&quot; value&#x3D;&quot;{{_reviewComponentDetails?.reviewStatuses[1]?.code}}&quot;&gt;
+                                    &lt;label for&#x3D;&quot;customqst1{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-label&quot;&gt;&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;two{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[1]?.desc}}&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;p-3 border-right h6 text-center&quot; &gt;
+                                &lt;div class&#x3D;&quot;custom-control custom-radio ml-3&quot; [ngClass]&#x3D;&quot;{&#x27;has-danger&#x27;: optionError}&quot;&gt;
+                                    &lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;customqst2{{_reviewComponentDetails?.defaultID}}&quot; name&#x3D;&quot;reviewOption{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-input&quot; value&#x3D;&quot;{{_reviewComponentDetails?.reviewStatuses[2]?.code}}&quot;&gt;
+                                    &lt;label for&#x3D;&quot;customqst2{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;custom-control-label&quot;&gt;&lt;/label&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                                    &lt;label for&#x3D;&quot;three{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[2]?.desc}}&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        
+                        &lt;div class&#x3D;&quot;ml-auto w-25 mt-3 text-center&quot;&gt;
+                            &lt;div  [ngClass]&#x3D;&quot;{&#x27;p-3 mt-1&#x27;:_reviewComponentDetails?.prevReviewStatus &#x3D;&#x3D;&#x3D; &#x27;N/A&#x27;, &#x27;px-3 pb-3 pt-0&#x27; : _reviewComponentDetails?.prevReviewStatus !&#x3D;&#x3D; &#x27;N/A&#x27;}&quot;&gt;
+                                &lt;div class&#x3D;&quot;h6 font-weight-light mb-1&quot;&gt;{{_reviewComponentDetails?.prevReviewStatus}}&lt;/div&gt;
+                                &lt;div class&#x3D;&quot;mt-0&quot;&gt;
+                                    &lt;label for&#x3D;&quot;oneq2q&quot; class&#x3D;&quot; h6 pt-1&quot;&gt;{{_reviewComponentDetails?.reviewStatuses[3]?.desc}}&lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;mt-3 mr-2 px-3 mb-3&quot;&gt;
+                    &lt;h5&gt;{{_reviewComponentDetails?.commentHeader}}&lt;/h5&gt;
+                    &lt;div class&#x3D;&quot;w-100 h5 font-weight-light&quot; &gt;
+                        {{_reviewComponentDetails?.comments}}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class&#x3D;&quot;row h5 pl-3&quot;&gt;
+                    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                        &lt;label for&#x3D;&quot;date{{_reviewComponentDetails?.defaultID}}&quot;&gt;{{pageText?.lbl_date}}&lt;/label&gt;
+                        &lt;span id&#x3D;&quot;date{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;pl-1 font-weight-light&quot;&gt;{{_reviewComponentDetails?.reviewDate}}&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                        &lt;label for&#x3D;&quot;date{{_reviewComponentDetails?.defaultID}}&quot;&gt;{{pageText?.lbl_updated_by}}&lt;/label&gt;
+                        &lt;span id&#x3D;&quot;date{{_reviewComponentDetails?.defaultID}}&quot; class&#x3D;&quot;pl-1 font-weight-light text-primary&quot;&gt;{{_reviewComponentDetails?.reviewedBy}}&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot; mt-5 pt-4 flex-shrink-1 px-3&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex  flex-column&quot; style&#x3D;&quot;text-align:center;&quot;&gt;
+               
+                &lt;div class&#x3D;&quot;py-3 mt-1&quot;&gt;
+                    &lt;i id&#x3D;&quot;vhistory&quot; class&#x3D;&quot;fas pl-1 text-primary fa-2x fa-history cursor-pointer&quot; title&#x3D;&quot;{{_reviewComponentDetails?.reviewHistoryHeader}}&quot; (click)&#x3D;&quot;viewHistory()&quot;&gt;&lt;/i&gt;
+                    &lt;div class&#x3D;&quot;pt-1 h6&quot; (click)&#x3D;&quot;viewHistory()&quot;&gt;{{_reviewComponentDetails?.reviewHistoryHeader}}&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;border-bottom pb-0 pt-0&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section *ngIf="_reviewComponentDetails.showEdit" id="{{_reviewComponentDetails?.defaultID}}">    <div class="border-bottom pb-0 pt-0"></div>    <div *ngFor="let error of errorsList" class="alert alert-danger text-center mx-4 mt-2" role="alert">{{error}}</div>    <div class="d-flex">        <div class=" w-100 border-right" [ngClass]="{\'lightcream-bg\':startEdit}">            <div class="d-flex  flex-column">                <div class="pt-1 pb-1 border-bottom">                    <div class="d-flex ">                        <div class="px-3 pt-4 w-25 mt-4 h5">{{_reviewComponentDetails?.reviewHeader}}</div>                        <div class="p-3 border-right h6 text-center">                            <div class="custom-control custom-radio ml-3"  [ngClass]="{\'has-danger\':optionError}">                                <input type="radio" id="customqst0{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[0]?.code}}">                                <label for="customqst0{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>                            </div>                            <div class="mt-3">                                <label for="one{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[0]?.desc}}</label>                            </div>                        </div>                        <div class="p-3 border-right h6 text-center">                            <div class="custom-control custom-radio ml-3" [ngClass]="{\'has-danger\': optionError}">                                <input type="radio" id="customqst1{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[1]?.code}}">                                <label for="customqst1{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>                            </div>                            <div class="mt-3">                                <label for="two{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[1]?.desc}}</label>                            </div>                        </div>                        <div class="p-3 border-right h6 text-center" >                            <div class="custom-control custom-radio ml-3" [ngClass]="{\'has-danger\': optionError}">                                <input type="radio" id="customqst2{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[2]?.code}}">                                <label for="customqst2{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>                            </div>                            <div class="mt-3">                                <label for="three{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[2]?.desc}}</label>                            </div>                        </div>                        <div class="w-25 mt-3 text-center">                            <div  style="width:78% !important;" [ngClass]="{\'p-3 mt-1\':_reviewComponentDetails?.prevReviewStatus === \'N/A\', \'px-3 pb-3 pt-0\' : _reviewComponentDetails?.prevReviewStatus !== \'N/A\'}">                                <div class="h6 font-weight-light mb-1">{{_reviewComponentDetails?.prevReviewStatus}}</div>                                <div class="mt-0">                                    <label for="oneq2q" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[3]?.desc}}</label>                                </div>                            </div>                        </div>                    </div>                </div>                <div class="mt-3 mr-2 px-3 mb-3">                    <h5>{{reviewComponentDetails?.commentHeader}}</h5>                    <div class="input-group w-100" [ngClass]="{\'has-danger\': commentError}">                        <textarea class="form-control mydeq-textarea" rows="6" id="reviewComments{{_reviewComponentDetails?.defaultID}}" maxlength="4000"></textarea>                    </div>                </div>                <div *ngIf="startEdit" class="pt-3">                    <div class="pl-0">                        <button type="button" class="btn btn-danger" (click)="clearFormFieldsAndDisable()">                            <span class="px-2 float-left">                            </span>{{_reviewComponentDetails?.leftBtnTxt}}                        </button>                        <button type="button" class="btn btn-primary float-right px-3" (click)="rightButtonClick()">                            {{_reviewComponentDetails?.rightBtnTxt}}                        </button>                    </div>                </div>            </div>        </div>        <div class=" mt-5 pt-4 flex-shrink-1 px-3">            <div class="d-flex  flex-column" style="text-align:center;">                <div class="pt-3 pb-4 border-bottom">                    <i class="fas pl-1  text-primary fa-2x fa-pencil-alt cursor-pointer" title="{{pageText?.edit}}" (click)="enableForm()"></i>                </div>                <div class="py-3 mt-1">                    <i id="vhistory" class="fas pl-1 text-primary fa-2x fa-history cursor-pointer" title="{{_reviewComponentDetails?.reviewHistoryHeader}}" (click)="viewHistory()"></i>                    <div class="pt-1 h6" (click)="viewHistory()">{{_reviewComponentDetails?.reviewHistoryHeader}}</div>                </div>            </div>        </div>    </div>    <div class="border-bottom pb-0 pt-0"></div></section><!-- ==================================================== --><section *ngIf="!_reviewComponentDetails.showEdit" id="{{_reviewComponentDetails?.defaultID}}">    <div class="border-bottom pb-0 pt-0"></div>    <div class="d-flex">        <div class=" w-100 border-right" [ngClass]="{\'lightcream-bg\':startEdit}">            <div class="d-flex  flex-column">                <div class="pt-1 pb-1 border-bottom">                    <div class="d-flex ">                        <div class="px-3 pt-4 w-25 mt-4 h5">{{_reviewComponentDetails?.reviewHeader}}</div>                        <div class="p-3 border-right h6 text-center">                                <div class="custom-control custom-radio ml-3"  [ngClass]="{\'has-danger\':optionError}">                                    <input type="radio" id="customqst0{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[0]?.code}}">                                    <label for="customqst0{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>                                </div>                                <div class="mt-3">                                    <label for="one{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[0]?.desc}}</label>                                </div>                            </div>                            <div class="p-3 border-right h6 text-center">                                <div class="custom-control custom-radio ml-3" [ngClass]="{\'has-danger\': optionError}">                                    <input type="radio" id="customqst1{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[1]?.code}}">                                    <label for="customqst1{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>                                </div>                                <div class="mt-3">                                    <label for="two{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[1]?.desc}}</label>                                </div>                            </div>                            <div class="p-3 border-right h6 text-center" >                                <div class="custom-control custom-radio ml-3" [ngClass]="{\'has-danger\': optionError}">                                    <input type="radio" id="customqst2{{_reviewComponentDetails?.defaultID}}" name="reviewOption{{_reviewComponentDetails?.defaultID}}" class="custom-control-input" value="{{_reviewComponentDetails?.reviewStatuses[2]?.code}}">                                    <label for="customqst2{{_reviewComponentDetails?.defaultID}}" class="custom-control-label"></label>                                </div>                                <div class="mt-3">                                    <label for="three{{_reviewComponentDetails?.defaultID}}" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[2]?.desc}}</label>                                </div>                            </div>                                                <div class="ml-auto w-25 mt-3 text-center">                            <div  [ngClass]="{\'p-3 mt-1\':_reviewComponentDetails?.prevReviewStatus === \'N/A\', \'px-3 pb-3 pt-0\' : _reviewComponentDetails?.prevReviewStatus !== \'N/A\'}">                                <div class="h6 font-weight-light mb-1">{{_reviewComponentDetails?.prevReviewStatus}}</div>                                <div class="mt-0">                                    <label for="oneq2q" class=" h6 pt-1">{{_reviewComponentDetails?.reviewStatuses[3]?.desc}}</label>                                </div>                            </div>                        </div>                    </div>                </div>                <div class="mt-3 mr-2 px-3 mb-3">                    <h5>{{_reviewComponentDetails?.commentHeader}}</h5>                    <div class="w-100 h5 font-weight-light" >                        {{_reviewComponentDetails?.comments}}                    </div>                </div>                <div class="row h5 pl-3">                    <div class="col-md-6">                        <label for="date{{_reviewComponentDetails?.defaultID}}">{{pageText?.lbl_date}}</label>                        <span id="date{{_reviewComponentDetails?.defaultID}}" class="pl-1 font-weight-light">{{_reviewComponentDetails?.reviewDate}}</span>                    </div>                    <div class="col-md-6">                        <label for="date{{_reviewComponentDetails?.defaultID}}">{{pageText?.lbl_updated_by}}</label>                        <span id="date{{_reviewComponentDetails?.defaultID}}" class="pl-1 font-weight-light text-primary">{{_reviewComponentDetails?.reviewedBy}}</span>                    </div>                </div>                            </div>        </div>        <div class=" mt-5 pt-4 flex-shrink-1 px-3">            <div class="d-flex  flex-column" style="text-align:center;">                               <div class="py-3 mt-1">                    <i id="vhistory" class="fas pl-1 text-primary fa-2x fa-history cursor-pointer" title="{{_reviewComponentDetails?.reviewHistoryHeader}}" (click)="viewHistory()"></i>                    <div class="pt-1 h6" (click)="viewHistory()">{{_reviewComponentDetails?.reviewHistoryHeader}}</div>                </div>            </div>        </div>    </div>    <div class="border-bottom pb-0 pt-0"></div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'manager-root'},{'name': 'BootstrapPaginator', 'selector': 'mfBootstrapPaginator'},{'name': 'DefaultSorter', 'selector': 'mfDefaultSorter'},{'name': 'HistoryComponent', 'selector': 'review-history'},{'name': 'InventoryListComponent', 'selector': 'manager-inventory-list'},{'name': 'MydeqAlertModalComponent', 'selector': 'deq-alert-modal'},{'name': 'MydeqFooterComponent', 'selector': 'mydeq-footer'},{'name': 'MydeqHeaderComponent', 'selector': 'mydeq-header'},{'name': 'PageNotFoundComponent', 'selector': 'mydeq-page-not-found'},{'name': 'Paginator', 'selector': 'mfPaginator'},{'name': 'ReviewComponent', 'selector': 'review-component'},{'name': 'SearchComponent', 'selector': 'search-component'},{'name': 'SessionTimeOutModalComponent', 'selector': 'mydeq-session-timeout'}];
+    var DIRECTIVES = [{'name': 'DataTable', 'selector': 'table[mfData]'}];
+    var ACTUAL_COMPONENT = {'name': 'ReviewComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReviewComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
