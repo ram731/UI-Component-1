@@ -1,10 +1,15 @@
 <nav class="navbar bg-info header" role="navigation">
 	<div class="container">
-	    <a class="navbar-brand" href="javascript:void(0)" [routerLink]="['navigate']">
-			<img class="pt-2" style="max-height:50px;" src="assets/img/Logo_Color.png" alt="myDEQ" />
-	    </a>
+		<a class="navbar-brand" href="javascript:void(0)" [routerLink]="['pending']">
+			<img class="pt-2 pr-2 border-right" style="max-height:50px;" src="assets/img/Logo_Color.png" alt="myDEQ" />
+			<div *ngIf="isTestEnvironment" class="badge badge-pill badge-danger font-weight-normal ml-2">Beta</div>
+		</a>
 		<ul class="nav">
-			<li class="nav-item"><a class="nav-link"  href="logout"><u>LOGOUT</u></a></li>
+			<li class="nav-item"><a id="logoutLink" class="nav-link"  href="logout">LOGOUT</a></li>
 		</ul>
 	</div>
+</nav>
+
+<nav class="navbar sticky-top navbar-primary bg-primary h-auto text-center text-white pt-2" *ngIf="isTestEnvironment">
+	<h5>You are in the {{env}} environment</h5>
 </nav>

@@ -462,6 +462,23 @@ span.required::after, label.required::after {
 
 }
 
+
+.custom-radio-bottom {
+	padding-left: 0;
+	padding-top: 2rem;
+  
+	.custom-control-label {
+	  font-weight: 400;
+	  &::before, &::after {
+		left: 35%;
+		top: -2rem;
+	  }
+	}
+	.custom-control-input:checked~.custom-control-label:after {
+	  top: -2rem;
+	}
+}
+
 .custom-control-indicator {
 	top: 0;
 }
