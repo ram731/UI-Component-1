@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "page": {
+      "description": "A DEQ Page schematic.",
+      "factory": "./deq/index#page",
+      "schema": "./deq/schema.json"
+    }
+  }
+}
