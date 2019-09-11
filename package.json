@@ -9,11 +9,12 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "app-war": "ng build external --prod --base-href \"/external/\" --build-optimizer",
-    "app-local": "ng build external --target=development --environment=prod --base-href \"/external/\""
-   
+    "app-local": "ng build external --target=development --environment=prod --base-href \"/external/\"",
+    "deq-page": "schematics ./schematics/src/collection.json:page --debug=false"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics-cli": "^0.803.4",
     "@angular/animations": "^7.0.3",
     "@angular/common": "^7.0.3",
     "@angular/compiler": "^7.0.3",
