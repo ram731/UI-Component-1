@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "deqPageSchematics",
+  "title": "DEQ Page Schema",
+  "type": "object",
+  "description": "Creates DEQ Page Component in Page Directory",
+  "properties":{
+    "name": {
+      "type": "string",
+      "description": "Name of the Component.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What do you want to name the Component?"
+    },
+    "project":{
+      "type": "string",
+      "description": "The Name of the Project to add the Component to.",
+      "$default":{
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "Which Project would you like to add the Component to?"
+    }
+  },
+  "required":[
+    "name",
+    "project"
+  ]
+}

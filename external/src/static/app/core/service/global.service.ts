@@ -72,5 +72,25 @@ export class GlobalService {
             );
     }
 
+       logoutMe(app: string): Observable<any> {
+       const url = '/' + app + '/service/killit';
+       return this.http
+         .delete(url, { responseType: 'text' })
+         .pipe(
+           map((response) => this.extractData(response, true, 'logoutMe')),
+           catchError((error) => this.handleError(error, true, 'logoutMe'))
+         );
+     }
+    
+    handleError(error: HttpErrorResponse, displayLoading = true, callingMethodName: string = null) {   
+        return observableThrowError(error.error);      
+     }
+    
+    private extractData(res: HttpResponse<any> | any, displayLoading = true, callingMethodName: string = null) {
+        if (res && res.body) {
+          return res.body;
+        }
+        return res;
+    }
 
 }
