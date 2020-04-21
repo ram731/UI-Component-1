@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 
-export const metadata = {
+@NgModule({
 
     imports: [        
         ReactiveFormsModule,
@@ -17,8 +17,7 @@ export const metadata = {
     exports: [        
         PageFooterComponent,
     ]
-};
-@NgModule(metadata)
+})
 export class ComponentPageModule{}
 
 

@@ -70,9 +70,9 @@ export class MydeqHeaderComponent implements OnInit {
   
   logoutMe() {
     this.myAppList.forEach(app => {     
-      if(app!=this.context){
+     /*  if(app!=this.context){
         this.observerList$.push(this.service.logoutMe(app));
-      }      
+      }  */     console.log('Commented service call')
     });
 
     if(this.observerList$ && this.observerList$.length > 0){
