@@ -14,7 +14,7 @@ import { EachQuestion } from './question-list/each-question/each-question.compon
 import {ResponsivePageComponent} from './responsive-page/responsive-page.component';
 
 
-export const metadata = {
+@NgModule({
 
     imports: [
         CommonModule,
@@ -44,8 +44,7 @@ export const metadata = {
         EachQuestion,
         ResponsivePageComponent   
     ]
-};
-@NgModule(metadata)
+})
 export class CommonPageModule{}
 
 

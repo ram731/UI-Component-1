@@ -2,7 +2,7 @@ import { Component, ViewChild, ChangeDetectorRef, AfterViewChecked, OnInit, Afte
 import { Router, ActivatedRoute, RoutesRecognized, NavigationEnd, Params, ActivatedRouteSnapshot } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Utils } from './shared/Utils';
-import { Angulartics2Piwik } from 'angulartics2/piwik';
+//import { Angulartics2Piwik } from 'angulartics2/piwik';
 
 import { SessionTimeOutModalComponent } from './core/component/modals/session-timeout/timeout.component';
 import { AppService } from './service/app.service';
@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 import { PageConentService } from './core/content/content-service.component';
 import { NeedHelpComponent } from './core/component/need-help/need-help.component';
 
-declare var _paq: any;
+//declare var _paq: any;
 
 /**
  * App Component.
@@ -52,10 +52,10 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
     router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
-    piwik.startTracking();
+    /* piwik.startTracking();
     if (_paq) {
       _paq.push(['setSiteId', utils.getPiwikSiteId(window.location.hostname)]);
-    }
+    } */
 
     router.events.subscribe(e => {
       if (window.location.pathname.endsWith('confirmation')) {

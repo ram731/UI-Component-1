@@ -47,7 +47,7 @@
                         class="fa fa-chevron-right pl-1"></i></span>
                   </div>
                   <div class="custom-file h6" >
-                    <input type="file" class="custom-file-input" id="file1" name="file1" ngf-max-size="20MB" (change)="uploadFile($event,1)" [disabled] = "fileDisableIndicator" accept = ".pdf">
+                    <input type="file" class="custom-file-input" id="file1" name="file1" ngf-max-size="20MB" (change)="uploadFile($event,1)"  accept = ".pdf">
                     <label class="custom-file-label pt-2 h6" style="overflow: hidden !important;" for="file1">
                       {{file1?.name| slice:0:75}}
                       <span *ngIf="file1 && file1?.name && file1?.name?.length > 75">...</span>

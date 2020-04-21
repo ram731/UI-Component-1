@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { Angulartics2Module } from 'angulartics2';
+//import { Angulartics2Module } from 'angulartics2';
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -13,8 +13,7 @@ import { NgbDateFRParserFormatter } from './core/component/date-formatter/custom
 import { PageModule } from './pages/pages.module';
 
 
-
-const metadata = {
+@NgModule({
   declarations: [
     AppComponent
   ],
@@ -24,9 +23,8 @@ const metadata = {
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    NgbModule.forRoot(),
+    NgbModule,
     appRouting,
-    Angulartics2Module.forRoot(),
     SharedModule,
     PageModule
     
@@ -36,6 +34,5 @@ const metadata = {
   
   ],
   bootstrap: [AppComponent]
-};
-@NgModule(metadata)
+})
 export class AppModule {}
