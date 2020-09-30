@@ -74,6 +74,6 @@ import { GlobalService } from './service/global.service';
     NeedHelpComponent
   ],
   providers: [MyDeqErrorHandler,PageConentService, GlobalService],
-  entryComponents: [MydeqAlertModalComponent]
+  //entryComponents: [MydeqAlertModalComponent]
 })
 export class MyDEQCoreModule { }
