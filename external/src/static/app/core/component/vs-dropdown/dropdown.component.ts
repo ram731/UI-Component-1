@@ -1,10 +1,8 @@
 import { Component, Output, EventEmitter, forwardRef, Input } from '@angular/core';
 import { NgbDropdownConfig, NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
-
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectDropDown } from './SelectDropDown.datatype';
-
-import * as _ from 'lodash';
+import {find,filter} from 'lodash-es';
 
 const DROPDOWN_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
@@ -72,7 +70,7 @@ export class VSDropdownComponent implements ControlValueAccessor {
     }
 
     getItem = (vsId: String) => {
-        return _.find(this.itemList, ['vsId', vsId ]);
+        return find(this.itemList, ['vsId', vsId ]);
     }
 
     optionSeleted(dropDown: NgbDropdown, item: any) {
@@ -96,7 +94,7 @@ export class VSDropdownComponent implements ControlValueAccessor {
         }
         const regularExp = new RegExp('(' + this.searchFilterText + ')', 'i');
 
-        this.displayList = _.filter(this.itemList, function (vs) {
+        this.displayList = filter(this.itemList, function (vs) {
             return (
                 vs.vsDescriptiveName && vs.vsDescriptiveName.match(regularExp)
             );

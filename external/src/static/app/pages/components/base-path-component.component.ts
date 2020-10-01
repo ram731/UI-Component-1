@@ -6,7 +6,8 @@ import { AppService } from "../../service/app.service";
 import { MyDeqErrorHandler } from "../../core/errorHandler";
 import { PageTextGetter } from "../../core/content/pagetext-getter.component";
 import { Utils } from "../../shared/Utils";
-import * as _ from 'lodash';
+import {merge} from 'lodash';
+import { Directive } from "@angular/core";
 
 /**
  * The BasePathController is an abstract class which always to be extended for creating new page.
@@ -22,6 +23,7 @@ import * as _ from 'lodash';
  * 
  * }
  */
+@Directive()
 export abstract class BasePathController extends BaseController{
     public pageFooterDTL =null;
 
@@ -49,8 +51,8 @@ export abstract class BasePathController extends BaseController{
 
     protected getPathSpecificText(){
         let pathSpecificPageText={};
-        _.merge(pathSpecificPageText,this.pageText.base);
-        _.merge(pathSpecificPageText,this.pageText[this.utils.path]);
+        merge(pathSpecificPageText,this.pageText.base);
+        merge(pathSpecificPageText,this.pageText[this.utils.path]);
         return pathSpecificPageText
     }
     

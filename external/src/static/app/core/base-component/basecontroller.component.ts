@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit, Directive } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import * as _ from 'lodash';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -117,6 +117,7 @@ interface AdditionalPutCallDetails {
  * 
  * }
  */
+@Directive()
 export abstract class BaseController  extends BaseComponent implements OnInit {
 
     /**

@@ -1,7 +1,7 @@
 import {Injectable } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import {NgbAccordionConfig, NgbModal , NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
-import * as _ from 'lodash';
+import {pull} from 'lodash-es';
 
 /**
  * Utility Class
@@ -249,7 +249,7 @@ export class Utils {
    */
   closeLoading(callingMethodname: string = null) {
     if (callingMethodname) {
-      _.pull(this.methodCalls, callingMethodname);
+      pull(this.methodCalls, callingMethodname);
     }
     if (this.methodCalls && this.methodCalls.length === 0) {
       setTimeout(() => this.showLoadingSign = false, 0);
@@ -366,7 +366,7 @@ export class Utils {
   hideLoading = (callingMethodname: string = null) => {
 
     if (callingMethodname) {
-      _.pull(this.methodCalls, callingMethodname);
+      pull(this.methodCalls, callingMethodname);
     }
 
     if (this.methodCalls.length === 0) {

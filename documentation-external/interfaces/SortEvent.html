@@ -162,7 +162,7 @@
     Directive, Input, EventEmitter, SimpleChange, OnChanges, DoCheck, IterableDiffers,
     IterableDiffer, Output
 } from &#x27;@angular/core&#x27;;
-import * as _ from &#x27;lodash&#x27;;
+import {includes,orderBy,slice} from &#x27;lodash-es&#x27;;
 import { ReplaySubject } from &#x27;rxjs&#x27;;
 import { isNumber } from &#x27;util&#x27;;
 import { parse } from &#x27;url&#x27;;
@@ -217,7 +217,7 @@ export class DataTable implements OnChanges, DoCheck {
     public setSort(sortBy: string|string[], sortOrder: string): void {
         if (this.sortBy !&#x3D;&#x3D; sortBy || this.sortOrder !&#x3D;&#x3D; sortOrder) {
             this.sortBy &#x3D; sortBy;
-            this.sortOrder &#x3D; _.includes([&#x27;asc&#x27;, &#x27;desc&#x27;], sortOrder) ? sortOrder : &#x27;asc&#x27;;
+            this.sortOrder &#x3D; includes([&#x27;asc&#x27;, &#x27;desc&#x27;], sortOrder) ? sortOrder : &#x27;asc&#x27;;
             this.mustRecalculateData &#x3D; true;
             this.onSortChange.next({sortBy: sortBy, sortOrder: sortOrder});
             this.sortByChange.emit(this.sortBy);
@@ -267,7 +267,7 @@ export class DataTable implements OnChanges, DoCheck {
             this.mustRecalculateData &#x3D; true;
         }
         if (changes[&#x27;sortBy&#x27;] || changes[&#x27;sortOrder&#x27;]) {
-            if (!_.includes([&#x27;asc&#x27;, &#x27;desc&#x27;], this.sortOrder)) {
+            if (!includes([&#x27;asc&#x27;, &#x27;desc&#x27;], this.sortOrder)) {
                 console.warn(&#x27;angular2-datatable: value for input mfSortOrder must be one of [\&#x27;asc\&#x27;, \&#x27;desc\&#x27;], but is:&#x27;, this.sortOrder);
                 this.sortOrder &#x3D; &#x27;asc&#x27;;
             }
@@ -305,11 +305,11 @@ export class DataTable implements OnChanges, DoCheck {
         let tmp:any[] &#x3D; [];
         tmp.push(this.sortOrder);
         if ( typeof sortBy &#x3D;&#x3D;&#x3D; &#x27;string&#x27; || sortBy instanceof String) {
-            data &#x3D; _.orderBy(data, this.caseInsensitiveIteratee(&lt;string&gt;sortBy), tmp);
+            data &#x3D; orderBy(data, this.caseInsensitiveIteratee(&lt;string&gt;sortBy), tmp);
         } else {
-            data &#x3D; _.orderBy(data, sortBy, tmp);
+            data &#x3D; orderBy(data, sortBy, tmp);
         }
-        data &#x3D; _.slice(data, offset, offset + this.rowsOnPage);
+        data &#x3D; slice(data, offset, offset + this.rowsOnPage);
         this.data &#x3D; data;
     }
 
@@ -340,6 +340,7 @@ export class DataTable implements OnChanges, DoCheck {
 </div>
 
 
+                   
 
 
 
@@ -362,6 +363,7 @@ export class DataTable implements OnChanges, DoCheck {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'SortEvent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

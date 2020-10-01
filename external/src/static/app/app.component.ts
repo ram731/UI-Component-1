@@ -32,7 +32,7 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
   currentComponent: any = null;
   pageTitle = 'SUBMIT AIR COMPLIANCE CERTIFICATION';
   showReturnToQL:boolean = false;
-  
+  data: any =null;
   constructor(
     public utils: Utils,
     private titleService: Title,
@@ -42,7 +42,7 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
     private cdRef: ChangeDetectorRef,
     private pageConentService: PageConentService,
     private logger:LoggerService,
-    private piwik: Angulartics2Piwik
+    //private piwik: Angulartics2Piwik
     ) {
       
     logger.setProductionFlag(environment.production);
@@ -57,6 +57,18 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
       _paq.push(['setSiteId', utils.getPiwikSiteId(window.location.hostname)]);
     } */
 
+
+    (async  () => {
+      if(!this.utils['mapUrl']){
+        try{
+          let gisData = await this.service.getGisURLS();
+          this.utils['mapUrl'] = gisData.propertyMap;
+        }catch(e){
+          console.error('PLACE: ERROR while fetching GIS data.')
+        }
+      }
+    })();
+
     router.events.subscribe(e => {
       if (window.location.pathname.endsWith('confirmation')) {
         this.utils.isConfirmationPage = true;
@@ -67,19 +79,19 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
       if (e instanceof RoutesRecognized) {
         const root = e.state.root.firstChild;
         const queryParams: any = root.queryParamMap;
-        let data: any = root && root.children[0] ? root.children[0].data : { title: '' };
+        this.data= root && root.children[0] ? root.children[0].data : { title: '' };
         if (!this.utils.glbReqId && queryParams && queryParams.params['glbReqId']) {
           this.utils.glbReqId = queryParams.params['glbReqId'];
         }
-        this.pageTitle = data.title ? data.title : this.pageTitle;
+        this.pageTitle = this.data.title ? this.data.title : this.pageTitle;
         titleService.setTitle(this.pageTitle);
        
         utils.path = utils.path ? utils.path : (root.routeConfig.path ? root.routeConfig.path : '');
         utils.pageURL = e.url;
-        this.utils.showSaveAndExit = data.showSaveAndExit ? data.showSaveAndExit : false;       
-        if(data.placeBarRequired ){
+        this.utils.showSaveAndExit = this.data.showSaveAndExit ? this.data.showSaveAndExit : false;       
+        if(this.data.placeBarRequired ){
           this.initPlaceBar(root);        }
-        this.showReturnToQL = data.showReturnToQL ? data.showReturnToQL : false;      
+        this.showReturnToQL = this.data.showReturnToQL ? this.data.showReturnToQL : false;      
 
       } else if (e instanceof NavigationEnd) {
         if (e.url.indexOf('glbReqId') > 0) {
@@ -102,6 +114,19 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
       this.currentComponent = event;
       if (typeof this.currentComponent.setPageReview === "function") {
         this.currentComponent.setPageReview(this);
+      }
+
+      if (this.data) {
+       
+        if(this.data.pageTextComp){
+          PageConentService.getInstance().registerBasePageContent(event, this.data.pageTextComp);
+          event.pageText = event.getPathSpecificText();
+         }
+  
+         if(this.data.pageLoadServiceName){
+          event.setPageLoadServiceName(this.data.pageLoadServiceName);
+         }
+       
       }
 
     }, 300);

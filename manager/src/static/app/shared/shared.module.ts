@@ -49,6 +49,6 @@ import { LoggerService } from './lib/logger/logger-service.component';
     Utils, MyDeqErrorHandler, ManagerService, PageConentService, PhonePipe, NgbAccordionConfig,
     NgbDatepickerConfig, NgbActiveModal, NgbPopoverConfig, LoggerService
   ],
-  entryComponents: [MydeqAlertModalComponent]
+  //entryComponents: [MydeqAlertModalComponent]
 })
 export class SharedModule {}

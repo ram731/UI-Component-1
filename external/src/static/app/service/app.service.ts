@@ -4,7 +4,8 @@ import { environment } from '../../environments/environment';
 import { Utils } from '../shared/Utils';
 import { throwError as observableThrowError, of, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import * as _ from 'lodash';
+import {filter} from 'lodash-es';
+
 const endpoint_url: string = environment.contextPath + '/service/';
 
 /**
@@ -352,6 +353,23 @@ export class AppService {
                 catchError((error) => this.handleError_PlaceDetails(error)));
     }
 
+    //GIS SERVICE
+  async getGisURLS() {
+    if (this.testMode) {
+      return  of(environment.gisURLS).toPromise();
+      //return observableThrowError(environment.gisURLSERR).toPromise();
+
+    }
+    this.utils.showLoading('getGisURLS');
+    const url = 'service/gisUrls';
+    return this.http
+      .get(url, { observe: 'response' })
+      .pipe(
+        map((response) => this.extractData(response, true, 'getGisURLS')),
+        catchError((error) => this.handleError(error, true, 'getGisURLS'))
+      ).toPromise();
+  }
+
     //COMMON SERVICE
     public handleError_PlaceDetails(error) {
         return observableThrowError(error.error);
@@ -379,7 +397,7 @@ export class AppService {
             if (res.body.reviewList && res.body.reviewList.length > 0) {
                 let arrayObj: any[] = []
                 arrayObj = res.body.reviewList;
-                res.body.reviewList = _.filter(arrayObj, function (n) {
+                res.body.reviewList = filter(arrayObj, function (n) {
                     return n.currentInd === 'C';
                 });
                 this.utils.setPageComments(res.body.reviewList);
@@ -461,7 +479,7 @@ export class AppService {
             returnObj = environment[mockDataKey];
         }
         if(returnObj['reviewList']) {
-            this.utils.setPageComments(_.filter(returnObj['reviewList'], function (n) {
+            this.utils.setPageComments(filter(returnObj['reviewList'], function (n) {
                 return n.currentInd === 'C';
             }));
         }
