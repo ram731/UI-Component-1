@@ -388,7 +388,7 @@ import { EachQuestion } from &#x27;./question-list/each-question/each-question.c
 import {ResponsivePageComponent} from &#x27;./responsive-page/responsive-page.component&#x27;;
 
 
-export const metadata &#x3D; {
+@NgModule({
 
     imports: [
         CommonModule,
@@ -418,8 +418,7 @@ export const metadata &#x3D; {
         EachQuestion,
         ResponsivePageComponent   
     ]
-};
-@NgModule(metadata)
+})
 export class CommonPageModule{}
 
 
@@ -437,6 +436,7 @@ export class CommonPageModule{}
 
 
 
+                   
 
 
 
@@ -459,6 +459,7 @@ export class CommonPageModule{}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'CommonPageModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

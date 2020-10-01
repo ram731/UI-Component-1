@@ -33,7 +33,7 @@ export class WhatsNeededPageContent extends BasePageContent  {
         }
       ],
 
-      'warning_msg': `Warning: Your session will time out in 20 minutes of non-activity on a single screen. You may save your application, once started, by clicking on this &#147; <span class="text-primary"><i class="far fa-save" aria-hidden="true"></i></span> &#148; icon located at the top right of every page.`
+      'warning_msg': `<div class="pt-4">Warning: Your session will time out after 20 minutes of non-activity on a single screen.</div><div class='mt-5'>Your information is not saved until you reach the screen that has the options to click SAVE & CONTINUE or <br/>SAVE & EXIT. Once saved, you can resume at any time by visiting your dashboard.</div>`
     }
   }
 

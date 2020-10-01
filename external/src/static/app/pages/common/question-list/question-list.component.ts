@@ -7,7 +7,7 @@ import { MyDeqErrorHandler } from '../../../core/errorHandler';
 import { LoggerService } from '../../../shared/lib/logger/logger-service.component';
 import { PagecontentQuestionList } from './question-list.resourcebundle';
 import { BasePathController } from '../../components/base-path-component.component';
-import * as _ from 'lodash';
+import {find,cloneDeep,filter }from 'lodash-es';
 
 @Component({
     selector: 'question-list',
@@ -38,7 +38,7 @@ export class QuestionListComponent extends BasePathController {
         this.questionList = this.generateQuestionList(getResponse.questionList);
         this.logger.debug('In onGetResponse', this.questionList)
 
-        if (!(_.find(getResponse.questionList, function (o) {
+        if (!(find(getResponse.questionList, function (o) {
             return o.parentQuestionId === null && o.questionStatus !== 'Complete';
         }))) {
             this.pageFooterDTL.disableRightButton = false;
@@ -68,7 +68,7 @@ export class QuestionListComponent extends BasePathController {
         return returnList;
     }
     private resetParentQuestion() {
-        return _.cloneDeep({
+        return cloneDeep({
             parent: null,
             child: []
         })
@@ -76,7 +76,7 @@ export class QuestionListComponent extends BasePathController {
 
     isRevisionNeeded(revisionList: any[]): boolean {
         if (revisionList) {
-            return _.find(revisionList, function (o) { return o.currentInd === 'C' && o.status === 'R'; }) ? true : false;
+            return find(revisionList, function (o) { return o.currentInd === 'C' && o.status === 'R'; }) ? true : false;
         }
         return false;
     }
@@ -123,8 +123,8 @@ export class QuestionListComponent extends BasePathController {
     }
 
     private calculateShowRevision(inputQuestionList: any[]) {
-        let filteredList = _.filter(inputQuestionList, function (question: any) {
-            if (question.reviewList && question.reviewList.length > 0 && _.find(question.reviewList, { "currentInd": "C", "status": "R" })) {
+        let filteredList = filter(inputQuestionList, function (question: any) {
+            if (question.reviewList && question.reviewList.length > 0 && find(question.reviewList, { "currentInd": "C", "status": "R" })) {
                 return question;
             }
 

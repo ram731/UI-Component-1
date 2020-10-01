@@ -213,7 +213,7 @@ import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 import { NgbModule, NgbDateParserFormatter } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
-import { Angulartics2Module } from &#x27;angulartics2&#x27;;
+//import { Angulartics2Module } from &#x27;angulartics2&#x27;;
 
 import { SharedModule } from &#x27;./shared/shared.module&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
@@ -222,8 +222,7 @@ import { NgbDateFRParserFormatter } from &#x27;./core/component/date-formatter/c
 import { PageModule } from &#x27;./pages/pages.module&#x27;;
 
 
-
-const metadata &#x3D; {
+@NgModule({
   declarations: [
     AppComponent
   ],
@@ -233,9 +232,8 @@ const metadata &#x3D; {
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    NgbModule.forRoot(),
+    NgbModule,
     appRouting,
-    Angulartics2Module.forRoot(),
     SharedModule,
     PageModule
     
@@ -245,8 +243,7 @@ const metadata &#x3D; {
   
   ],
   bootstrap: [AppComponent]
-};
-@NgModule(metadata)
+})
 export class AppModule {}
 </code></pre>
     </div>
@@ -261,6 +258,7 @@ export class AppModule {}
 
 
 
+                   
 
 
 
@@ -283,6 +281,7 @@ export class AppModule {}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'AppModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

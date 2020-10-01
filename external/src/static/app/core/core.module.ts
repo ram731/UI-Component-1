@@ -24,6 +24,7 @@ import { MydeqNavigationAlertModalComponent } from './component/modals/navigatio
 import { PageConentService } from './content/content-service.component';
 import { NeedHelpComponent } from './component/need-help/need-help.component';
 import { GlobalService } from './service/global.service';
+import { LogoutService } from './service/logout.service';
 
 
 @NgModule({
@@ -73,7 +74,7 @@ import { GlobalService } from './service/global.service';
     CommentsComponent,
     NeedHelpComponent
   ],
-  providers: [MyDeqErrorHandler,PageConentService, GlobalService],
+  providers: [MyDeqErrorHandler,PageConentService, GlobalService, LogoutService],
   //entryComponents: [MydeqAlertModalComponent]
 })
 export class MyDEQCoreModule { }
