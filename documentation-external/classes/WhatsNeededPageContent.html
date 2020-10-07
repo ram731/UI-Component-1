@@ -249,7 +249,7 @@
             select:&#x60;Select One&#x60;,
             cancel:&#x60;CANCEL&#x60;,
             save:&#x60;SAVE&#x60;,
-            saveAndContinue:&#x60;SAVE PAGE &amp; CONTINUE&#x60;,
+            saveAndContinue:&#x60;SAVE &amp; CONTINUE&#x60;,
             delete:&#x60;DELETE&#x60;,
             edit:&#x60;EDIT&#x60;,
             continue:&#x60;CONTINUE&#x60;,
@@ -549,7 +549,7 @@ export class WhatsNeededPageContent extends BasePageContent  {
         }
       ],
 
-      &#x27;warning_msg&#x27;: &#x60;Warning: Your session will time out in 20 minutes of non-activity on a single screen. You may save your application, once started, by clicking on this &amp;#147; &lt;span class&#x3D;&quot;text-primary&quot;&gt;&lt;i class&#x3D;&quot;far fa-save&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt; &amp;#148; icon located at the top right of every page.&#x60;
+      &#x27;warning_msg&#x27;: &#x60;&lt;div class&#x3D;&quot;pt-4&quot;&gt;Warning: Your session will time out after 20 minutes of non-activity on a single screen.&lt;/div&gt;&lt;div class&#x3D;&#x27;mt-5&#x27;&gt;Your information is not saved until you reach the screen that has the options to click SAVE &amp; CONTINUE or &lt;br/&gt;SAVE &amp; EXIT. Once saved, you can resume at any time by visiting your dashboard.&lt;/div&gt;&#x60;
     }
   }
 
@@ -582,6 +582,7 @@ export class WhatsNeededPageContent extends BasePageContent  {
 
 
 
+                   
 
 
 
@@ -604,6 +605,7 @@ export class WhatsNeededPageContent extends BasePageContent  {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
             var COMPODOC_CURRENT_PAGE_URL = 'WhatsNeededPageContent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

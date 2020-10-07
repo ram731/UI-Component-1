@@ -1,7 +1,7 @@
 import {Injectable } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import {NgbAccordionConfig, NgbModal , NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
-import * as _ from 'lodash';
+import {pull} from 'lodash-es';
 
 /**
  * Utility Class
@@ -29,7 +29,7 @@ export class Utils {
   pageURL: string;
   pageTitle:string ="";
 
-  piwikSiteIds: any[];
+  //piwikSiteIds: any[];
   ANALYTICS: any;
   tooltipText: any;
   ALERT: any;
@@ -85,14 +85,14 @@ export class Utils {
     dpConfig.minDate = {year: 2016, month: 1, day: 1};
     dpConfig.maxDate = {year: Math.max(now.getFullYear(),2021), month: 12, day: 31};
 
-    this.piwikSiteIds = [
+/*     this.piwikSiteIds = [
       { hostName: 'localhost', siteId: 1 },
       { hostName: 'mydev.azdeq.gov', siteId: 1 },
       { hostName: 'myqa.azdeq.gov', siteId: 3 },
       { hostName: 'myuat.azdeq.gov', siteId: 5 },
       { hostName: 'mybeta.azdeq.gov', siteId: 4 },
       { hostName: 'my.azdeq.gov', siteId: 6 }
-    ];
+    ]; */
 
     this.ANALYTICS = {
      
@@ -194,7 +194,7 @@ export class Utils {
   /**
    * Returns Piwik site Id
    */
-  public getPiwikSiteId = (hostname) => {
+/*   public getPiwikSiteId = (hostname) => {
     for (let i = 0; i < this.piwikSiteIds.length; i++) {
       const piwikSite = this.piwikSiteIds[i];
       if (piwikSite.hostName === hostname) {
@@ -202,7 +202,7 @@ export class Utils {
       }
     }
     return 1;
-  }
+  } */
 
   /**
    * Performs null check.
@@ -249,7 +249,7 @@ export class Utils {
    */
   closeLoading(callingMethodname: string = null) {
     if (callingMethodname) {
-      _.pull(this.methodCalls, callingMethodname);
+      pull(this.methodCalls, callingMethodname);
     }
     if (this.methodCalls && this.methodCalls.length === 0) {
       setTimeout(() => this.showLoadingSign = false, 0);
@@ -366,7 +366,7 @@ export class Utils {
   hideLoading = (callingMethodname: string = null) => {
 
     if (callingMethodname) {
-      _.pull(this.methodCalls, callingMethodname);
+      pull(this.methodCalls, callingMethodname);
     }
 
     if (this.methodCalls.length === 0) {

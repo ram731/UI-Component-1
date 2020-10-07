@@ -147,7 +147,7 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { CommonPageModule } from &#x27;./common/common.module&#x27;;
 
-export const metadata &#x3D; {
+@NgModule({
 
     imports: [
         CommonModule,
@@ -155,8 +155,7 @@ export const metadata &#x3D; {
         CommonPageModule
     ]
 
-};
-@NgModule(metadata)
+})
 export class PageModule {}
 
 
@@ -174,6 +173,7 @@ export class PageModule {}
 
 
 
+                   
 
 
 
@@ -196,6 +196,7 @@ export class PageModule {}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'PageModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -1,5 +1,5 @@
 # UI-Component
-UI-Component is a framework for developing Angular 7 based customer facing web applications as per MyDEQ standers. This project is generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+UI-Component is a framework for developing Angular 9 based customer facing web applications as per MyDEQ standers. This project is generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

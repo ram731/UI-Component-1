@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
+import { LogoutService } from '../../../service/logout.service';
 
 interface HeaderDetails{
   first_name?:string,
@@ -52,16 +53,17 @@ interface HeaderDetails{
 export class MydeqHeaderComponent implements OnInit {
 
   @Input('headerDetail') headerDetail:HeaderDetails = {first_name:null,last_name:null};
+  /* 
   localStorageKey = 'visitedAppList';
   myAppList: string[] = [];
   observerList$: Observable<any>[] = [];
-  context: string;
+  context: string; */
   
-  constructor() { 
-   this.context = window.location.pathname.substring(1, window.location.pathname.indexOf('/', 2));
+  constructor(private logoutService:LogoutService) { 
+ /*   this.context = window.location.pathname.substring(1, window.location.pathname.indexOf('/', 2));
    const appList: string[] = this.getFromSessionStorage(this.localStorageKey);
    this.myAppList = appList ? appList.filter(f => f !== this.context).concat([this.context]) : [this.context];
-   localStorage.setItem(this.localStorageKey, JSON.stringify(this.myAppList));
+   localStorage.setItem(this.localStorageKey, JSON.stringify(this.myAppList)); */
   }
 
   ngOnInit() {
@@ -69,10 +71,10 @@ export class MydeqHeaderComponent implements OnInit {
   }
   
   logoutMe() {
+    this.logoutService.logoutMe();
+    /* 
     this.myAppList.forEach(app => {     
-      if(app!=this.context){
-        this.observerList$.push(this.service.logoutMe(app));
-      }      
+       console.log('Commented service call')
     });
 
     if(this.observerList$ && this.observerList$.length > 0){
@@ -86,11 +88,11 @@ export class MydeqHeaderComponent implements OnInit {
     }
     else{
       this.redirectToLogout();
-    }
+    } */
     
   }
 
-  getFromSessionStorage(key: string) {
+ /*  getFromSessionStorage(key: string) {
     try {
       return JSON.parse(localStorage.getItem(key));
     } catch (e) {
@@ -102,6 +104,6 @@ export class MydeqHeaderComponent implements OnInit {
   redirectToLogout() {
     window.open('logout', '_self');
     localStorage.setItem(this.localStorageKey, JSON.stringify([]));
-  }
+  } */
 
 }

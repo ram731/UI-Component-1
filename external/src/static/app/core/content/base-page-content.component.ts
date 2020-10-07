@@ -9,7 +9,7 @@ export abstract class BasePageContent implements PageTextGetter{
             select:`Select One`,
             cancel:`CANCEL`,
             save:`SAVE`,
-            saveAndContinue:`SAVE PAGE & CONTINUE`,
+            saveAndContinue:`SAVE & CONTINUE`,
             delete:`DELETE`,
             edit:`EDIT`,
             continue:`CONTINUE`,

@@ -171,6 +171,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+import { Observable, forkJoin } from &#x27;rxjs&#x27;;
+
 interface HeaderDetails{
   first_name?:string,
   last_name?:string
@@ -222,17 +224,65 @@ interface HeaderDetails{
 export class MydeqHeaderComponent implements OnInit {
 
   @Input(&#x27;headerDetail&#x27;) headerDetail:HeaderDetails &#x3D; {first_name:null,last_name:null};
-  constructor() { }
+  localStorageKey &#x3D; &#x27;visitedAppList&#x27;;
+  myAppList: string[] &#x3D; [];
+  observerList$: Observable&lt;any&gt;[] &#x3D; [];
+  context: string;
+  
+  constructor() { 
+   this.context &#x3D; window.location.pathname.substring(1, window.location.pathname.indexOf(&#x27;/&#x27;, 2));
+   const appList: string[] &#x3D; this.getFromSessionStorage(this.localStorageKey);
+   this.myAppList &#x3D; appList ? appList.filter(f &#x3D;&gt; f !&#x3D;&#x3D; this.context).concat([this.context]) : [this.context];
+   localStorage.setItem(this.localStorageKey, JSON.stringify(this.myAppList));
+  }
 
   ngOnInit() {
     
   }
+  
+  logoutMe() {
+    this.myAppList.forEach(app &#x3D;&gt; {     
+     /*  if(app!&#x3D;this.context){
+        this.observerList$.push(this.service.logoutMe(app));
+      }  */     console.log(&#x27;Commented service call&#x27;)
+    });
 
-}</code></pre>
+    if(this.observerList$ &amp;&amp; this.observerList$.length &gt; 0){
+      forkJoin(this.observerList$).subscribe(
+        response &#x3D;&gt; {
+          this.redirectToLogout();
+        },
+        error &#x3D;&gt; {
+          this.redirectToLogout();
+        });
+    }
+    else{
+      this.redirectToLogout();
+    }
+    
+  }
+
+  getFromSessionStorage(key: string) {
+    try {
+      return JSON.parse(localStorage.getItem(key));
+    } catch (e) {
+      console.error(&#x27;Error getting data from sessionStorage&#x27;, e);
+      return null;
+    }
+  }
+
+  redirectToLogout() {
+    window.open(&#x27;logout&#x27;, &#x27;_self&#x27;);
+    localStorage.setItem(this.localStorageKey, JSON.stringify([]));
+  }
+
+}
+</code></pre>
     </div>
 </div>
 
 
+                   
 
 
 
@@ -255,6 +305,7 @@ export class MydeqHeaderComponent implements OnInit {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'HeaderDetails.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

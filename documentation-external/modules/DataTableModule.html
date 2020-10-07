@@ -232,18 +232,6 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>EntryComponents<a href="https://angular.io/api/core/NgModule#entryComponents" target="_blank"
-                            title="Official documentation about module entryComponents"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/BootstrapPaginator.html">BootstrapPaginator</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/DefaultSorter.html">DefaultSorter</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
                     <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
@@ -293,10 +281,10 @@ import {BootstrapPaginator} from &quot;./BootstrapPaginator&quot;;
         Paginator,
         BootstrapPaginator
     ],
-    entryComponents: [
+   /*  entryComponents: [
         DefaultSorter,
         BootstrapPaginator
-    ]
+    ] */
 })
 export class DataTableModule {
 
@@ -314,6 +302,7 @@ export class DataTableModule {
 
 
 
+                   
 
 
 
@@ -336,6 +325,7 @@ export class DataTableModule {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'DataTableModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

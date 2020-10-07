@@ -110,10 +110,6 @@
                                 <a href="#getCompletePlacebarAddress">getCompletePlacebarAddress</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#getPiwikSiteId">getPiwikSiteId</a>
-                            </li>
-                            <li>
                                 <a href="#glbReqId">glbReqId</a>
                             </li>
                             <li>
@@ -168,9 +164,6 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#pathVal">pathVal</a>
-                            </li>
-                            <li>
-                                <a href="#piwikSiteIds">piwikSiteIds</a>
                             </li>
                             <li>
                                 <a href="#placeAddress">placeAddress</a>
@@ -1530,39 +1523,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getPiwikSiteId"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            getPiwikSiteId</b>
-                            <a href="#getPiwikSiteId"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">external/src/static/app/shared/Utils.ts:197</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Returns Piwik site Id</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="glbReqId"></a>
                         <span class="name">
                             <b>
@@ -2012,7 +1972,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Performs null check.</p>
+                        <div class="io-description"><p>Returns Piwik site Id</p>
 </div>
                     </td>
                 </tr>
@@ -2105,33 +2065,6 @@
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">external/src/static/app/shared/Utils.ts:13</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="piwikSiteIds"></a>
-                        <span class="name">
-                            <b>
-                            piwikSiteIds</b>
-                            <a href="#piwikSiteIds"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>any[]</code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">external/src/static/app/shared/Utils.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -2624,7 +2557,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable } from &#x27;@angular/core&#x27;;
 import { NavigationExtras, Router } from &#x27;@angular/router&#x27;;
 import {NgbAccordionConfig, NgbModal , NgbDatepickerConfig} from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
-import * as _ from &#x27;lodash&#x27;;
+import {pull} from &#x27;lodash-es&#x27;;
 
 /**
  * Utility Class
@@ -2652,7 +2585,7 @@ export class Utils {
   pageURL: string;
   pageTitle:string &#x3D;&quot;&quot;;
 
-  piwikSiteIds: any[];
+  //piwikSiteIds: any[];
   ANALYTICS: any;
   tooltipText: any;
   ALERT: any;
@@ -2708,14 +2641,14 @@ export class Utils {
     dpConfig.minDate &#x3D; {year: 2016, month: 1, day: 1};
     dpConfig.maxDate &#x3D; {year: Math.max(now.getFullYear(),2021), month: 12, day: 31};
 
-    this.piwikSiteIds &#x3D; [
+/*     this.piwikSiteIds &#x3D; [
       { hostName: &#x27;localhost&#x27;, siteId: 1 },
       { hostName: &#x27;mydev.azdeq.gov&#x27;, siteId: 1 },
       { hostName: &#x27;myqa.azdeq.gov&#x27;, siteId: 3 },
       { hostName: &#x27;myuat.azdeq.gov&#x27;, siteId: 5 },
       { hostName: &#x27;mybeta.azdeq.gov&#x27;, siteId: 4 },
       { hostName: &#x27;my.azdeq.gov&#x27;, siteId: 6 }
-    ];
+    ]; */
 
     this.ANALYTICS &#x3D; {
      
@@ -2817,7 +2750,7 @@ export class Utils {
   /**
    * Returns Piwik site Id
    */
-  public getPiwikSiteId &#x3D; (hostname) &#x3D;&gt; {
+/*   public getPiwikSiteId &#x3D; (hostname) &#x3D;&gt; {
     for (let i &#x3D; 0; i &lt; this.piwikSiteIds.length; i++) {
       const piwikSite &#x3D; this.piwikSiteIds[i];
       if (piwikSite.hostName &#x3D;&#x3D;&#x3D; hostname) {
@@ -2825,7 +2758,7 @@ export class Utils {
       }
     }
     return 1;
-  }
+  } */
 
   /**
    * Performs null check.
@@ -2872,7 +2805,7 @@ export class Utils {
    */
   closeLoading(callingMethodname: string &#x3D; null) {
     if (callingMethodname) {
-      _.pull(this.methodCalls, callingMethodname);
+      pull(this.methodCalls, callingMethodname);
     }
     if (this.methodCalls &amp;&amp; this.methodCalls.length &#x3D;&#x3D;&#x3D; 0) {
       setTimeout(() &#x3D;&gt; this.showLoadingSign &#x3D; false, 0);
@@ -2989,7 +2922,7 @@ export class Utils {
   hideLoading &#x3D; (callingMethodname: string &#x3D; null) &#x3D;&gt; {
 
     if (callingMethodname) {
-      _.pull(this.methodCalls, callingMethodname);
+      pull(this.methodCalls, callingMethodname);
     }
 
     if (this.methodCalls.length &#x3D;&#x3D;&#x3D; 0) {
@@ -3079,6 +3012,7 @@ export class Utils {
 
 
 
+                   
 
 
 
@@ -3101,6 +3035,7 @@ export class Utils {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
             var COMPODOC_CURRENT_PAGE_URL = 'Utils.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

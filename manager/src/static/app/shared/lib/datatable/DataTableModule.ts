@@ -22,10 +22,10 @@ import {BootstrapPaginator} from "./BootstrapPaginator";
         Paginator,
         BootstrapPaginator
     ],
-    entryComponents: [
+    /* entryComponents: [
         DefaultSorter,
         BootstrapPaginator
-    ]
+    ] */
 })
 export class DataTableModule {
 

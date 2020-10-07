@@ -173,7 +173,7 @@ import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { PageFooterComponent } from &#x27;./page-footer/page-footer.component&#x27;;
 
-export const metadata &#x3D; {
+@NgModule({
 
     imports: [        
         ReactiveFormsModule,
@@ -186,8 +186,7 @@ export const metadata &#x3D; {
     exports: [        
         PageFooterComponent,
     ]
-};
-@NgModule(metadata)
+})
 export class ComponentPageModule{}
 
 
@@ -205,6 +204,7 @@ export class ComponentPageModule{}
 
 
 
+                   
 
 
 
@@ -227,6 +227,7 @@ export class ComponentPageModule{}
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
             var COMPODOC_CURRENT_PAGE_URL = 'ComponentPageModule.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -1,4 +1,5 @@
 import { Component, NgZone } from '@angular/core';
+import { LogoutService } from '../../../service/logout.service';
 /**
  * Session timeout modal.
  */
@@ -13,6 +14,11 @@ export class SessionTimeOutModalComponent {
     private warnTime = 1080000;     // 20m - 118s(count down) - 2m(buffer)
     private timer: any;
     private timestamp: any;
+
+    constructor(
+        private service: LogoutService
+    ) { }
+
 
     init() {
         this.timestamp = new Date();
@@ -44,6 +50,7 @@ export class SessionTimeOutModalComponent {
     showTimeoutModal() {
         this.sessionTimedOut = true;
         this.timeoutMessageIsVisible = true;
+        this.service.logoutMe(true);
     }
 
     continueSession() {
@@ -55,6 +62,7 @@ export class SessionTimeOutModalComponent {
     }
 
     endSession() {
-        window.open('http://azdeq.gov/', '_self');
+        //window.open('http://azdeq.gov/', '_self');
+        window.open('logout', '_self');
     }
 }

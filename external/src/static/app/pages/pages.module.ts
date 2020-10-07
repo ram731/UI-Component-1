@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CommonPageModule } from './common/common.module';
 
-export const metadata = {
+@NgModule({
 
     imports: [
         CommonModule,
@@ -11,8 +11,7 @@ export const metadata = {
         CommonPageModule
     ]
 
-};
-@NgModule(metadata)
+})
 export class PageModule {}
 
 

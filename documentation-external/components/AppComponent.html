@@ -246,7 +246,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(utils: <a href="../injectables/Utils.html">Utils</a>, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, service: <a href="../injectables/AppService.html">AppService</a>, cdRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, pageConentService: <a href="../injectables/PageConentService.html">PageConentService</a>, logger: <a href="../injectables/LoggerService.html">LoggerService</a>, piwik: Angulartics2Piwik)</code>
+<code>constructor(utils: <a href="../injectables/Utils.html">Utils</a>, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, service: <a href="../injectables/AppService.html">AppService</a>, cdRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, pageConentService: <a href="../injectables/PageConentService.html">PageConentService</a>, logger: <a href="../injectables/LoggerService.html">LoggerService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -357,18 +357,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/LoggerService.html" target="_self" >LoggerService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>piwik</td>
-                                                  
-                                                        <td>
-                                                                    <code>Angulartics2Piwik</code>
                                                         </td>
                                                   
                                                     <td>
@@ -1406,7 +1394,7 @@
 import { Router, ActivatedRoute, RoutesRecognized, NavigationEnd, Params, ActivatedRouteSnapshot } from &#x27;@angular/router&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { Utils } from &#x27;./shared/Utils&#x27;;
-import { Angulartics2Piwik } from &#x27;angulartics2/piwik&#x27;;
+//import { Angulartics2Piwik } from &#x27;angulartics2/piwik&#x27;;
 
 import { SessionTimeOutModalComponent } from &#x27;./core/component/modals/session-timeout/timeout.component&#x27;;
 import { AppService } from &#x27;./service/app.service&#x27;;
@@ -1415,7 +1403,7 @@ import { environment } from &#x27;../environments/environment&#x27;;
 import { PageConentService } from &#x27;./core/content/content-service.component&#x27;;
 import { NeedHelpComponent } from &#x27;./core/component/need-help/need-help.component&#x27;;
 
-declare var _paq: any;
+//declare var _paq: any;
 
 /**
  * App Component.
@@ -1446,7 +1434,7 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
     private cdRef: ChangeDetectorRef,
     private pageConentService: PageConentService,
     private logger:LoggerService,
-    private piwik: Angulartics2Piwik
+    //private piwik: Angulartics2Piwik
     ) {
       
     logger.setProductionFlag(environment.production);
@@ -1456,10 +1444,10 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
     router.routeReuseStrategy.shouldReuseRoute &#x3D; function () {
       return false;
     };
-    piwik.startTracking();
+    /* piwik.startTracking();
     if (_paq) {
       _paq.push([&#x27;setSiteId&#x27;, utils.getPiwikSiteId(window.location.hostname)]);
-    }
+    } */
 
     router.events.subscribe(e &#x3D;&gt; {
       if (window.location.pathname.endsWith(&#x27;confirmation&#x27;)) {
@@ -1799,6 +1787,7 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
 
 
 
+                   
 
 
 
@@ -1821,6 +1810,7 @@ export class AppComponent implements AfterViewChecked, OnInit, AfterViewInit {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
